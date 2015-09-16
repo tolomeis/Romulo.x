@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/XC8_18F87K22/production\Romulo.x.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>16384</length>
+      <used>3098</used>
+      <free>13286</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>768</length>
+      <used>116</used>
+      <free>652</free>
+    </memory>
+  </executable>
+</project>

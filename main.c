@@ -24,12 +24,10 @@
 #include "alias.h"
 
 /******************************************************************************/
-/*** VARBIABILI                                        */
+/*** VARBIABILI per memorizzazione                                    */
 /******************************************************************************/
 
-
 uint16_t V_pulsantiera;
-
 uint16_t V_frontale;
 uint16_t V_posteriore;
 
@@ -45,9 +43,13 @@ uint8_t color;
 bool solleva = false;
 uint16_t i;
 uint16_t numPassi=0;
+
 /*****43 GRUPPI DI 4 PASSI PER ELEVARE IL CARRELLO***
  ***** IN TOTALE 172 PASSI */
 uint8_t p = 0;
+
+/****************************************************************************/
+/*** FUNZIONI BASE*****/
 
 
 void suonaBuzzer_1(){

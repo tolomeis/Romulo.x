@@ -13,8 +13,8 @@ ifeq "${IGNORE_LOCAL}" "TRUE"
 else
 include Makefile
 # Include makefile containing local settings
-ifeq "$(wildcard nbproject/Makefile-local-C18_18F87K22.mk)" "nbproject/Makefile-local-C18_18F87K22.mk"
-include nbproject/Makefile-local-C18_18F87K22.mk
+ifeq "$(wildcard nbproject/Makefile-local-XC8_18F87K22.mk)" "nbproject/Makefile-local-XC8_18F87K22.mk"
+include nbproject/Makefile-local-XC8_18F87K22.mk
 endif
 endif
 
@@ -25,7 +25,7 @@ MV=mv
 CP=cp 
 
 # Macros
-CND_CONF=C18_18F87K22
+CND_CONF=XC8_18F87K22
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
@@ -75,7 +75,7 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-C18_18F87K22.mk dist/${CND_CONF}/${IMAGE_TYPE}/Romulo.x.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-XC8_18F87K22.mk dist/${CND_CONF}/${IMAGE_TYPE}/Romulo.x.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=18F24K22
 # ------------------------------------------------------------------------------------
@@ -323,8 +323,8 @@ endif
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
-	${RM} -r build/C18_18F87K22
-	${RM} -r dist/C18_18F87K22
+	${RM} -r build/XC8_18F87K22
+	${RM} -r dist/XC8_18F87K22
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl
