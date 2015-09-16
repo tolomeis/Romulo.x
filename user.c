@@ -20,12 +20,91 @@
 #include "user.h"
 #include "alias.h"
 #include "mcc_generated_files/mcc.h"
+
 /******************************************************************************/
 /* User Functions                                                             */
 /******************************************************************************/
 
 /* <Initialize variables in user.h and insert code for user algorithms.> */
 
+
+
+void seguiLinea(){
+            EPWM1_LoadDutyValue(700);
+            EPWM2_LoadDutyValue(712);
+            MOT_EN = 1;
+            //attendi linea o attendi tempo
+            while(ADC_GetConversion(channel_AN13)<Front_POS){
+                    checkBatt();
+                    /**** INSEGUITORE DI LINEA***/
+                    deltaV =  ADC_GetConversion(channel_AN13);
+                    if(deltaV > 292){
+                        vel_DX=762;
+                        vel_SX = 655;
+                    }else if(deltaV < 252 && deltaV > 10){
+                    vel_SX=750;
+                    vel_DX = 667;
+                   }else if(deltaV > 10){
+                        vel_DX = 712;
+                        vel_SX = 700;
+                   }
+                    EPWM1_LoadDutyValue(vel_SX);
+                    EPWM2_LoadDutyValue(vel_DX);
+                    for(uint8_t T = 0; T < 8; T++){
+                        __delay_ms(1);
+                         if(ADC_GetConversion(channel_AN13)>=Front_POS){
+                            break;
+                        }
+
+                      }
+            }
+         
+}
+
+
+void controllaColore(){
+    S0 = 0;
+    S1 = 1;
+    COLORLED = 0;
+    //controllo rosso
+    S2 = 0;
+    S3 = 0;
+    for(uint8_t i = 0; i<25; i++){
+    __delay_ms(10);
+    __delay_ms(10);
+    }
+    rossoPC = ADC_GetConversion(channel_AN4);
+    //BLU
+    S2 = 0;
+    S3 = 1;
+    for(uint8_t i = 0; i<25; i++){
+    __delay_ms(10);
+    __delay_ms(10);
+    }
+    bluPC = ADC_GetConversion(channel_AN4);
+    //verde
+    S2 = 1;
+    S3 = 1;
+    for(uint8_t i = 0; i<25; i++){
+    __delay_ms(10);
+    __delay_ms(10);
+    }
+    verdePC  = ADC_GetConversion(channel_AN4);
+    COLORLED = 1;
+    if(rossoPC >= bluPC){
+        if(rossoPC >= verdePC){
+            colore = rosso;
+        }else{
+            colore = verde;
+        }
+
+    }else if(bluPC>=verdePC){
+        colore = blu;
+    }else {
+        colore = verde;
+    }
+
+}
 
 void InitApp(void)
 {
@@ -114,7 +193,7 @@ void sollevaCarrello(void){
             STEP_EN = 0;
 }
 
-
+// per sollevare o abbassare servono 43 cicli di 4 passi ciascuno
 void abbassaCarrello(void){
     uint8_t p = 0;
     for(uint8_t p = 0; p<43;p++){

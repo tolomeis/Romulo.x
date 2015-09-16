@@ -17,8 +17,9 @@
 
 #endif
 
-#include "system.h"        /* System funct/params, like osc/peripheral config */
-#include "user.h"          /* User funct/params, such as InitApp */
+#include "system.h" /* System funct/params, like osc/peripheral config */
+ #include "user.h" 
+        /* User funct/params, such as InitApp */
 #include "mcc_generated_files/mcc.h"
 
 #include "alias.h"
@@ -31,106 +32,13 @@ uint16_t V_pulsantiera;
 uint16_t V_frontale;
 uint16_t V_posteriore;
 
-uint16_t V_batt;
+
 
 uint8_t goal_color;
 
-uint8_t color;
 
-bool solleva = false;
 uint16_t i;
-uint16_t numPassi=0;
 
-
-uint16_t biancoR;
-uint16_t biancoB;
-uint16_t biancoV;
-
-int16_t rossoPC;
-int16_t verdePC;
-int16_t bluPC;
-uint8_t colore;
-
-uint16_t vel_DX = 712;
-uint16_t vel_SX = 700;
-uint16_t deltaV;
-
-void seguiLinea(){
-            EPWM1_LoadDutyValue(700);
-            EPWM2_LoadDutyValue(712);
-            MOT_EN = 1;
-            //attendi linea o attendi tempo
-            while(ADC_GetConversion(channel_AN13)<Front_POS){
-                    checkBatt();
-                    /**** INSEGUITORE DI LINEA***/
-                    deltaV =  ADC_GetConversion(channel_AN13);
-                    if(deltaV > 292){
-                        vel_DX=762;
-                        vel_SX = 655;
-                    }else if(deltaV < 252 && deltaV > 10){
-                    vel_SX=750;
-                    vel_DX = 667;
-                   }else if(deltaV > 10){
-                        vel_DX = 712;
-                        vel_SX = 700;
-                   }
-                    EPWM1_LoadDutyValue(vel_SX);
-                    EPWM2_LoadDutyValue(vel_DX);
-                    for(uint8_t T = 0; T < 8; T++){
-                        __delay_ms(1);
-                         if(ADC_GetConversion(channel_AN13)>=Front_POS){
-                            break;
-                        }
-
-                      }
-            }
-         
-}
-
-
-void controllaColore(){
-    S0 = 0;
-    S1 = 1;
-    COLORLED = 0;
-    //controllo rosso
-    S2 = 0;
-    S3 = 0;
-    for(uint8_t i = 0; i<25; i++){
-    __delay_ms(10);
-    __delay_ms(10);
-    }
-    rossoPC = ADC_GetConversion(channel_AN4);
-    //BLU
-    S2 = 0;
-    S3 = 1;
-    for(uint8_t i = 0; i<25; i++){
-    __delay_ms(10);
-    __delay_ms(10);
-    }
-    bluPC = ADC_GetConversion(channel_AN4);
-    //verde
-    S2 = 1;
-    S3 = 1;
-    for(uint8_t i = 0; i<25; i++){
-    __delay_ms(10);
-    __delay_ms(10);
-    }
-    verdePC  = ADC_GetConversion(channel_AN4);
-    COLORLED = 1;
-    if(rossoPC >= bluPC){
-        if(rossoPC >= verdePC){
-            colore = rosso;
-        }else{
-            colore = verde;
-        }
-
-    }else if(bluPC>=verdePC){
-        colore = blu;
-    }else {
-        colore = verde;
-    }
-
-}
 /******************************************************************************/
 /* Main Program                                                              */
 /******************************************************************************/
