@@ -23,6 +23,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISBbits `VS499 ~T0 @X0 0 e@3987 ]
 "8370
 [v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"122 mcc_generated_files/epwm1.h
+[v _EPWM1_LoadDutyValue `(v ~T0 @X0 0 ef1`ui ]
+"122 mcc_generated_files/epwm2.h
+[v _EPWM2_LoadDutyValue `(v ~T0 @X0 0 ef1`ui ]
+[v F7486 `(v ~T0 @X0 1 tf1`ul ]
+"152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v __delay `JF7486 ~T0 @X0 0 e ]
+[p i __delay ]
+"18169 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f24k22.h
+[v _LATC0 `Vb ~T0 @X0 0 e@31832 ]
+"149 mcc_generated_files/ccp4.h
+[v _CCP4_SetCompareCount `(v ~T0 @X0 0 ef1`ui ]
+"15590 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f24k22.h
+[s S990 :2 `uc 1 :1 `uc 1 ]
+[n S990 . . NOT_T1SYNC ]
+"15594
+[s S991 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S991 . TMR1ON T1RD16 nT1SYNC T1SOSCEN T1CKPS TMR1CS ]
+"15602
+[s S992 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S992 . . RD16 T1SYNC T1OSCEN T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
+"15612
+[s S993 :3 `uc 1 :1 `uc 1 ]
+[n S993 . . SOSCEN ]
+"15589
+[u S989 `S990 1 `S991 1 `S992 1 `S993 1 ]
+[n S989 . . . . . ]
+"15617
+[v _T1CONbits `VS989 ~T0 @X0 0 e@4045 ]
+"18183
+[v _LATC7 `Vb ~T0 @X0 0 e@31839 ]
+"18177
+[v _LATC4 `Vb ~T0 @X0 0 e@31836 ]
+"18179
+[v _LATC5 `Vb ~T0 @X0 0 e@31837 ]
+"18175
+[v _LATC3 `Vb ~T0 @X0 0 e@31835 ]
+"18181
+[v _LATC6 `Vb ~T0 @X0 0 e@31838 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7184,54 +7223,409 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;user.h: 13: void InitApp(void);
-"29 user.c
+[; ;user.h: 15: void stopM(void);
+[; ;user.h: 17: void suonaBuzzer_1(void);
+[; ;user.h: 19: void checkBatt(void);
+[; ;user.h: 21: void sollevaCarrello(void);
+[; ;user.h: 22: void abbassaCarrello(void);
+[; ;pin_manager.h: 197: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 209: void PIN_MANAGER_IOC(void);
+[; ;adc.h: 72: typedef uint16_t adc_result_t;
+[; ;adc.h: 86: typedef enum
+[; ;adc.h: 87: {
+[; ;adc.h: 88: channel_CTMU = 0x1D,
+[; ;adc.h: 89: channel_DAC = 0x1E,
+[; ;adc.h: 90: channel_FVRBuf2 = 0x1F,
+[; ;adc.h: 91: channel_AN4 = 0x04,
+[; ;adc.h: 92: channel_AN8 = 0x08,
+[; ;adc.h: 93: channel_AN9 = 0x09,
+[; ;adc.h: 94: channel_AN11 = 0x0B,
+[; ;adc.h: 95: channel_AN13 = 0x0D
+[; ;adc.h: 96: } adc_channel_t;
+[; ;adc.h: 131: void ADC_Initialize(void);
+[; ;adc.h: 160: void ADC_StartConversion(adc_channel_t channel);
+[; ;adc.h: 192: bool ADC_IsConversionDone();
+[; ;adc.h: 225: adc_result_t ADC_GetConversionResult(void);
+[; ;adc.h: 255: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;tmr2.h: 103: void TMR2_Initialize(void);
+[; ;tmr2.h: 132: void TMR2_StartTimer(void);
+[; ;tmr2.h: 164: void TMR2_StopTimer(void);
+[; ;tmr2.h: 199: uint8_t TMR2_ReadTimer(void);
+[; ;tmr2.h: 238: void TMR2_WriteTimer(uint8_t timerVal);
+[; ;tmr2.h: 290: void TMR2_LoadPeriodRegister(uint8_t periodVal);
+[; ;tmr2.h: 325: bool TMR2_HasOverflowOccured(void);
+[; ;epwm1.h: 96: void EPWM1_Initialize(void);
+[; ;epwm1.h: 122: void EPWM1_LoadDutyValue(uint16_t dutyValue);
+[; ;epwm2.h: 96: void EPWM2_Initialize(void);
+[; ;epwm2.h: 122: void EPWM2_LoadDutyValue(uint16_t dutyValue);
+[; ;tmr1.h: 94: void TMR1_Initialize(void);
+[; ;tmr1.h: 125: void TMR1_StartTimer(void);
+[; ;tmr1.h: 155: void TMR1_StopTimer(void);
+[; ;tmr1.h: 189: uint16_t TMR1_ReadTimer(void);
+[; ;tmr1.h: 215: void TMR1_WriteTimer(uint16_t timerVal);
+[; ;tmr1.h: 247: void TMR1_Reload(void);
+[; ;tmr1.h: 288: void TMR1_StartSinglePulseAcquisition(void);
+[; ;tmr1.h: 329: uint8_t TMR1_CheckGateValueStatus(void);
+[; ;tmr1.h: 367: bool TMR1_HasOverflowOccured(void);
+[; ;ccp4.h: 76: typedef union CCPR4Reg_tag
+[; ;ccp4.h: 77: {
+[; ;ccp4.h: 78: struct
+[; ;ccp4.h: 79: {
+[; ;ccp4.h: 80: uint8_t ccpr4l;
+[; ;ccp4.h: 81: uint8_t ccpr4h;
+[; ;ccp4.h: 82: };
+[; ;ccp4.h: 83: struct
+[; ;ccp4.h: 84: {
+[; ;ccp4.h: 85: uint16_t ccpr4_16Bit;
+[; ;ccp4.h: 86: };
+[; ;ccp4.h: 87: } CCP_PERIOD_REG_T ;
+[; ;ccp4.h: 122: void CCP4_Initialize(void);
+[; ;ccp4.h: 149: void CCP4_SetCompareCount(uint16_t compareCount);
+[; ;ccp4.h: 178: bool CCP4_IsCompareComplete(void);
+[; ;mcc.h: 73: void SYSTEM_Initialize(void);
+[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
+"30 user.c
 [v _InitApp `(v ~T0 @X0 1 ef ]
-"30
+"31
 {
-[; ;user.c: 29: void InitApp(void)
-[; ;user.c: 30: {
+[; ;user.c: 30: void InitApp(void)
+[; ;user.c: 31: {
 [e :U _InitApp ]
 [f ]
-[; ;user.c: 32: TRISAbits.RA0 = 0;
-"32
-[e = . . _TRISAbits 1 0 -> -> 0 `i `uc ]
-[; ;user.c: 33: TRISAbits.RA1 = 0;
+[; ;user.c: 33: TRISAbits.RA0 = 0;
 "33
-[e = . . _TRISAbits 1 1 -> -> 0 `i `uc ]
-[; ;user.c: 34: TRISAbits.RA2 = 0;
+[e = . . _TRISAbits 1 0 -> -> 0 `i `uc ]
+[; ;user.c: 34: TRISAbits.RA1 = 0;
 "34
-[e = . . _TRISAbits 1 2 -> -> 0 `i `uc ]
-[; ;user.c: 35: TRISAbits.RA3 = 0;
+[e = . . _TRISAbits 1 1 -> -> 0 `i `uc ]
+[; ;user.c: 35: TRISAbits.RA2 = 0;
 "35
-[e = . . _TRISAbits 1 3 -> -> 0 `i `uc ]
-[; ;user.c: 36: TRISAbits.RA4 = 0;
+[e = . . _TRISAbits 1 2 -> -> 0 `i `uc ]
+[; ;user.c: 36: TRISAbits.RA3 = 0;
 "36
-[e = . . _TRISAbits 1 4 -> -> 0 `i `uc ]
-[; ;user.c: 37: TRISAbits.RA5 = 1;
+[e = . . _TRISAbits 1 3 -> -> 0 `i `uc ]
+[; ;user.c: 37: TRISAbits.RA4 = 0;
 "37
+[e = . . _TRISAbits 1 4 -> -> 0 `i `uc ]
+[; ;user.c: 38: TRISAbits.RA5 = 1;
+"38
 [e = . . _TRISAbits 1 5 -> -> 1 `i `uc ]
-[; ;user.c: 39: TRISBbits.RB0 = 0;
-"39
-[e = . . _TRISBbits 1 0 -> -> 0 `i `uc ]
-[; ;user.c: 40: TRISBbits.RB1 = 1;
+[; ;user.c: 40: TRISBbits.RB0 = 0;
 "40
-[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
-[; ;user.c: 41: TRISBbits.RB2 = 1;
+[e = . . _TRISBbits 1 0 -> -> 0 `i `uc ]
+[; ;user.c: 41: TRISBbits.RB1 = 1;
 "41
-[e = . . _TRISBbits 1 2 -> -> 1 `i `uc ]
-[; ;user.c: 42: TRISBbits.RB3 = 1;
+[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
+[; ;user.c: 42: TRISBbits.RB2 = 1;
 "42
-[e = . . _TRISBbits 1 3 -> -> 1 `i `uc ]
-[; ;user.c: 43: TRISBbits.RB4 = 1;
+[e = . . _TRISBbits 1 2 -> -> 1 `i `uc ]
+[; ;user.c: 43: TRISBbits.RB3 = 1;
 "43
-[e = . . _TRISBbits 1 4 -> -> 1 `i `uc ]
-[; ;user.c: 44: TRISBbits.RB5 = 1;
+[e = . . _TRISBbits 1 3 -> -> 1 `i `uc ]
+[; ;user.c: 44: TRISBbits.RB4 = 1;
 "44
+[e = . . _TRISBbits 1 4 -> -> 1 `i `uc ]
+[; ;user.c: 45: TRISBbits.RB5 = 1;
+"45
 [e = . . _TRISBbits 1 5 -> -> 1 `i `uc ]
-[; ;user.c: 47: TRISC = 0x00;
-"47
+[; ;user.c: 48: TRISC = 0x00;
+"48
 [e = _TRISC -> -> 0 `i `uc ]
-[; ;user.c: 49: }
-"49
-[e :UE 1105 ]
+[; ;user.c: 50: }
+"50
+[e :UE 1108 ]
+}
+"53
+[v _stopM `(v ~T0 @X0 1 ef ]
+{
+[; ;user.c: 53: void stopM(void){
+[e :U _stopM ]
+[f ]
+[; ;user.c: 54: EPWM1_LoadDutyValue(511);
+"54
+[e ( _EPWM1_LoadDutyValue (1 -> -> 511 `i `ui ]
+[; ;user.c: 55: EPWM2_LoadDutyValue(511);
+"55
+[e ( _EPWM2_LoadDutyValue (1 -> -> 511 `i `ui ]
+[; ;user.c: 56: _delay((unsigned long)((10)*(64000000/4000.0)));
+"56
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 57: _delay((unsigned long)((10)*(64000000/4000.0)));
+"57
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 58: LATC0 = 0;
+"58
+[e = _LATC0 -> -> 0 `i `b ]
+[; ;user.c: 59: }
+"59
+[e :UE 1109 ]
+}
+"61
+[v _suonaBuzzer_1 `(v ~T0 @X0 1 ef ]
+{
+[; ;user.c: 61: void suonaBuzzer_1(void){
+[e :U _suonaBuzzer_1 ]
+[f ]
+[; ;user.c: 62: CCP4_SetCompareCount(800);
+"62
+[e ( _CCP4_SetCompareCount (1 -> -> 800 `i `ui ]
+[; ;user.c: 63: T1CONbits.TMR1ON = 1;
+"63
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+[; ;user.c: 64: for (uint16_t T=0; T <= 100; T=T+1){
+"64
+{
+[v _T `ui ~T0 @X0 1 a ]
+[e = _T -> -> 0 `i `ui ]
+[e $ <= _T -> -> 100 `i `ui 1111  ]
+[e $U 1112  ]
+[e :U 1111 ]
+{
+[; ;user.c: 65: _delay((unsigned long)((10)*(64000000/4000.0)));
+"65
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"66
+}
+"64
+[e = _T + _T -> -> 1 `i `ui ]
+[e $ <= _T -> -> 100 `i `ui 1111  ]
+[e :U 1112 ]
+"66
+}
+[; ;user.c: 66: }
+[; ;user.c: 67: T1CONbits.TMR1ON = 0;
+"67
+[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
+[; ;user.c: 68: }
+"68
+[e :UE 1110 ]
+}
+"70
+[v _checkBatt `(v ~T0 @X0 1 ef ]
+{
+[; ;user.c: 70: void checkBatt(void){
+[e :U _checkBatt ]
+[f ]
+[; ;user.c: 81: }
+"81
+[e :UE 1114 ]
+}
+"83
+[v _sollevaCarrello `(v ~T0 @X0 1 ef ]
+{
+[; ;user.c: 83: void sollevaCarrello(void){
+[e :U _sollevaCarrello ]
+[f ]
+"84
+[v _p `uc ~T0 @X0 1 a ]
+[; ;user.c: 84: uint8_t p = 0;
+[e = _p -> -> 0 `i `uc ]
+[; ;user.c: 85: for(p=0; p<43;p++){
+"85
+{
+[e = _p -> -> 0 `i `uc ]
+[e $ < -> _p `i -> 43 `i 1116  ]
+[e $U 1117  ]
+[e :U 1116 ]
+{
+[; ;user.c: 86: LATC7 = 1;
+"86
+[e = _LATC7 -> -> 1 `i `b ]
+[; ;user.c: 87: LATC4=0;
+"87
+[e = _LATC4 -> -> 0 `i `b ]
+[; ;user.c: 88: LATC5=1;
+"88
+[e = _LATC5 -> -> 1 `i `b ]
+[; ;user.c: 89: LATC3=1;
+"89
+[e = _LATC3 -> -> 1 `i `b ]
+[; ;user.c: 90: LATC6=0;
+"90
+[e = _LATC6 -> -> 0 `i `b ]
+[; ;user.c: 91: _delay((unsigned long)((10)*(64000000/4000.0)));
+"91
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 92: _delay((unsigned long)((2)*(64000000/4000.0)));
+"92
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 93: LATC4=0;
+"93
+[e = _LATC4 -> -> 0 `i `b ]
+[; ;user.c: 94: LATC5=0;
+"94
+[e = _LATC5 -> -> 0 `i `b ]
+[; ;user.c: 95: LATC3=1;
+"95
+[e = _LATC3 -> -> 1 `i `b ]
+[; ;user.c: 96: LATC6=1;
+"96
+[e = _LATC6 -> -> 1 `i `b ]
+[; ;user.c: 97: _delay((unsigned long)((10)*(64000000/4000.0)));
+"97
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 98: _delay((unsigned long)((2)*(64000000/4000.0)));
+"98
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 99: LATC4=1;
+"99
+[e = _LATC4 -> -> 1 `i `b ]
+[; ;user.c: 100: LATC5=0;
+"100
+[e = _LATC5 -> -> 0 `i `b ]
+[; ;user.c: 101: LATC3=0;
+"101
+[e = _LATC3 -> -> 0 `i `b ]
+[; ;user.c: 102: LATC6=1;
+"102
+[e = _LATC6 -> -> 1 `i `b ]
+[; ;user.c: 103: _delay((unsigned long)((10)*(64000000/4000.0)));
+"103
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 104: _delay((unsigned long)((2)*(64000000/4000.0)));
+"104
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 105: LATC4=1;
+"105
+[e = _LATC4 -> -> 1 `i `b ]
+[; ;user.c: 106: LATC5=1;
+"106
+[e = _LATC5 -> -> 1 `i `b ]
+[; ;user.c: 107: LATC3=0;
+"107
+[e = _LATC3 -> -> 0 `i `b ]
+[; ;user.c: 108: LATC6=0;
+"108
+[e = _LATC6 -> -> 0 `i `b ]
+[; ;user.c: 109: _delay((unsigned long)((10)*(64000000/4000.0)));
+"109
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 110: _delay((unsigned long)((2)*(64000000/4000.0)));
+"110
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"113
+}
+"85
+[e ++ _p -> -> 1 `i `uc ]
+[e $ < -> _p `i -> 43 `i 1116  ]
+[e :U 1117 ]
+"113
+}
+[; ;user.c: 113: }
+[; ;user.c: 114: LATC7 = 0;
+"114
+[e = _LATC7 -> -> 0 `i `b ]
+[; ;user.c: 115: }
+"115
+[e :UE 1115 ]
+}
+"118
+[v _abbassaCarrello `(v ~T0 @X0 1 ef ]
+{
+[; ;user.c: 118: void abbassaCarrello(void){
+[e :U _abbassaCarrello ]
+[f ]
+"119
+[v _p `uc ~T0 @X0 1 a ]
+[; ;user.c: 119: uint8_t p = 0;
+[e = _p -> -> 0 `i `uc ]
+[; ;user.c: 120: for(uint8_t p = 0; p<43;p++){
+"120
+{
+[v _p `uc ~T0 @X0 1 a ]
+[e = _p -> -> 0 `i `uc ]
+[e $ < -> _p `i -> 43 `i 1120  ]
+[e $U 1121  ]
+[e :U 1120 ]
+{
+[; ;user.c: 121: LATC7 = 1;
+"121
+[e = _LATC7 -> -> 1 `i `b ]
+[; ;user.c: 122: LATC4=1;
+"122
+[e = _LATC4 -> -> 1 `i `b ]
+[; ;user.c: 123: LATC5=1;
+"123
+[e = _LATC5 -> -> 1 `i `b ]
+[; ;user.c: 124: LATC3=0;
+"124
+[e = _LATC3 -> -> 0 `i `b ]
+[; ;user.c: 125: LATC6=0;
+"125
+[e = _LATC6 -> -> 0 `i `b ]
+[; ;user.c: 126: _delay((unsigned long)((10)*(64000000/4000.0)));
+"126
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 127: _delay((unsigned long)((2)*(64000000/4000.0)));
+"127
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 128: LATC4=1;
+"128
+[e = _LATC4 -> -> 1 `i `b ]
+[; ;user.c: 129: LATC5=0;
+"129
+[e = _LATC5 -> -> 0 `i `b ]
+[; ;user.c: 130: LATC3=0;
+"130
+[e = _LATC3 -> -> 0 `i `b ]
+[; ;user.c: 131: LATC6=1;
+"131
+[e = _LATC6 -> -> 1 `i `b ]
+[; ;user.c: 132: _delay((unsigned long)((10)*(64000000/4000.0)));
+"132
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 133: _delay((unsigned long)((2)*(64000000/4000.0)));
+"133
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 134: LATC4=0;
+"134
+[e = _LATC4 -> -> 0 `i `b ]
+[; ;user.c: 135: LATC5=0;
+"135
+[e = _LATC5 -> -> 0 `i `b ]
+[; ;user.c: 136: LATC3=1;
+"136
+[e = _LATC3 -> -> 1 `i `b ]
+[; ;user.c: 137: LATC6=1;
+"137
+[e = _LATC6 -> -> 1 `i `b ]
+[; ;user.c: 138: _delay((unsigned long)((10)*(64000000/4000.0)));
+"138
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 139: _delay((unsigned long)((2)*(64000000/4000.0)));
+"139
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 140: LATC4=0;
+"140
+[e = _LATC4 -> -> 0 `i `b ]
+[; ;user.c: 141: LATC5=1;
+"141
+[e = _LATC5 -> -> 1 `i `b ]
+[; ;user.c: 142: LATC3=1;
+"142
+[e = _LATC3 -> -> 1 `i `b ]
+[; ;user.c: 143: LATC6=0;
+"143
+[e = _LATC6 -> -> 0 `i `b ]
+[; ;user.c: 144: _delay((unsigned long)((10)*(64000000/4000.0)));
+"144
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;user.c: 145: _delay((unsigned long)((2)*(64000000/4000.0)));
+"145
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"148
+}
+"120
+[e ++ _p -> -> 1 `i `uc ]
+[e $ < -> _p `i -> 43 `i 1120  ]
+[e :U 1121 ]
+"148
+}
+[; ;user.c: 148: }
+[; ;user.c: 149: LATC7 = 0;
+"149
+[e = _LATC7 -> -> 0 `i `b ]
+[; ;user.c: 151: }
+"151
+[e :UE 1119 ]
 }
