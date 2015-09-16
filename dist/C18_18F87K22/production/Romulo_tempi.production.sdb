@@ -1,0 +1,785 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F24K22 ]
+[d frameptr 4065 ]
+"81 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/adc.c
+[e E8504 . `uc
+channel_CTMU 29
+channel_DAC 30
+channel_FVRBuf2 31
+channel_AN4 4
+channel_AN8 8
+channel_AN9 9
+channel_AN11 11
+channel_AN13 13
+]
+"162 /home/simone/Scrivania/Romulo_tempi/main.c
+[e E8512 . `uc
+channel_CTMU 29
+channel_DAC 30
+channel_FVRBuf2 31
+channel_AN4 4
+channel_AN8 8
+channel_AN9 9
+channel_AN11 11
+channel_AN13 13
+]
+"4 /opt/microchip/xc8/v1.33/sources/common/abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"31 /opt/microchip/xc8/v1.33/sources/common/abtofl.c
+[v ___abtofl __abtofl `(d  1 e 3 0 ]
+"33 /opt/microchip/xc8/v1.33/sources/common/abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"36 /opt/microchip/xc8/v1.33/sources/common/altofl.c
+[v ___altofl __altofl `(d  1 e 3 0 ]
+"42 /opt/microchip/xc8/v1.33/sources/common/altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 /opt/microchip/xc8/v1.33/sources/common/attofl.c
+[v ___attofl __attofl `(d  1 e 3 0 ]
+"37 /opt/microchip/xc8/v1.33/sources/common/attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"31 /opt/microchip/xc8/v1.33/sources/common/awtofl.c
+[v ___awtofl __awtofl `(d  1 e 3 0 ]
+"32 /opt/microchip/xc8/v1.33/sources/common/awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"63 /opt/microchip/xc8/v1.33/sources/common/double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 /opt/microchip/xc8/v1.33/sources/common/fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"49 /opt/microchip/xc8/v1.33/sources/common/fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v1.33/sources/common/flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/flneg.c
+[v ___flneg __flneg `(d  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.33/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.33/sources/common/flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"43 /opt/microchip/xc8/v1.33/sources/common/fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"86 /opt/microchip/xc8/v1.33/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"49 /opt/microchip/xc8/v1.33/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v1.33/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.33/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 /opt/microchip/xc8/v1.33/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 /opt/microchip/xc8/v1.33/sources/common/lbtofl.c
+[v ___lbtofl __lbtofl `(d  1 e 3 0 ]
+"27 /opt/microchip/xc8/v1.33/sources/common/lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"30 /opt/microchip/xc8/v1.33/sources/common/lltofl.c
+[v ___lltofl __lltofl `(d  1 e 3 0 ]
+"35 /opt/microchip/xc8/v1.33/sources/common/lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 /opt/microchip/xc8/v1.33/sources/common/lttofl.c
+[v ___lttofl __lttofl `(d  1 e 3 0 ]
+"30 /opt/microchip/xc8/v1.33/sources/common/lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 /opt/microchip/xc8/v1.33/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 /opt/microchip/xc8/v1.33/sources/common/lwtofl.c
+[v ___lwtofl __lwtofl `(d  1 e 3 0 ]
+"28 /opt/microchip/xc8/v1.33/sources/common/lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/asfladd.c
+[v ___asfladd __asfladd `(d  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/asfldiv.c
+[v ___asfldiv __asfldiv `(d  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/asflmul.c
+[v ___asflmul __asflmul `(d  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/asflsub.c
+[v ___asflsub __asflsub `(d  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/asftadd.c
+[v ___asftadd __asftadd `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/asftdiv.c
+[v ___asftdiv __asftdiv `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/asftmul.c
+[v ___asftmul __asftmul `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/asftsub.c
+[v ___asftsub __asftsub `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic18/aslmul.c
+[v ___aslmul __aslmul `(ul  1 e 4 0 ]
+"27 /home/simone/Scrivania/Romulo_tempi/interrupts.c
+[v _high_isr high_isr `II(v  1 e 0 0 ]
+"67
+[v _low_isr low_isr `IIL(v  1 e 0 0 ]
+"53 /home/simone/Scrivania/Romulo_tempi/main.c
+[v _suonaBuzzer_1 suonaBuzzer_1 `(v  1 e 0 0 ]
+"62
+[v _checkBatt checkBatt `(v  1 e 0 0 ]
+"75
+[v _stopM stopM `(v  1 e 0 0 ]
+"83
+[v _sollevaCarrello sollevaCarrello `(v  1 e 0 0 ]
+"117
+[v _abbassaCarrello abbassaCarrello `(v  1 e 0 0 ]
+"154
+[v _seguiLinea seguiLinea `(v  1 e 0 0 ]
+"194
+[v _controllaColore controllaColore `(v  1 e 0 0 ]
+"240
+[v _main main `(v  1 e 0 0 ]
+"404
+[v _stop stop `II(v  1 e 0 0 ]
+"59 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 0 0 ]
+"80
+[v _ADC_StartConversion ADC_StartConversion `(v  1 e 0 0 ]
+"93
+[v _ADC_IsConversionDone ADC_IsConversionDone `(uc  1 e 1 0 ]
+"99
+[v _ADC_GetConversionResult ADC_GetConversionResult `(ui  1 e 2 0 ]
+"105
+[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
+"58 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/ccp4.c
+[v _CCP4_Initialize CCP4_Initialize `(v  1 e 0 0 ]
+"75
+[v _CCP4_SetCompareCount CCP4_SetCompareCount `(v  1 e 0 0 ]
+"86
+[v _CCP4_IsCompareComplete CCP4_IsCompareComplete `(uc  1 e 1 0 ]
+"64 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/epwm1.c
+[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 0 0 ]
+"91
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 0 0 ]
+"64 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/epwm2.c
+[v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 0 0 ]
+"91
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 0 0 ]
+"106 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+"118
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+"50 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+"63 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 0 0 ]
+"89
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 0 0 ]
+"95
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 0 0 ]
+"101
+[v _TMR1_ReadTimer TMR1_ReadTimer `(ui  1 e 2 0 ]
+"115
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 0 0 ]
+"137
+[v _TMR1_Reload TMR1_Reload `(v  1 e 0 0 ]
+"144
+[v _TMR1_StartSinglePulseAcquisition TMR1_StartSinglePulseAcquisition `(v  1 e 0 0 ]
+"149
+[v _TMR1_CheckGateValueStatus TMR1_CheckGateValueStatus `(uc  1 e 1 0 ]
+"154
+[v _TMR1_HasOverflowOccured TMR1_HasOverflowOccured `(uc  1 e 1 0 ]
+"58 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 0 0 ]
+"78
+[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 0 0 ]
+"84
+[v _TMR2_StopTimer TMR2_StopTimer `(v  1 e 0 0 ]
+"90
+[v _TMR2_ReadTimer TMR2_ReadTimer `(uc  1 e 1 0 ]
+"99
+[v _TMR2_WriteTimer TMR2_WriteTimer `(v  1 e 0 0 ]
+"105
+[v _TMR2_LoadPeriodRegister TMR2_LoadPeriodRegister `(v  1 e 0 0 ]
+"110
+[v _TMR2_HasOverflowOccured TMR2_HasOverflowOccured `(uc  1 e 1 0 ]
+"24 /home/simone/Scrivania/Romulo_tempi/system.c
+[v _ConfigureOscillator ConfigureOscillator `(v  1 e 0 0 ]
+"29 /home/simone/Scrivania/Romulo_tempi/user.c
+[v _InitApp InitApp `(v  1 e 0 0 ]
+"47 /opt/microchip/xc8/v1.33/include/pic18f24k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"91
+[v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
+"140
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+[s S113 . 1 `uc 1 C4TSEL 1 0 :2:0 
+`uc 1 C5TSEL 1 0 :2:2 
+]
+"1244
+[s S116 . 1 `uc 1 C4TSEL0 1 0 :1:0 
+`uc 1 C4TSEL1 1 0 :1:1 
+`uc 1 C5TSEL0 1 0 :1:2 
+`uc 1 C5TSEL1 1 0 :1:3 
+]
+[u S121 . 1 `S113 1 . 1 0 `S116 1 . 1 0 ]
+[v _CCPTMRS1bits CCPTMRS1bits `VES121  1 e 1 @3912 ]
+[s S353 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 C2TSEL 1 0 :2:3 
+`uc 1 . 1 0 :1:5 
+`uc 1 C3TSEL 1 0 :2:6 
+]
+"1302
+[s S359 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C2TSEL0 1 0 :1:3 
+`uc 1 C2TSEL1 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 C3TSEL0 1 0 :1:6 
+`uc 1 C3TSEL1 1 0 :1:7 
+]
+[u S368 . 1 `S353 1 . 1 0 `S359 1 . 1 0 ]
+[v _CCPTMRS0bits CCPTMRS0bits `VES368  1 e 1 @3913 ]
+"1922
+[v _CCP4CON CCP4CON `VEuc  1 e 1 @3927 ]
+"1991
+[v _CCPR4L CCPR4L `VEuc  1 e 1 @3928 ]
+"2010
+[v _CCPR4H CCPR4H `VEuc  1 e 1 @3929 ]
+"2582
+[v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+"2681
+[v _PSTR2CON PSTR2CON `VEuc  1 e 1 @3939 ]
+"2856
+[v _ECCP2AS ECCP2AS `VEuc  1 e 1 @3940 ]
+"3097
+[v _PWM2CON PWM2CON `VEuc  1 e 1 @3941 ]
+"3166
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @3942 ]
+"3247
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @3943 ]
+"3266
+[v _CCPR2H CCPR2H `VEuc  1 e 1 @3944 ]
+[s S141 . 1 `uc 1 CCP3IF 1 0 :1:0 
+`uc 1 CCP4IF 1 0 :1:1 
+`uc 1 CCP5IF 1 0 :1:2 
+]
+"6090
+[u S145 . 1 `S141 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES145  1 e 1 @3963 ]
+"7524
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"7656
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"7788
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"7920
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+[s S588 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"7952
+[s S597 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S606 . 1 `S588 1 . 1 0 `S597 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES606  1 e 1 @3986 ]
+"8141
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"8173
+[v _TRISBbits TRISBbits `VES606  1 e 1 @3987 ]
+"8362
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"8603
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S175 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"9049
+[s S183 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S188 . 1 `S175 1 . 1 0 `S183 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES188  1 e 1 @3998 ]
+"11283
+[v _ECCP1AS ECCP1AS `VEuc  1 e 1 @4022 ]
+"11664
+[v _PWM1CON PWM1CON `VEuc  1 e 1 @4023 ]
+"12706
+[v _PSTR1CON PSTR1CON `VEuc  1 e 1 @4025 ]
+"12879
+[v _T2CON T2CON `VEuc  1 e 1 @4026 ]
+[s S447 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"12900
+[s S451 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S459 . 1 `S447 1 . 1 0 `S451 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES459  1 e 1 @4026 ]
+"12949
+[v _PR2 PR2 `VEuc  1 e 1 @4027 ]
+"12968
+[v _TMR2 TMR2 `VEuc  1 e 1 @4028 ]
+"12987
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
+"13074
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
+"13093
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @4031 ]
+"13112
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"13182
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"13249
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S503 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"13294
+[s S506 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S510 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+[s S518 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S521 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S524 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S527 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[s S530 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S533 . 1 `S503 1 . 1 0 `S506 1 . 1 0 `S510 1 . 1 0 `S518 1 . 1 0 `S521 1 . 1 0 `S524 1 . 1 0 `S527 1 . 1 0 `S530 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES533  1 e 1 @4034 ]
+"13379
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"13398
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"15482
+[v _T1GCON T1GCON `VEuc  1 e 1 @4044 ]
+[s S259 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T1GGO_NOT_DONE 1 0 :1:3 
+]
+"15512
+[s S262 . 1 `uc 1 T1GSS 1 0 :2:0 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO_nDONE 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 TMR1GE 1 0 :1:7 
+]
+[s S270 . 1 `uc 1 T1GSS0 1 0 :1:0 
+`uc 1 T1GSS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T1G_DONE 1 0 :1:3 
+]
+[s S275 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T1GGO 1 0 :1:3 
+]
+[u S278 . 1 `S259 1 . 1 0 `S262 1 . 1 0 `S270 1 . 1 0 `S275 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES278  1 e 1 @4044 ]
+"15576
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S209 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"15609
+[s S212 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 T1RD16 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1SOSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+[s S219 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+[s S228 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+]
+[u S231 . 1 `S209 1 . 1 0 `S212 1 . 1 0 `S219 1 . 1 0 `S228 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES231  1 e 1 @4045 ]
+"15688
+[v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
+"15694
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"15713
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+"15891
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"15947
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S31 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"16757
+[s S34 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S43 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S46 . 1 `S31 1 . 1 0 `S34 1 . 1 0 `S43 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES46  1 e 1 @4081 ]
+[s S772 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"16848
+[s S781 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S790 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S807 . 1 `S772 1 . 1 0 `S781 1 . 1 0 `S790 1 . 1 0 `S781 1 . 1 0 `S790 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES807  1 e 1 @4082 ]
+"17965
+[v _GIEH GIEH `VEb  1 e 0 @32663 ]
+"18037
+[v _INT1IE INT1IE `VEb  1 e 0 @32643 ]
+"18039
+[v _INT1IF INT1IF `VEb  1 e 0 @32640 ]
+"18041
+[v _INT1IP INT1IP `VEb  1 e 0 @32646 ]
+"18061
+[v _INTEDG1 INTEDG1 `VEb  1 e 0 @32653 ]
+"18129
+[v _LATA0 LATA0 `VEb  1 e 0 @31816 ]
+"18131
+[v _LATA1 LATA1 `VEb  1 e 0 @31817 ]
+"18133
+[v _LATA2 LATA2 `VEb  1 e 0 @31818 ]
+"18135
+[v _LATA3 LATA3 `VEb  1 e 0 @31819 ]
+"18137
+[v _LATA4 LATA4 `VEb  1 e 0 @31820 ]
+"18161
+[v _LATC0 LATC0 `VEb  1 e 0 @31832 ]
+"18167
+[v _LATC3 LATC3 `VEb  1 e 0 @31835 ]
+"18169
+[v _LATC4 LATC4 `VEb  1 e 0 @31836 ]
+"18171
+[v _LATC5 LATC5 `VEb  1 e 0 @31837 ]
+"18173
+[v _LATC6 LATC6 `VEb  1 e 0 @31838 ]
+"18175
+[v _LATC7 LATC7 `VEb  1 e 0 @31839 ]
+"31 /home/simone/Scrivania/Romulo_tempi/main.c
+[v _V_pulsantiera V_pulsantiera `ui  1 e 2 0 ]
+"33
+[v _V_frontale V_frontale `ui  1 e 2 0 ]
+"34
+[v _V_posteriore V_posteriore `ui  1 e 2 0 ]
+"36
+[v _V_batt V_batt `ui  1 e 2 0 ]
+"38
+[v _goal_color goal_color `uc  1 e 1 0 ]
+"39
+[v _color_R color_R `ui  1 e 2 0 ]
+"40
+[v _color_V color_V `ui  1 e 2 0 ]
+"41
+[v _color_B color_B `ui  1 e 2 0 ]
+"43
+[v _color color `uc  1 e 1 0 ]
+"45
+[v _solleva solleva `uc  1 e 1 0 ]
+"46
+[v _i i `ui  1 e 2 0 ]
+"47
+[v _numPassi numPassi `ui  1 e 2 0 ]
+"50
+[v _p p `uc  1 e 1 0 ]
+"150
+[v _vel_DX vel_DX `ui  1 e 2 0 ]
+"151
+[v _vel_SX vel_SX `ui  1 e 2 0 ]
+"152
+[v _deltaV deltaV `ui  1 e 2 0 ]
+"186
+[v _biancoR biancoR `ui  1 e 2 0 ]
+"187
+[v _biancoB biancoB `ui  1 e 2 0 ]
+"188
+[v _biancoV biancoV `ui  1 e 2 0 ]
+"190
+[v _rossoPC rossoPC `i  1 e 2 0 ]
+"191
+[v _verdePC verdePC `i  1 e 2 0 ]
+"192
+[v _bluPC bluPC `i  1 e 2 0 ]
+"193
+[v _colore colore `uc  1 e 1 0 ]
+"57 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEui  1 e 2 0 ]
+"240 /home/simone/Scrivania/Romulo_tempi/main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"313
+[v main@t_909 t `uc  1 a 1 27 ]
+"364
+[v main@t_914 t `uc  1 a 1 28 ]
+"301
+[v main@t t `uc  1 a 1 26 ]
+"388
+[v main@T_917 T `ui  1 a 2 31 ]
+"377
+[v main@T_916 T `uc  1 a 1 36 ]
+"344
+[v main@T_913 T `uc  1 a 1 35 ]
+"333
+[v main@T_911 T `uc  1 a 1 34 ]
+"325
+[v main@T_910 T `uc  1 a 1 33 ]
+"283
+[v main@T T `ui  1 a 2 29 ]
+"265
+[v main@numLinee numLinee `uc  1 a 1 25 ]
+"395
+} 0
+"75
+[v _stopM stopM `(v  1 e 0 0 ]
+{
+"81
+} 0
+"83
+[v _sollevaCarrello sollevaCarrello `(v  1 e 0 0 ]
+{
+"114
+} 0
+"154
+[v _seguiLinea seguiLinea `(v  1 e 0 0 ]
+{
+"175
+[v seguiLinea@T T `uc  1 a 1 21 ]
+"184
+} 0
+"62
+[v _checkBatt checkBatt `(v  1 e 0 0 ]
+{
+"73
+} 0
+"91 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/epwm2.c
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 0 0 ]
+{
+[v EPWM2_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 15 ]
+"98
+} 0
+"91 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/epwm1.c
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 0 0 ]
+{
+[v EPWM1_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 15 ]
+"98
+} 0
+"194 /home/simone/Scrivania/Romulo_tempi/main.c
+[v _controllaColore controllaColore `(v  1 e 0 0 ]
+{
+"217
+[v controllaColore@i_891 i `uc  1 a 1 23 ]
+"209
+[v controllaColore@i_890 i `uc  1 a 1 22 ]
+"201
+[v controllaColore@i i `uc  1 a 1 21 ]
+"236
+} 0
+"105 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/adc.c
+[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E8504  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E8504  1 a 1 wreg ]
+"108
+[v ADC_GetConversion@channel channel `E8504  1 a 1 19 ]
+"124
+} 0
+"117 /home/simone/Scrivania/Romulo_tempi/main.c
+[v _abbassaCarrello abbassaCarrello `(v  1 e 0 0 ]
+{
+"118
+[v abbassaCarrello@p p `uc  1 a 1 16 ]
+"149
+} 0
+"106 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+{
+"116
+} 0
+"58 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 0 0 ]
+{
+"76
+} 0
+"78
+[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 0 0 ]
+{
+"82
+} 0
+"63 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 0 0 ]
+{
+"87
+} 0
+"89
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 0 0 ]
+{
+"93
+} 0
+"50 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+{
+"68
+} 0
+"118 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+{
+"128
+} 0
+"64 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/epwm2.c
+[v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 0 0 ]
+{
+"89
+} 0
+"64 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/epwm1.c
+[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 0 0 ]
+{
+"89
+} 0
+"58 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/ccp4.c
+[v _CCP4_Initialize CCP4_Initialize `(v  1 e 0 0 ]
+{
+"73
+} 0
+"59 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 0 0 ]
+{
+"78
+} 0
+"29 /home/simone/Scrivania/Romulo_tempi/user.c
+[v _InitApp InitApp `(v  1 e 0 0 ]
+{
+"49
+} 0
+"67 /home/simone/Scrivania/Romulo_tempi/interrupts.c
+[v _low_isr low_isr `IIL(v  1 e 0 0 ]
+{
+"102
+} 0
+"27
+[v _high_isr high_isr `II(v  1 e 0 0 ]
+{
+"63
+} 0
+"404 /home/simone/Scrivania/Romulo_tempi/main.c
+[v _stop stop `II(v  1 e 0 0 ]
+{
+"417
+} 0
+"75 /home/simone/Scrivania/Romulo_tempi/mcc_generated_files/ccp4.c
+[v _CCP4_SetCompareCount CCP4_SetCompareCount `(v  1 e 0 0 ]
+{
+[s S133 . 2 `uc 1 ccpr4l 1 0 `uc 1 ccpr4h 1 1 ]
+"77
+[s S136 . 2 `ui 1 ccpr4_16Bit 2 0 ]
+[u S138 CCPR4Reg_tag 2 `S133 1 . 2 0 `S136 1 . 2 0 ]
+[v CCP4_SetCompareCount@module module `S138  1 a 2 33 ]
+"75
+[v CCP4_SetCompareCount@compareCount compareCount `ui  1 p 2 31 ]
+"84
+} 0
