@@ -9183,84 +9183,7 @@ void SYSTEM_Initialize(void);
 # 86
 void OSCILLATOR_Initialize(void);
 
-# 32 "user.c"
-void seguiLinea(){
-EPWM1_LoadDutyValue(700);
-EPWM2_LoadDutyValue(712);
-LATC0 = 1;
-
-while(ADC_GetConversion(channel_AN13)<750){
-checkBatt();
-
-deltaV = ADC_GetConversion(channel_AN13);
-if(deltaV > 292){
-vel_DX=762;
-vel_SX = 655;
-}else if(deltaV < 252 && deltaV > 10){
-vel_SX=750;
-vel_DX = 667;
-}else if(deltaV > 10){
-vel_DX = 712;
-vel_SX = 700;
-}
-EPWM1_LoadDutyValue(vel_SX);
-EPWM2_LoadDutyValue(vel_DX);
-for(uint8_t T = 0; T < 8; T++){
-_delay((unsigned long)((1)*(64000000/4000.0)));
-if(ADC_GetConversion(channel_AN13)>=750){
-break;
-}
-
-}
-}
-
-}
-
-
-void controllaColore(){
-LATA0 = 0;
-LATA1 = 1;
-LATA4 = 0;
-
-LATA2 = 0;
-LATA3 = 0;
-for(uint8_t i = 0; i<25; i++){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-_delay((unsigned long)((10)*(64000000/4000.0)));
-}
-rossoPC = ADC_GetConversion(channel_AN4);
-
-LATA2 = 0;
-LATA3 = 1;
-for(uint8_t i = 0; i<25; i++){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-_delay((unsigned long)((10)*(64000000/4000.0)));
-}
-bluPC = ADC_GetConversion(channel_AN4);
-
-LATA2 = 1;
-LATA3 = 1;
-for(uint8_t i = 0; i<25; i++){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-_delay((unsigned long)((10)*(64000000/4000.0)));
-}
-verdePC = ADC_GetConversion(channel_AN4);
-LATA4 = 1;
-if(rossoPC >= bluPC){
-if(rossoPC >= verdePC){
-colore = 0;
-}else{
-colore = 2;
-}
-
-}else if(bluPC>=verdePC){
-colore = 1;
-}else {
-colore = 2;
-}
-
-}
-
+# 30 "user.c"
 void InitApp(void)
 {
 
@@ -9283,6 +9206,115 @@ TRISC = 0x00;
 
 }
 
+# 57
+void seguiLinea(){
+
+EPWM1_LoadDutyValue(700);
+EPWM2_LoadDutyValue(712);
+LATC0 = 1;
+
+
+
+while(ADC_GetConversion(channel_AN13)<750){
+checkBatt();
+
+deltaV = ADC_GetConversion(channel_AN13);
+
+
+
+if(deltaV > 292){
+
+vel_DX=762;
+vel_SX = 655;
+
+}else if(deltaV < 252 && deltaV > 10){
+
+vel_SX=750;
+vel_DX = 667;
+
+}else if(deltaV > 10){
+
+
+vel_DX = 712;
+vel_SX = 700;
+}
+
+
+
+EPWM1_LoadDutyValue(vel_SX);
+EPWM2_LoadDutyValue(vel_DX);
+
+
+
+
+for(uint8_t T = 0; T < 8; T++){
+_delay((unsigned long)((1)*(64000000/4000.0)));
+if(ADC_GetConversion(channel_AN13)>=750){
+break;
+}
+
+}
+}
+
+}
+
+
+void controllaColore(){
+
+LATA0 = 0;
+LATA1 = 1;
+LATA4 = 0;
+
+
+LATA2 = 0;
+LATA3 = 0;
+
+for(uint8_t i = 0; i<25; i++){
+_delay((unsigned long)((10)*(64000000/4000.0)));
+_delay((unsigned long)((10)*(64000000/4000.0)));
+}
+rossoPC = ADC_GetConversion(channel_AN4);
+
+
+LATA2 = 0;
+LATA3 = 1;
+for(uint8_t i = 0; i<25; i++){
+_delay((unsigned long)((10)*(64000000/4000.0)));
+_delay((unsigned long)((10)*(64000000/4000.0)));
+}
+bluPC = ADC_GetConversion(channel_AN4);
+
+
+LATA2 = 1;
+LATA3 = 1;
+for(uint8_t i = 0; i<25; i++){
+_delay((unsigned long)((10)*(64000000/4000.0)));
+_delay((unsigned long)((10)*(64000000/4000.0)));
+}
+verdePC = ADC_GetConversion(channel_AN4);
+
+
+LATA4 = 1;
+
+
+
+if(rossoPC >= bluPC){
+if(rossoPC >= verdePC){
+colore = 0;
+}else{
+colore = 2;
+}
+
+}else if(bluPC>=verdePC){
+colore = 1;
+}else {
+colore = 2;
+}
+
+}
+
+
+
 
 void stopM(void){
 EPWM1_LoadDutyValue(511);
@@ -9303,7 +9335,7 @@ T1CONbits.TMR1ON = 0;
 
 void checkBatt(void){
 
-# 160
+# 194
 }
 
 void sollevaCarrello(void){

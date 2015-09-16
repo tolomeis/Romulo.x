@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Wed Sep 16 11:18:54 2015
+                                                                                               Wed Sep 16 11:47:39 2015
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F24K22
@@ -318,12 +318,12 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    312                           
    313                           ; 1 bytes @ 0x6
    314  000066                     	ds	1
-   315  000067                     controllaColore@i_746:
+   315  000067                     controllaColore@i_763:
    316                           	opt stack 0
    317                           
    318                           ; 1 bytes @ 0x7
    319  000067                     	ds	1
-   320  000068                     controllaColore@i_747:
+   320  000068                     controllaColore@i_764:
    321                           	opt stack 0
    322                           
    323                           ; 1 bytes @ 0x8
@@ -494,75 +494,75 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    488                           ;main.c: 49: InitApp();
    489  0000B2  ECD0  F005         	call	_InitApp	;wreg free
    490                           
-   491                           ;main.c: 51: LATC0 = 0;
+   491                           ;main.c: 52: LATC0 = 0;
    492  0000B6  908B               	bcf	3979,0,c	;volatile
    493                           
-   494                           ;main.c: 52: LATC7 = 0;
+   494                           ;main.c: 53: LATC7 = 0;
    495  0000B8  9E8B               	bcf	3979,7,c	;volatile
    496                           
-   497                           ;main.c: 53: EPWM1_LoadDutyValue(511);
+   497                           ;main.c: 54: EPWM1_LoadDutyValue(511);
    498  0000BA  0E01               	movlw	1
    499  0000BC  0100               	movlb	0	; () banked
    500  0000BE  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
    501  0000C0  6960               	setf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
    502  0000C2  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
    503                           
-   504                           ;main.c: 54: EPWM2_LoadDutyValue(511);
+   504                           ;main.c: 55: EPWM2_LoadDutyValue(511);
    505  0000C6  0E01               	movlw	1
    506  0000C8  0100               	movlb	0	; () banked
    507  0000CA  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
    508  0000CC  6960               	setf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
    509  0000CE  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
    510                           
-   511                           ;main.c: 56: T1CONbits.TMR1ON = 0;
+   511                           ;main.c: 57: T1CONbits.TMR1ON = 0;
    512  0000D2  90CD               	bcf	4045,0,c	;volatile
    513                           
-   514                           ;main.c: 57: LATA4= 1;
+   514                           ;main.c: 58: LATA4= 1;
    515  0000D4  8889               	bsf	3977,4,c	;volatile
    516                           
-   517                           ;main.c: 59: TRISBbits.RB1 = 1;
+   517                           ;main.c: 60: TRISBbits.RB1 = 1;
    518  0000D6  8293               	bsf	3987,1,c	;volatile
    519                           
-   520                           ;main.c: 60: INTEDG1 = 0;
+   520                           ;main.c: 61: INTEDG1 = 0;
    521  0000D8  9AF1               	bcf	intcon2,5,c	;volatile
    522                           
-   523                           ;main.c: 61: INT1IP = 1;
+   523                           ;main.c: 62: INT1IP = 1;
    524  0000DA  8CF0               	bsf	intcon3,6,c	;volatile
    525                           
-   526                           ;main.c: 62: INT1IE = 1;
+   526                           ;main.c: 63: INT1IE = 1;
    527  0000DC  86F0               	bsf	intcon3,3,c	;volatile
    528                           
-   529                           ;main.c: 63: (INTCONbits.GIE = 1);
+   529                           ;main.c: 64: (INTCONbits.GIE = 1);
    530  0000DE  8EF2               	bsf	intcon,7,c	;volatile
    531                           
-   532                           ;main.c: 64: GIEH =1;
+   532                           ;main.c: 65: GIEH =1;
    533  0000E0  8EF2               	bsf	intcon,7,c	;volatile
    534                           
-   535                           ;main.c: 66: LATC4=0;
+   535                           ;main.c: 68: LATC4=0;
    536  0000E2  988B               	bcf	3979,4,c	;volatile
    537                           
-   538                           ;main.c: 67: LATC5=0;
+   538                           ;main.c: 69: LATC5=0;
    539  0000E4  9A8B               	bcf	3979,5,c	;volatile
    540                           
-   541                           ;main.c: 68: LATC3=0;
+   541                           ;main.c: 70: LATC3=0;
    542  0000E6  968B               	bcf	3979,3,c	;volatile
    543                           
-   544                           ;main.c: 69: LATC6=0;
+   544                           ;main.c: 71: LATC6=0;
    545  0000E8  9C8B               	bcf	3979,6,c	;volatile
    546                           
-   547                           ;main.c: 70: uint8_t numLinee = 0;
+   547                           ;main.c: 72: uint8_t numLinee = 0;
    548  0000EA  0E00               	movlw	0
    549  0000EC  0100               	movlb	0	; () banked
    550  0000EE  6F6A               	movwf	main@numLinee& (0+255),b
    551  0000F0                     l1933:
    552                           
-   553                           ;main.c: 72: V_pulsantiera = ADC_GetConversion(channel_AN9);
+   553                           ;main.c: 79: V_pulsantiera = ADC_GetConversion(channel_AN9);
    554  0000F0  0E09               	movlw	9
    555  0000F2  ECFD  F004         	call	_ADC_GetConversion
    556  0000F6  C060  F084         	movff	?_ADC_GetConversion,_V_pulsantiera
    557  0000FA  C061  F085         	movff	?_ADC_GetConversion+1,_V_pulsantiera+1
    558                           
-   559                           ;main.c: 73: if(V_pulsantiera <1000){
+   559                           ;main.c: 82: if(V_pulsantiera <1000){
    560  0000FE  0EE8               	movlw	232
    561  000100  0100               	movlb	0	; () banked
    562  000102  5D84               	subwf	_V_pulsantiera& (0+255),w,b
@@ -573,7 +573,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    567  00010C  D7F1               	goto	l1933
    568                           
    569                           ; BSR set to: 0
-   570                           ;main.c: 75: if(921-40 <= V_pulsantiera && V_pulsantiera <= 921+40){
+   570                           ;main.c: 83: if(921-40 <= V_pulsantiera && V_pulsantiera <= 921+40){
    571  00010E  0E71               	movlw	113
    572  000110  0100               	movlb	0	; () banked
    573  000112  5D84               	subwf	_V_pulsantiera& (0+255),w,b
@@ -594,7 +594,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    588  00012C  D002               	goto	l1941
    589                           
    590                           ; BSR set to: 0
-   591                           ;main.c: 76: goal_color = 0;
+   591                           ;main.c: 84: goal_color = 0;
    592  00012E  0E00               	movlw	0
    593  000130  D023               	goto	L2
    594  000132                     l1941:
@@ -620,7 +620,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    614  000150  D002               	goto	l1947
    615                           
    616                           ; BSR set to: 0
-   617                           ;main.c: 78: goal_color = 2;
+   617                           ;main.c: 86: goal_color = 2;
    618  000152  0E02               	movlw	2
    619  000154  D011               	goto	L2
    620  000156                     l1947:
@@ -646,7 +646,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    640  000174  D003               	goto	l435
    641                           
    642                           ; BSR set to: 0
-   643                           ;main.c: 80: goal_color = 1;
+   643                           ;main.c: 88: goal_color = 1;
    644  000176  0E01               	movlw	1
    645  000178                     L2:
    646  000178  0100               	movlb	0	; () banked
@@ -654,8 +654,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    648  00017C                     l435:
    649                           
    650                           ; BSR set to: 0
-   651                           ;main.c: 81: }
-   652                           ;main.c: 88: for (uint16_t T=0; T <= 50; T=T+1){
+   651                           ;main.c: 89: }
+   652                           ;main.c: 93: for (uint16_t T=0; T <= 50; T=T+1){
    653  00017C  0E00               	movlw	0
    654  00017E  0100               	movlb	0	; () banked
    655  000180  6F6F               	movwf	(main@T+1)& (0+255),b
@@ -674,7 +674,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    668  000194  D013               	goto	l1963
    669                           
    670                           ; BSR set to: 0
-   671                           ;main.c: 89: _delay((unsigned long)((10)*(64000000/4000.0)));
+   671                           ;main.c: 94: _delay((unsigned long)((10)*(64000000/4000.0)));
    672                           
    673                           ; BSR set to: 0
    674                           
@@ -702,8 +702,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    696  0001BC                     l1963:
    697                           
    698                           ; BSR set to: 0
-   699                           ;main.c: 90: }
-   700                           ;main.c: 92: EPWM1_LoadDutyValue(514);
+   699                           ;main.c: 95: }
+   700                           ;main.c: 97: EPWM1_LoadDutyValue(514);
    701  0001BC  0E02               	movlw	2
    702  0001BE  0100               	movlb	0	; () banked
    703  0001C0  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -711,7 +711,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    705  0001C4  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
    706  0001C6  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
    707                           
-   708                           ;main.c: 93: EPWM2_LoadDutyValue(514);
+   708                           ;main.c: 98: EPWM2_LoadDutyValue(514);
    709  0001CA  0E02               	movlw	2
    710  0001CC  0100               	movlb	0	; () banked
    711  0001CE  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -719,10 +719,10 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    713  0001D2  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
    714  0001D4  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
    715                           
-   716                           ;main.c: 94: LATC0 = 1;
+   716                           ;main.c: 99: LATC0 = 1;
    717  0001D8  808B               	bsf	3979,0,c	;volatile
    718                           
-   719                           ;main.c: 95: EPWM1_LoadDutyValue(700);
+   719                           ;main.c: 100: EPWM1_LoadDutyValue(700);
    720  0001DA  0E02               	movlw	2
    721  0001DC  0100               	movlb	0	; () banked
    722  0001DE  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -730,7 +730,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    724  0001E2  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
    725  0001E4  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
    726                           
-   727                           ;main.c: 96: EPWM2_LoadDutyValue(712);
+   727                           ;main.c: 101: EPWM2_LoadDutyValue(712);
    728  0001E8  0E02               	movlw	2
    729  0001EA  0100               	movlb	0	; () banked
    730  0001EC  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -738,16 +738,16 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    732  0001F0  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
    733  0001F2  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
    734                           
-   735                           ;main.c: 97: seguiLinea();
+   735                           ;main.c: 102: seguiLinea();
    736  0001F6  EC36  F003         	call	_seguiLinea	;wreg free
    737                           
-   738                           ;main.c: 99: stopM();
+   738                           ;main.c: 106: stopM();
    739  0001FA  EC1D  F005         	call	_stopM	;wreg free
    740                           
-   741                           ;main.c: 101: controllaColore();
+   741                           ;main.c: 108: controllaColore();
    742  0001FE  EC86  F002         	call	_controllaColore	;wreg free
    743                           
-   744                           ;main.c: 102: if(colore != goal_color){
+   744                           ;main.c: 110: if(colore != goal_color){
    745  000202  0100               	movlb	0	; () banked
    746  000204  517F               	movf	_goal_color& (0+255),w,b
    747  000206  0100               	movlb	0	; () banked
@@ -756,11 +756,11 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    750  00020C  D058               	goto	l2007
    751                           
    752                           ; BSR set to: 0
-   753                           ;main.c: 103: LATC0 = 1;
+   753                           ;main.c: 113: LATC0 = 1;
    754  00020E  808B               	bsf	3979,0,c	;volatile
    755                           
    756                           ; BSR set to: 0
-   757                           ;main.c: 104: EPWM1_LoadDutyValue(700);
+   757                           ;main.c: 114: EPWM1_LoadDutyValue(700);
    758  000210  0E02               	movlw	2
    759  000212  0100               	movlb	0	; () banked
    760  000214  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -768,7 +768,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    762  000218  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
    763  00021A  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
    764                           
-   765                           ;main.c: 105: EPWM2_LoadDutyValue(712);
+   765                           ;main.c: 115: EPWM2_LoadDutyValue(712);
    766  00021E  0E02               	movlw	2
    767  000220  0100               	movlb	0	; () banked
    768  000222  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -776,7 +776,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    770  000226  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
    771  000228  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
    772                           
-   773                           ;main.c: 106: for(uint8_t t = 0; t<=100; t++){
+   773                           ;main.c: 118: for(uint8_t t = 0; t<=100; t++){
    774  00022C  0E00               	movlw	0
    775  00022E  0100               	movlb	0	; () banked
    776  000230  6F6B               	movwf	main@t& (0+255),b
@@ -791,7 +791,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    785  00023C                     l1979:
    786                           
    787                           ; BSR set to: 0
-   788                           ;main.c: 107: _delay((unsigned long)((10)*(64000000/4000.0)));
+   788                           ;main.c: 119: _delay((unsigned long)((10)*(64000000/4000.0)));
    789  00023C  0ED0               	movlw	208
    790  00023E  0100               	movlb	0	; () banked
    791  000240  6F69               	movwf	??_main& (0+255),b
@@ -807,22 +807,22 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    801  000252                     l1983:
    802                           
    803                           ; BSR set to: 0
-   804                           ;main.c: 108: }
-   805                           ;main.c: 109: seguiLinea();
+   804                           ;main.c: 120: }
+   805                           ;main.c: 121: seguiLinea();
    806  000252  EC36  F003         	call	_seguiLinea	;wreg free
    807                           
-   808                           ;main.c: 110: stopM();
+   808                           ;main.c: 122: stopM();
    809  000256  EC1D  F005         	call	_stopM	;wreg free
    810                           
-   811                           ;main.c: 112: controllaColore();
+   811                           ;main.c: 124: controllaColore();
    812  00025A  EC86  F002         	call	_controllaColore	;wreg free
    813                           
-   814                           ;main.c: 113: numLinee++;
+   814                           ;main.c: 128: numLinee++;
    815  00025E  0100               	movlb	0	; () banked
    816  000260  2B6A               	incf	main@numLinee& (0+255),f,b
    817                           
    818                           ; BSR set to: 0
-   819                           ;main.c: 114: if(colore != goal_color){
+   819                           ;main.c: 129: if(colore != goal_color){
    820  000262  0100               	movlb	0	; () banked
    821  000264  517F               	movf	_goal_color& (0+255),w,b
    822  000266  0100               	movlb	0	; () banked
@@ -831,11 +831,11 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    825  00026C  D028               	goto	l2007
    826                           
    827                           ; BSR set to: 0
-   828                           ;main.c: 115: LATC0 = 1;
+   828                           ;main.c: 133: LATC0 = 1;
    829  00026E  808B               	bsf	3979,0,c	;volatile
    830                           
    831                           ; BSR set to: 0
-   832                           ;main.c: 116: EPWM1_LoadDutyValue(700);
+   832                           ;main.c: 134: EPWM1_LoadDutyValue(700);
    833  000270  0E02               	movlw	2
    834  000272  0100               	movlb	0	; () banked
    835  000274  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -843,7 +843,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    837  000278  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
    838  00027A  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
    839                           
-   840                           ;main.c: 117: EPWM2_LoadDutyValue(712);
+   840                           ;main.c: 135: EPWM2_LoadDutyValue(712);
    841  00027E  0E02               	movlw	2
    842  000280  0100               	movlb	0	; () banked
    843  000282  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -851,7 +851,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    845  000286  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
    846  000288  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
    847                           
-   848                           ;main.c: 118: for(uint8_t t = 0; t<=100; t++){
+   848                           ;main.c: 136: for(uint8_t t = 0; t<=100; t++){
    849  00028C  0E00               	movlw	0
    850  00028E  0100               	movlb	0	; () banked
    851  000290  6F6C               	movwf	main@t_968& (0+255),b
@@ -866,7 +866,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    860  00029C                     l1999:
    861                           
    862                           ; BSR set to: 0
-   863                           ;main.c: 119: _delay((unsigned long)((10)*(64000000/4000.0)));
+   863                           ;main.c: 137: _delay((unsigned long)((10)*(64000000/4000.0)));
    864  00029C  0ED0               	movlw	208
    865  00029E  0100               	movlb	0	; () banked
    866  0002A0  6F69               	movwf	??_main& (0+255),b
@@ -882,22 +882,22 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    876  0002B2                     l2003:
    877                           
    878                           ; BSR set to: 0
-   879                           ;main.c: 120: }
-   880                           ;main.c: 121: seguiLinea();
+   879                           ;main.c: 138: }
+   880                           ;main.c: 139: seguiLinea();
    881  0002B2  EC36  F003         	call	_seguiLinea	;wreg free
    882                           
-   883                           ;main.c: 122: stopM();
+   883                           ;main.c: 140: stopM();
    884  0002B6  EC1D  F005         	call	_stopM	;wreg free
    885                           
-   886                           ;main.c: 123: numLinee++;
+   886                           ;main.c: 141: numLinee++;
    887  0002BA  0100               	movlb	0	; () banked
    888  0002BC  2B6A               	incf	main@numLinee& (0+255),f,b
    889  0002BE                     l2007:
    890                           
    891                           ; BSR set to: 0
-   892                           ;main.c: 124: }
-   893                           ;main.c: 125: }
-   894                           ;main.c: 127: EPWM1_LoadDutyValue(700);
+   892                           ;main.c: 142: }
+   893                           ;main.c: 143: }
+   894                           ;main.c: 151: EPWM1_LoadDutyValue(700);
    895  0002BE  0E02               	movlw	2
    896  0002C0  0100               	movlb	0	; () banked
    897  0002C2  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -905,7 +905,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    899  0002C6  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
    900  0002C8  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
    901                           
-   902                           ;main.c: 128: EPWM2_LoadDutyValue(300);
+   902                           ;main.c: 152: EPWM2_LoadDutyValue(300);
    903  0002CC  0E01               	movlw	1
    904  0002CE  0100               	movlb	0	; () banked
    905  0002D0  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -913,10 +913,10 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    907  0002D4  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
    908  0002D6  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
    909                           
-   910                           ;main.c: 129: LATC0 = 1;
+   910                           ;main.c: 153: LATC0 = 1;
    911  0002DA  808B               	bsf	3979,0,c	;volatile
    912                           
-   913                           ;main.c: 130: for (uint8_t T=0; T <= 190; T=T+1){
+   913                           ;main.c: 154: for (uint8_t T=0; T <= 190; T=T+1){
    914  0002DC  0E00               	movlw	0
    915  0002DE  0100               	movlb	0	; () banked
    916  0002E0  6F72               	movwf	main@T_969& (0+255),b
@@ -930,7 +930,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    924  0002EC                     l2019:
    925                           
    926                           ; BSR set to: 0
-   927                           ;main.c: 131: _delay((unsigned long)((10)*(64000000/4000.0)));
+   927                           ;main.c: 155: _delay((unsigned long)((10)*(64000000/4000.0)));
    928  0002EC  0ED0               	movlw	208
    929  0002EE  0100               	movlb	0	; () banked
    930  0002F0  6F69               	movwf	??_main& (0+255),b
@@ -941,7 +941,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    935  0002F8  2F69               	decfsz	??_main& (0+255),f,b
    936  0002FA  D7FC               	goto	u1207
    937                           
-   938                           ;main.c: 132: checkBatt();
+   938                           ;main.c: 156: checkBatt();
    939  0002FC  EC16  F006         	call	_checkBatt	;wreg free
    940  000300  0100               	movlb	0	; () banked
    941  000302  2972               	incf	main@T_969& (0+255),w,b
@@ -949,8 +949,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    943  000306                     l2027:
    944                           
    945                           ; BSR set to: 0
-   946                           ;main.c: 133: }
-   947                           ;main.c: 135: EPWM1_LoadDutyValue(661);
+   946                           ;main.c: 157: }
+   947                           ;main.c: 159: EPWM1_LoadDutyValue(661);
    948  000306  0E02               	movlw	2
    949  000308  0100               	movlb	0	; () banked
    950  00030A  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -958,7 +958,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    952  00030E  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
    953  000310  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
    954                           
-   955                           ;main.c: 136: EPWM2_LoadDutyValue(670);
+   955                           ;main.c: 160: EPWM2_LoadDutyValue(670);
    956  000314  0E02               	movlw	2
    957  000316  0100               	movlb	0	; () banked
    958  000318  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -966,10 +966,10 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    960  00031C  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
    961  00031E  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
    962                           
-   963                           ;main.c: 137: LATC0 = 1;
+   963                           ;main.c: 161: LATC0 = 1;
    964  000322  808B               	bsf	3979,0,c	;volatile
    965                           
-   966                           ;main.c: 138: for (uint8_t T=0; T <= 200; T=T+1){
+   966                           ;main.c: 162: for (uint8_t T=0; T <= 200; T=T+1){
    967  000324  0E00               	movlw	0
    968  000326  0100               	movlb	0	; () banked
    969  000328  6F73               	movwf	main@T_970& (0+255),b
@@ -983,7 +983,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    977  000334                     l2037:
    978                           
    979                           ; BSR set to: 0
-   980                           ;main.c: 139: _delay((unsigned long)((10)*(64000000/4000.0)));
+   980                           ;main.c: 163: _delay((unsigned long)((10)*(64000000/4000.0)));
    981  000334  0ED0               	movlw	208
    982  000336  0100               	movlb	0	; () banked
    983  000338  6F69               	movwf	??_main& (0+255),b
@@ -994,7 +994,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    988  000340  2F69               	decfsz	??_main& (0+255),f,b
    989  000342  D7FC               	goto	u1217
    990                           
-   991                           ;main.c: 140: checkBatt();
+   991                           ;main.c: 164: checkBatt();
    992  000344  EC16  F006         	call	_checkBatt	;wreg free
    993  000348  0100               	movlb	0	; () banked
    994  00034A  2973               	incf	main@T_970& (0+255),w,b
@@ -1002,14 +1002,14 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    996  00034E                     l2045:
    997                           
    998                           ; BSR set to: 0
-   999                           ;main.c: 141: }
-  1000                           ;main.c: 143: stopM();
+   999                           ;main.c: 165: }
+  1000                           ;main.c: 167: stopM();
   1001  00034E  EC1D  F005         	call	_stopM	;wreg free
   1002                           
-  1003                           ;main.c: 144: sollevaCarrello();
+  1003                           ;main.c: 168: sollevaCarrello();
   1004  000352  ECC5  F003         	call	_sollevaCarrello	;wreg free
   1005                           
-  1006                           ;main.c: 146: EPWM1_LoadDutyValue(361);
+  1006                           ;main.c: 170: EPWM1_LoadDutyValue(361);
   1007  000356  0E01               	movlw	1
   1008  000358  0100               	movlb	0	; () banked
   1009  00035A  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1017,7 +1017,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1011  00035E  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
   1012  000360  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1013                           
-  1014                           ;main.c: 147: EPWM2_LoadDutyValue(372);
+  1014                           ;main.c: 171: EPWM2_LoadDutyValue(372);
   1015  000364  0E01               	movlw	1
   1016  000366  0100               	movlb	0	; () banked
   1017  000368  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1025,10 +1025,10 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1019  00036C  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
   1020  00036E  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1021                           
-  1022                           ;main.c: 148: LATC0 = 1;
+  1022                           ;main.c: 172: LATC0 = 1;
   1023  000372  808B               	bsf	3979,0,c	;volatile
   1024                           
-  1025                           ;main.c: 149: for (uint8_t T=0; T <= 150; T=T+1){
+  1025                           ;main.c: 173: for (uint8_t T=0; T <= 150; T=T+1){
   1026  000374  0E00               	movlw	0
   1027  000376  0100               	movlb	0	; () banked
   1028  000378  6F74               	movwf	main@T_972& (0+255),b
@@ -1042,7 +1042,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1036  000384                     l2055:
   1037                           
   1038                           ; BSR set to: 0
-  1039                           ;main.c: 150: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1039                           ;main.c: 174: _delay((unsigned long)((10)*(64000000/4000.0)));
   1040  000384  0ED0               	movlw	208
   1041  000386  0100               	movlb	0	; () banked
   1042  000388  6F69               	movwf	??_main& (0+255),b
@@ -1053,7 +1053,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1047  000390  2F69               	decfsz	??_main& (0+255),f,b
   1048  000392  D7FC               	goto	u1227
   1049                           
-  1050                           ;main.c: 151: checkBatt();
+  1050                           ;main.c: 175: checkBatt();
   1051  000394  EC16  F006         	call	_checkBatt	;wreg free
   1052  000398  0100               	movlb	0	; () banked
   1053  00039A  2974               	incf	main@T_972& (0+255),w,b
@@ -1061,11 +1061,11 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1055  00039E                     l2063:
   1056                           
   1057                           ; BSR set to: 0
-  1058                           ;main.c: 152: }
-  1059                           ;main.c: 153: stopM();
+  1058                           ;main.c: 176: }
+  1059                           ;main.c: 177: stopM();
   1060  00039E  EC1D  F005         	call	_stopM	;wreg free
   1061                           
-  1062                           ;main.c: 157: EPWM1_LoadDutyValue(700);
+  1062                           ;main.c: 183: EPWM1_LoadDutyValue(700);
   1063  0003A2  0E02               	movlw	2
   1064  0003A4  0100               	movlb	0	; () banked
   1065  0003A6  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1073,7 +1073,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1067  0003AA  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
   1068  0003AC  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1069                           
-  1070                           ;main.c: 158: EPWM2_LoadDutyValue(300);
+  1070                           ;main.c: 184: EPWM2_LoadDutyValue(300);
   1071  0003B0  0E01               	movlw	1
   1072  0003B2  0100               	movlb	0	; () banked
   1073  0003B4  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1081,7 +1081,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1075  0003B8  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
   1076  0003BA  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1077                           
-  1078                           ;main.c: 159: LATC0 = 1;
+  1078                           ;main.c: 185: LATC0 = 1;
   1079  0003BE  808B               	bsf	3979,0,c	;volatile
   1080  0003C0                     l2067:
   1081  0003C0  0E0D               	movlw	13
@@ -1096,7 +1096,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1090  0003D4  D7F5               	goto	l2067
   1091                           
   1092                           ; BSR set to: 0
-  1093                           ;main.c: 161: EPWM1_LoadDutyValue(700);
+  1093                           ;main.c: 188: EPWM1_LoadDutyValue(700);
   1094                           
   1095                           ; BSR set to: 0
   1096  0003D6  0E02               	movlw	2
@@ -1106,7 +1106,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1100  0003DE  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
   1101  0003E0  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1102                           
-  1103                           ;main.c: 162: EPWM2_LoadDutyValue(712);
+  1103                           ;main.c: 189: EPWM2_LoadDutyValue(712);
   1104  0003E4  0E02               	movlw	2
   1105  0003E6  0100               	movlb	0	; () banked
   1106  0003E8  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1114,17 +1114,17 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1108  0003EC  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
   1109  0003EE  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1110                           
-  1111                           ;main.c: 163: LATC0 = 1;
+  1111                           ;main.c: 190: LATC0 = 1;
   1112  0003F2  808B               	bsf	3979,0,c	;volatile
   1113                           
-  1114                           ;main.c: 164: seguiLinea();
+  1114                           ;main.c: 191: seguiLinea();
   1115  0003F4  EC36  F003         	call	_seguiLinea	;wreg free
   1116                           
-  1117                           ;main.c: 165: while (numLinee>0){
+  1117                           ;main.c: 194: while (numLinee>0){
   1118  0003F8  D026               	goto	l2091
   1119  0003FA                     l2073:
   1120                           
-  1121                           ;main.c: 166: EPWM1_LoadDutyValue(700);
+  1121                           ;main.c: 195: EPWM1_LoadDutyValue(700);
   1122  0003FA  0E02               	movlw	2
   1123  0003FC  0100               	movlb	0	; () banked
   1124  0003FE  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1132,7 +1132,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1126  000402  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
   1127  000404  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1128                           
-  1129                           ;main.c: 167: EPWM2_LoadDutyValue(712);
+  1129                           ;main.c: 196: EPWM2_LoadDutyValue(712);
   1130  000408  0E02               	movlw	2
   1131  00040A  0100               	movlb	0	; () banked
   1132  00040C  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1140,10 +1140,10 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1134  000410  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
   1135  000412  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1136                           
-  1137                           ;main.c: 168: LATC0 = 1;
+  1137                           ;main.c: 197: LATC0 = 1;
   1138  000416  808B               	bsf	3979,0,c	;volatile
   1139                           
-  1140                           ;main.c: 169: for(uint8_t t = 0; t<=35; t++){
+  1140                           ;main.c: 198: for(uint8_t t = 0; t<=35; t++){
   1141  000418  0E00               	movlw	0
   1142  00041A  0100               	movlb	0	; () banked
   1143  00041C  6F6D               	movwf	main@t_973& (0+255),b
@@ -1158,7 +1158,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1152  000428                     l2083:
   1153                           
   1154                           ; BSR set to: 0
-  1155                           ;main.c: 170: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1155                           ;main.c: 199: _delay((unsigned long)((10)*(64000000/4000.0)));
   1156  000428  0ED0               	movlw	208
   1157  00042A  0100               	movlb	0	; () banked
   1158  00042C  6F69               	movwf	??_main& (0+255),b
@@ -1174,11 +1174,11 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1168  00043E                     l2087:
   1169                           
   1170                           ; BSR set to: 0
-  1171                           ;main.c: 171: }
-  1172                           ;main.c: 172: seguiLinea();
+  1171                           ;main.c: 200: }
+  1172                           ;main.c: 201: seguiLinea();
   1173  00043E  EC36  F003         	call	_seguiLinea	;wreg free
   1174                           
-  1175                           ;main.c: 173: numLinee--;
+  1175                           ;main.c: 202: numLinee--;
   1176  000442  0100               	movlb	0	; () banked
   1177  000444  076A               	decf	main@numLinee& (0+255),f,b
   1178  000446                     l2091:
@@ -1189,16 +1189,16 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1183  00044E  D7D5               	goto	l2073
   1184                           
   1185                           ; BSR set to: 0
-  1186                           ;main.c: 174: }
-  1187                           ;main.c: 176: stopM();
+  1186                           ;main.c: 203: }
+  1187                           ;main.c: 208: stopM();
   1188                           
   1189                           ; BSR set to: 0
   1190  000450  EC1D  F005         	call	_stopM	;wreg free
   1191                           
-  1192                           ;main.c: 177: abbassaCarrello();
+  1192                           ;main.c: 209: abbassaCarrello();
   1193  000454  EC26  F004         	call	_abbassaCarrello	;wreg free
   1194                           
-  1195                           ;main.c: 179: EPWM1_LoadDutyValue(300);
+  1195                           ;main.c: 211: EPWM1_LoadDutyValue(300);
   1196  000458  0E01               	movlw	1
   1197  00045A  0100               	movlb	0	; () banked
   1198  00045C  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1206,7 +1206,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1200  000460  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
   1201  000462  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1202                           
-  1203                           ;main.c: 180: EPWM2_LoadDutyValue(300);
+  1203                           ;main.c: 212: EPWM2_LoadDutyValue(300);
   1204  000466  0E01               	movlw	1
   1205  000468  0100               	movlb	0	; () banked
   1206  00046A  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1214,10 +1214,10 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1208  00046E  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
   1209  000470  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1210                           
-  1211                           ;main.c: 181: LATC0 = 1;
+  1211                           ;main.c: 213: LATC0 = 1;
   1212  000474  808B               	bsf	3979,0,c	;volatile
   1213                           
-  1214                           ;main.c: 182: for (uint8_t T=0; T <=200; T=T+1){
+  1214                           ;main.c: 214: for (uint8_t T=0; T <=200; T=T+1){
   1215  000476  0E00               	movlw	0
   1216  000478  0100               	movlb	0	; () banked
   1217  00047A  6F75               	movwf	main@T_975& (0+255),b
@@ -1231,7 +1231,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1225  000486                     l2103:
   1226                           
   1227                           ; BSR set to: 0
-  1228                           ;main.c: 183: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1228                           ;main.c: 215: _delay((unsigned long)((10)*(64000000/4000.0)));
   1229  000486  0ED0               	movlw	208
   1230  000488  0100               	movlb	0	; () banked
   1231  00048A  6F69               	movwf	??_main& (0+255),b
@@ -1242,7 +1242,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1236  000492  2F69               	decfsz	??_main& (0+255),f,b
   1237  000494  D7FC               	goto	u1247
   1238                           
-  1239                           ;main.c: 185: checkBatt();
+  1239                           ;main.c: 216: checkBatt();
   1240  000496  EC16  F006         	call	_checkBatt	;wreg free
   1241  00049A  0100               	movlb	0	; () banked
   1242  00049C  2975               	incf	main@T_975& (0+255),w,b
@@ -1250,11 +1250,11 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1244  0004A0                     l2111:
   1245                           
   1246                           ; BSR set to: 0
-  1247                           ;main.c: 186: }
-  1248                           ;main.c: 187: stopM();
+  1247                           ;main.c: 217: }
+  1248                           ;main.c: 218: stopM();
   1249  0004A0  EC1D  F005         	call	_stopM	;wreg free
   1250                           
-  1251                           ;main.c: 190: EPWM1_LoadDutyValue(700);
+  1251                           ;main.c: 221: EPWM1_LoadDutyValue(700);
   1252  0004A4  0E02               	movlw	2
   1253  0004A6  0100               	movlb	0	; () banked
   1254  0004A8  6F61               	movwf	(EPWM1_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1262,7 +1262,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1256  0004AC  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
   1257  0004AE  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1258                           
-  1259                           ;main.c: 191: EPWM2_LoadDutyValue(300);
+  1259                           ;main.c: 222: EPWM2_LoadDutyValue(300);
   1260  0004B2  0E01               	movlw	1
   1261  0004B4  0100               	movlb	0	; () banked
   1262  0004B6  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1270,10 +1270,10 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1264  0004BA  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
   1265  0004BC  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1266                           
-  1267                           ;main.c: 192: LATC0 = 1;
+  1267                           ;main.c: 223: LATC0 = 1;
   1268  0004C0  808B               	bsf	3979,0,c	;volatile
   1269                           
-  1270                           ;main.c: 193: for (uint16_t T=0; T <= 400; T=T+1){
+  1270                           ;main.c: 224: for (uint16_t T=0; T <= 400; T=T+1){
   1271  0004C2  0E00               	movlw	0
   1272  0004C4  0100               	movlb	0	; () banked
   1273  0004C6  6F71               	movwf	(main@T_976+1)& (0+255),b
@@ -1292,7 +1292,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1286  0004DA  D015               	goto	l2129
   1287                           
   1288                           ; BSR set to: 0
-  1289                           ;main.c: 194: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1289                           ;main.c: 225: _delay((unsigned long)((10)*(64000000/4000.0)));
   1290                           
   1291                           ; BSR set to: 0
   1292                           
@@ -1307,7 +1307,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1301  0004E8  2F69               	decfsz	??_main& (0+255),f,b
   1302  0004EA  D7FC               	goto	u1257
   1303                           
-  1304                           ;main.c: 195: checkBatt();
+  1304                           ;main.c: 226: checkBatt();
   1305  0004EC  EC16  F006         	call	_checkBatt	;wreg free
   1306  0004F0  0E01               	movlw	1
   1307  0004F2  0100               	movlb	0	; () banked
@@ -1323,8 +1323,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1317  000506                     l2129:
   1318                           
   1319                           ; BSR set to: 0
-  1320                           ;main.c: 196: }
-  1321                           ;main.c: 197: stopM();
+  1320                           ;main.c: 227: }
+  1321                           ;main.c: 228: stopM();
   1322  000506  EC1D  F005         	call	_stopM	;wreg free
   1323  00050A  D5F2               	goto	l1933
   1324  00050C                     __end_of_main:
@@ -1344,7 +1344,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1338                           
   1339 ;; *************** function _stopM *****************
   1340 ;; Defined at:
-  1341 ;;		line 132 in file "user.c"
+  1341 ;;		line 166 in file "user.c"
   1342 ;; Parameters:    Size  Location     Type
   1343 ;;		None
   1344 ;; Auto vars:     Size  Location     Type
@@ -1379,7 +1379,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1373  000A3A                     _stopM:
   1374                           	opt stack 26
   1375                           
-  1376                           ;user.c: 133: EPWM1_LoadDutyValue(511);
+  1376                           ;user.c: 167: EPWM1_LoadDutyValue(511);
   1377                           
   1378                           ;incstack = 0
   1379  000A3A  0E01               	movlw	1
@@ -1388,14 +1388,14 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1382  000A40  6960               	setf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
   1383  000A42  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1384                           
-  1385                           ;user.c: 134: EPWM2_LoadDutyValue(511);
+  1385                           ;user.c: 168: EPWM2_LoadDutyValue(511);
   1386  000A46  0E01               	movlw	1
   1387  000A48  0100               	movlb	0	; () banked
   1388  000A4A  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
   1389  000A4C  6960               	setf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
   1390  000A4E  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1391                           
-  1392                           ;user.c: 135: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1392                           ;user.c: 169: _delay((unsigned long)((10)*(64000000/4000.0)));
   1393  000A52  0ED0               	movlw	208
   1394  000A54  0100               	movlb	0	; () banked
   1395  000A56  6F64               	movwf	??_stopM& (0+255),b
@@ -1406,7 +1406,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1400  000A5E  2F64               	decfsz	??_stopM& (0+255),f,b
   1401  000A60  D7FC               	goto	u1267
   1402                           
-  1403                           ;user.c: 136: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1403                           ;user.c: 170: _delay((unsigned long)((10)*(64000000/4000.0)));
   1404  000A62  0ED0               	movlw	208
   1405  000A64  0100               	movlb	0	; () banked
   1406  000A66  6F64               	movwf	??_stopM& (0+255),b
@@ -1417,7 +1417,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1411  000A6E  2F64               	decfsz	??_stopM& (0+255),f,b
   1412  000A70  D7FC               	goto	u1277
   1413                           
-  1414                           ;user.c: 137: LATC0 = 0;
+  1414                           ;user.c: 171: LATC0 = 0;
   1415  000A72  908B               	bcf	3979,0,c	;volatile
   1416  000A74  0012               	return		;funcret
   1417  000A76                     __end_of_stopM:
@@ -1437,7 +1437,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1431                           
   1432 ;; *************** function _sollevaCarrello *****************
   1433 ;; Defined at:
-  1434 ;;		line 162 in file "user.c"
+  1434 ;;		line 196 in file "user.c"
   1435 ;; Parameters:    Size  Location     Type
   1436 ;;		None
   1437 ;; Auto vars:     Size  Location     Type
@@ -1471,14 +1471,14 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1465  00078A                     _sollevaCarrello:
   1466                           	opt stack 27
   1467                           
-  1468                           ;user.c: 163: uint8_t p = 0;
+  1468                           ;user.c: 197: uint8_t p = 0;
   1469                           
   1470                           ;incstack = 0
   1471  00078A  0E00               	movlw	0
   1472  00078C  0100               	movlb	0	; () banked
   1473  00078E  6F61               	movwf	sollevaCarrello@p& (0+255),b
   1474                           
-  1475                           ;user.c: 164: for(p=0; p<43;p++){
+  1475                           ;user.c: 198: for(p=0; p<43;p++){
   1476  000790  0E00               	movlw	0
   1477  000792  0100               	movlb	0	; () banked
   1478  000794  6F61               	movwf	sollevaCarrello@p& (0+255),b
@@ -1493,23 +1493,23 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1487  0007A0                     l338:
   1488                           
   1489                           ; BSR set to: 0
-  1490                           ;user.c: 165: LATC7 = 1;
+  1490                           ;user.c: 199: LATC7 = 1;
   1491  0007A0  8E8B               	bsf	3979,7,c	;volatile
   1492                           
-  1493                           ;user.c: 166: LATC4=0;
+  1493                           ;user.c: 200: LATC4=0;
   1494  0007A2  988B               	bcf	3979,4,c	;volatile
   1495                           
-  1496                           ;user.c: 167: LATC5=1;
+  1496                           ;user.c: 201: LATC5=1;
   1497  0007A4  8A8B               	bsf	3979,5,c	;volatile
   1498                           
-  1499                           ;user.c: 168: LATC3=1;
+  1499                           ;user.c: 202: LATC3=1;
   1500  0007A6  868B               	bsf	3979,3,c	;volatile
   1501                           
-  1502                           ;user.c: 169: LATC6=0;
+  1502                           ;user.c: 203: LATC6=0;
   1503  0007A8  9C8B               	bcf	3979,6,c	;volatile
   1504                           
   1505                           ; BSR set to: 0
-  1506                           ;user.c: 170: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1506                           ;user.c: 204: _delay((unsigned long)((10)*(64000000/4000.0)));
   1507  0007AA  0ED0               	movlw	208
   1508  0007AC  0100               	movlb	0	; () banked
   1509  0007AE  6F60               	movwf	??_sollevaCarrello& (0+255),b
@@ -1520,7 +1520,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1514  0007B6  2F60               	decfsz	??_sollevaCarrello& (0+255),f,b
   1515  0007B8  D7FC               	goto	u1287
   1516                           
-  1517                           ;user.c: 171: _delay((unsigned long)((2)*(64000000/4000.0)));
+  1517                           ;user.c: 205: _delay((unsigned long)((2)*(64000000/4000.0)));
   1518  0007BA  0E2A               	movlw	42
   1519  0007BC  0100               	movlb	0	; () banked
   1520  0007BE  6F60               	movwf	??_sollevaCarrello& (0+255),b
@@ -1531,19 +1531,19 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1525  0007C6  2F60               	decfsz	??_sollevaCarrello& (0+255),f,b
   1526  0007C8  D7FC               	goto	u1297
   1527                           
-  1528                           ;user.c: 172: LATC4=0;
+  1528                           ;user.c: 206: LATC4=0;
   1529  0007CA  988B               	bcf	3979,4,c	;volatile
   1530                           
-  1531                           ;user.c: 173: LATC5=0;
+  1531                           ;user.c: 207: LATC5=0;
   1532  0007CC  9A8B               	bcf	3979,5,c	;volatile
   1533                           
-  1534                           ;user.c: 174: LATC3=1;
+  1534                           ;user.c: 208: LATC3=1;
   1535  0007CE  868B               	bsf	3979,3,c	;volatile
   1536                           
-  1537                           ;user.c: 175: LATC6=1;
+  1537                           ;user.c: 209: LATC6=1;
   1538  0007D0  8C8B               	bsf	3979,6,c	;volatile
   1539                           
-  1540                           ;user.c: 176: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1540                           ;user.c: 210: _delay((unsigned long)((10)*(64000000/4000.0)));
   1541  0007D2  0ED0               	movlw	208
   1542  0007D4  0100               	movlb	0	; () banked
   1543  0007D6  6F60               	movwf	??_sollevaCarrello& (0+255),b
@@ -1554,7 +1554,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1548  0007DE  2F60               	decfsz	??_sollevaCarrello& (0+255),f,b
   1549  0007E0  D7FC               	goto	u1307
   1550                           
-  1551                           ;user.c: 177: _delay((unsigned long)((2)*(64000000/4000.0)));
+  1551                           ;user.c: 211: _delay((unsigned long)((2)*(64000000/4000.0)));
   1552  0007E2  0E2A               	movlw	42
   1553  0007E4  0100               	movlb	0	; () banked
   1554  0007E6  6F60               	movwf	??_sollevaCarrello& (0+255),b
@@ -1565,19 +1565,19 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1559  0007EE  2F60               	decfsz	??_sollevaCarrello& (0+255),f,b
   1560  0007F0  D7FC               	goto	u1317
   1561                           
-  1562                           ;user.c: 178: LATC4=1;
+  1562                           ;user.c: 212: LATC4=1;
   1563  0007F2  888B               	bsf	3979,4,c	;volatile
   1564                           
-  1565                           ;user.c: 179: LATC5=0;
+  1565                           ;user.c: 213: LATC5=0;
   1566  0007F4  9A8B               	bcf	3979,5,c	;volatile
   1567                           
-  1568                           ;user.c: 180: LATC3=0;
+  1568                           ;user.c: 214: LATC3=0;
   1569  0007F6  968B               	bcf	3979,3,c	;volatile
   1570                           
-  1571                           ;user.c: 181: LATC6=1;
+  1571                           ;user.c: 215: LATC6=1;
   1572  0007F8  8C8B               	bsf	3979,6,c	;volatile
   1573                           
-  1574                           ;user.c: 182: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1574                           ;user.c: 216: _delay((unsigned long)((10)*(64000000/4000.0)));
   1575  0007FA  0ED0               	movlw	208
   1576  0007FC  0100               	movlb	0	; () banked
   1577  0007FE  6F60               	movwf	??_sollevaCarrello& (0+255),b
@@ -1588,7 +1588,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1582  000806  2F60               	decfsz	??_sollevaCarrello& (0+255),f,b
   1583  000808  D7FC               	goto	u1327
   1584                           
-  1585                           ;user.c: 183: _delay((unsigned long)((2)*(64000000/4000.0)));
+  1585                           ;user.c: 217: _delay((unsigned long)((2)*(64000000/4000.0)));
   1586  00080A  0E2A               	movlw	42
   1587  00080C  0100               	movlb	0	; () banked
   1588  00080E  6F60               	movwf	??_sollevaCarrello& (0+255),b
@@ -1599,19 +1599,19 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1593  000816  2F60               	decfsz	??_sollevaCarrello& (0+255),f,b
   1594  000818  D7FC               	goto	u1337
   1595                           
-  1596                           ;user.c: 184: LATC4=1;
+  1596                           ;user.c: 218: LATC4=1;
   1597  00081A  888B               	bsf	3979,4,c	;volatile
   1598                           
-  1599                           ;user.c: 185: LATC5=1;
+  1599                           ;user.c: 219: LATC5=1;
   1600  00081C  8A8B               	bsf	3979,5,c	;volatile
   1601                           
-  1602                           ;user.c: 186: LATC3=0;
+  1602                           ;user.c: 220: LATC3=0;
   1603  00081E  968B               	bcf	3979,3,c	;volatile
   1604                           
-  1605                           ;user.c: 187: LATC6=0;
+  1605                           ;user.c: 221: LATC6=0;
   1606  000820  9C8B               	bcf	3979,6,c	;volatile
   1607                           
-  1608                           ;user.c: 188: _delay((unsigned long)((10)*(64000000/4000.0)));
+  1608                           ;user.c: 222: _delay((unsigned long)((10)*(64000000/4000.0)));
   1609  000822  0ED0               	movlw	208
   1610  000824  0100               	movlb	0	; () banked
   1611  000826  6F60               	movwf	??_sollevaCarrello& (0+255),b
@@ -1622,7 +1622,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1616  00082E  2F60               	decfsz	??_sollevaCarrello& (0+255),f,b
   1617  000830  D7FC               	goto	u1347
   1618                           
-  1619                           ;user.c: 189: _delay((unsigned long)((2)*(64000000/4000.0)));
+  1619                           ;user.c: 223: _delay((unsigned long)((2)*(64000000/4000.0)));
   1620  000832  0E2A               	movlw	42
   1621  000834  0100               	movlb	0	; () banked
   1622  000836  6F60               	movwf	??_sollevaCarrello& (0+255),b
@@ -1638,8 +1638,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1632  000848                     l339:
   1633                           
   1634                           ; BSR set to: 0
-  1635                           ;user.c: 192: }
-  1636                           ;user.c: 193: LATC7 = 0;
+  1635                           ;user.c: 226: }
+  1636                           ;user.c: 227: LATC7 = 0;
   1637  000848  9E8B               	bcf	3979,7,c	;volatile
   1638                           
   1639                           ; BSR set to: 0
@@ -1661,7 +1661,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1655                           
   1656 ;; *************** function _seguiLinea *****************
   1657 ;; Defined at:
-  1658 ;;		line 32 in file "user.c"
+  1658 ;;		line 57 in file "user.c"
   1659 ;; Parameters:    Size  Location     Type
   1660 ;;		None
   1661 ;; Auto vars:     Size  Location     Type
@@ -1698,7 +1698,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1692  00066C                     _seguiLinea:
   1693                           	opt stack 26
   1694                           
-  1695                           ;user.c: 33: EPWM1_LoadDutyValue(700);
+  1695                           ;user.c: 59: EPWM1_LoadDutyValue(700);
   1696                           
   1697                           ; BSR set to: 0
   1698                           ;incstack = 0
@@ -1709,7 +1709,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1703  000674  6F60               	movwf	EPWM1_LoadDutyValue@dutyValue& (0+255),b
   1704  000676  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1705                           
-  1706                           ;user.c: 34: EPWM2_LoadDutyValue(712);
+  1706                           ;user.c: 60: EPWM2_LoadDutyValue(712);
   1707  00067A  0E02               	movlw	2
   1708  00067C  0100               	movlb	0	; () banked
   1709  00067E  6F61               	movwf	(EPWM2_LoadDutyValue@dutyValue+1)& (0+255),b
@@ -1717,23 +1717,23 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1711  000682  6F60               	movwf	EPWM2_LoadDutyValue@dutyValue& (0+255),b
   1712  000684  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1713                           
-  1714                           ;user.c: 35: LATC0 = 1;
+  1714                           ;user.c: 61: LATC0 = 1;
   1715  000688  808B               	bsf	3979,0,c	;volatile
   1716                           
-  1717                           ;user.c: 37: while(ADC_GetConversion(channel_AN13)<750){
-  1718  00068A  D073               	goto	l1737
-  1719  00068C                     l1703:
+  1717                           ;user.c: 65: while(ADC_GetConversion(channel_AN13)<750){
+  1718  00068A  D073               	goto	l1741
+  1719  00068C                     l1707:
   1720                           
-  1721                           ;user.c: 38: checkBatt();
+  1721                           ;user.c: 66: checkBatt();
   1722  00068C  EC16  F006         	call	_checkBatt	;wreg free
   1723                           
-  1724                           ;user.c: 40: deltaV = ADC_GetConversion(channel_AN13);
+  1724                           ;user.c: 68: deltaV = ADC_GetConversion(channel_AN13);
   1725  000690  0E0D               	movlw	13
   1726  000692  ECFD  F004         	call	_ADC_GetConversion
   1727  000696  C060  F078         	movff	?_ADC_GetConversion,_deltaV
   1728  00069A  C061  F079         	movff	?_ADC_GetConversion+1,_deltaV+1
   1729                           
-  1730                           ;user.c: 41: if(deltaV > 292){
+  1730                           ;user.c: 72: if(deltaV > 292){
   1731  00069E  0E25               	movlw	37
   1732  0006A0  0100               	movlb	0	; () banked
   1733  0006A2  5D78               	subwf	_deltaV& (0+255),w,b
@@ -1741,33 +1741,33 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1735  0006A6  0100               	movlb	0	; () banked
   1736  0006A8  5979               	subwfb	(_deltaV+1)& (0+255),w,b
   1737  0006AA  A0D8               	btfss	status,0,c
-  1738  0006AC  D00A               	goto	l1709
+  1738  0006AC  D00A               	goto	l1713
   1739                           
   1740                           ; BSR set to: 0
-  1741                           ;user.c: 42: vel_DX=762;
+  1741                           ;user.c: 74: vel_DX=762;
   1742  0006AE  0E02               	movlw	2
   1743  0006B0  0100               	movlb	0	; () banked
   1744  0006B2  6F81               	movwf	(_vel_DX+1)& (0+255),b
   1745  0006B4  0EFA               	movlw	250
   1746  0006B6  6F80               	movwf	_vel_DX& (0+255),b
   1747                           
-  1748                           ;user.c: 43: vel_SX = 655;
+  1748                           ;user.c: 75: vel_SX = 655;
   1749  0006B8  0E02               	movlw	2
   1750  0006BA  0100               	movlb	0	; () banked
   1751  0006BC  6F83               	movwf	(_vel_SX+1)& (0+255),b
   1752  0006BE  0E8F               	movlw	143
   1753  0006C0  D02C               	goto	L7
-  1754  0006C2                     l1709:
+  1754  0006C2                     l1713:
   1755                           
   1756                           ; BSR set to: 0
   1757  0006C2  0100               	movlb	0	; () banked
   1758  0006C4  5179               	movf	(_deltaV+1)& (0+255),w,b
-  1759  0006C6  E118               	bnz	l1715
+  1759  0006C6  E118               	bnz	l1719
   1760  0006C8  0EFC               	movlw	252
   1761  0006CA  0100               	movlb	0	; () banked
   1762  0006CC  5D78               	subwf	_deltaV& (0+255),w,b
   1763  0006CE  B0D8               	btfsc	status,0,c
-  1764  0006D0  D013               	goto	l1715
+  1764  0006D0  D013               	goto	l1719
   1765                           
   1766                           ; BSR set to: 0
   1767  0006D2  0100               	movlb	0	; () banked
@@ -1777,27 +1777,27 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1771  0006DA  0100               	movlb	0	; () banked
   1772  0006DC  5D78               	subwf	_deltaV& (0+255),w,b
   1773  0006DE  A0D8               	btfss	status,0,c
-  1774  0006E0  D00B               	goto	l1715
+  1774  0006E0  D00B               	goto	l1719
   1775  0006E2                     u630:
   1776                           
   1777                           ; BSR set to: 0
-  1778                           ;user.c: 45: vel_SX=750;
+  1778                           ;user.c: 79: vel_SX=750;
   1779  0006E2  0E02               	movlw	2
   1780  0006E4  0100               	movlb	0	; () banked
   1781  0006E6  6F83               	movwf	(_vel_SX+1)& (0+255),b
   1782  0006E8  0EEE               	movlw	238
   1783  0006EA  6F82               	movwf	_vel_SX& (0+255),b
   1784                           
-  1785                           ;user.c: 46: vel_DX = 667;
+  1785                           ;user.c: 80: vel_DX = 667;
   1786  0006EC  0E02               	movlw	2
   1787  0006EE  0100               	movlb	0	; () banked
   1788  0006F0  6F81               	movwf	(_vel_DX+1)& (0+255),b
   1789  0006F2  0E9B               	movlw	155
   1790  0006F4  6F80               	movwf	_vel_DX& (0+255),b
   1791                           
-  1792                           ;user.c: 47: }else if(deltaV > 10){
-  1793  0006F6  D012               	goto	l1719
-  1794  0006F8                     l1715:
+  1792                           ;user.c: 82: }else if(deltaV > 10){
+  1793  0006F6  D012               	goto	l1723
+  1794  0006F8                     l1719:
   1795                           
   1796                           ; BSR set to: 0
   1797  0006F8  0100               	movlb	0	; () banked
@@ -1807,54 +1807,54 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1801  000700  0100               	movlb	0	; () banked
   1802  000702  5D78               	subwf	_deltaV& (0+255),w,b
   1803  000704  A0D8               	btfss	status,0,c
-  1804  000706  D00A               	goto	l1719
+  1804  000706  D00A               	goto	l1723
   1805  000708                     u640:
   1806                           
   1807                           ; BSR set to: 0
-  1808                           ;user.c: 48: vel_DX = 712;
+  1808                           ;user.c: 85: vel_DX = 712;
   1809  000708  0E02               	movlw	2
   1810  00070A  0100               	movlb	0	; () banked
   1811  00070C  6F81               	movwf	(_vel_DX+1)& (0+255),b
   1812  00070E  0EC8               	movlw	200
   1813  000710  6F80               	movwf	_vel_DX& (0+255),b
   1814                           
-  1815                           ;user.c: 49: vel_SX = 700;
+  1815                           ;user.c: 86: vel_SX = 700;
   1816  000712  0E02               	movlw	2
   1817  000714  0100               	movlb	0	; () banked
   1818  000716  6F83               	movwf	(_vel_SX+1)& (0+255),b
   1819  000718  0EBC               	movlw	188
   1820  00071A                     L7:
   1821  00071A  6F82               	movwf	_vel_SX& (0+255),b
-  1822  00071C                     l1719:
+  1822  00071C                     l1723:
   1823                           
   1824                           ; BSR set to: 0
-  1825                           ;user.c: 50: }
-  1826                           ;user.c: 51: EPWM1_LoadDutyValue(vel_SX);
+  1825                           ;user.c: 87: }
+  1826                           ;user.c: 91: EPWM1_LoadDutyValue(vel_SX);
   1827  00071C  C082  F060         	movff	_vel_SX,EPWM1_LoadDutyValue@dutyValue
   1828  000720  C083  F061         	movff	_vel_SX+1,EPWM1_LoadDutyValue@dutyValue+1
   1829  000724  EC59  F005         	call	_EPWM1_LoadDutyValue	;wreg free
   1830                           
-  1831                           ;user.c: 52: EPWM2_LoadDutyValue(vel_DX);
+  1831                           ;user.c: 92: EPWM2_LoadDutyValue(vel_DX);
   1832  000728  C080  F060         	movff	_vel_DX,EPWM2_LoadDutyValue@dutyValue
   1833  00072C  C081  F061         	movff	_vel_DX+1,EPWM2_LoadDutyValue@dutyValue+1
   1834  000730  EC3B  F005         	call	_EPWM2_LoadDutyValue	;wreg free
   1835                           
-  1836                           ;user.c: 53: for(uint8_t T = 0; T < 8; T++){
+  1836                           ;user.c: 97: for(uint8_t T = 0; T < 8; T++){
   1837  000734  0E00               	movlw	0
   1838  000736  0100               	movlb	0	; () banked
   1839  000738  6F66               	movwf	seguiLinea@T& (0+255),b
-  1840  00073A                     l1723:
+  1840  00073A                     l1727:
   1841                           
   1842                           ; BSR set to: 0
   1843  00073A  0E07               	movlw	7
   1844  00073C  0100               	movlb	0	; () banked
   1845  00073E  6566               	cpfsgt	seguiLinea@T& (0+255),b
-  1846  000740  D001               	goto	l1727
-  1847  000742  D017               	goto	l1737
-  1848  000744                     l1727:
+  1846  000740  D001               	goto	l1731
+  1847  000742  D017               	goto	l1741
+  1848  000744                     l1731:
   1849                           
   1850                           ; BSR set to: 0
-  1851                           ;user.c: 54: _delay((unsigned long)((1)*(64000000/4000.0)));
+  1851                           ;user.c: 98: _delay((unsigned long)((1)*(64000000/4000.0)));
   1852  000744  0E15               	movlw	21
   1853  000746  0100               	movlb	0	; () banked
   1854  000748  6F65               	movwf	??_seguiLinea& (0+255),b
@@ -1866,7 +1866,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1860  000752  D7FC               	goto	u1367
   1861  000754  D000               	nop2	
   1862                           
-  1863                           ;user.c: 55: if(ADC_GetConversion(channel_AN13)>=750){
+  1863                           ;user.c: 99: if(ADC_GetConversion(channel_AN13)>=750){
   1864  000756  0E0D               	movlw	13
   1865  000758  ECFD  F004         	call	_ADC_GetConversion
   1866  00075C  0EEE               	movlw	238
@@ -1876,18 +1876,18 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1870  000764  0100               	movlb	0	; () banked
   1871  000766  5961               	subwfb	(?_ADC_GetConversion+1)& (0+255),w,b
   1872  000768  B0D8               	btfsc	status,0,c
-  1873  00076A  D003               	goto	l1737
+  1873  00076A  D003               	goto	l1741
   1874                           
   1875                           ; BSR set to: 0
   1876                           
   1877                           ; BSR set to: 0
   1878                           
   1879                           ; BSR set to: 0
-  1880                           ;user.c: 56: break;
+  1880                           ;user.c: 100: break;
   1881  00076C  0100               	movlb	0	; () banked
   1882  00076E  2B66               	incf	seguiLinea@T& (0+255),f,b
-  1883  000770  D7E4               	goto	l1723
-  1884  000772                     l1737:
+  1883  000770  D7E4               	goto	l1727
+  1884  000772                     l1741:
   1885  000772  0E0D               	movlw	13
   1886  000774  ECFD  F004         	call	_ADC_GetConversion
   1887  000778  0EEE               	movlw	238
@@ -1898,7 +1898,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1892  000782  5961               	subwfb	(?_ADC_GetConversion+1)& (0+255),w,b
   1893  000784  B0D8               	btfsc	status,0,c
   1894  000786  0012               	return	
-  1895  000788  D781               	goto	l1703
+  1895  000788  D781               	goto	l1707
   1896  00078A                     __end_of_seguiLinea:
   1897                           	opt stack 0
   1898                           tblptru	equ	0xFF8
@@ -1916,7 +1916,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1910                           
   1911 ;; *************** function _checkBatt *****************
   1912 ;; Defined at:
-  1913 ;;		line 149 in file "user.c"
+  1913 ;;		line 183 in file "user.c"
   1914 ;; Parameters:    Size  Location     Type
   1915 ;;		None
   1916 ;; Auto vars:     Size  Location     Type
@@ -2146,7 +2146,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2140                           
   2141 ;; *************** function _controllaColore *****************
   2142 ;; Defined at:
-  2143 ;;		line 65 in file "user.c"
+  2143 ;;		line 109 in file "user.c"
   2144 ;; Parameters:    Size  Location     Type
   2145 ;;		None
   2146 ;; Auto vars:     Size  Location     Type
@@ -2182,40 +2182,40 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2176  00050C                     _controllaColore:
   2177                           	opt stack 26
   2178                           
-  2179                           ;user.c: 66: LATA0 = 0;
+  2179                           ;user.c: 111: LATA0 = 0;
   2180                           
   2181                           ; BSR set to: 0
   2182                           ;incstack = 0
   2183  00050C  9089               	bcf	3977,0,c	;volatile
   2184                           
-  2185                           ;user.c: 67: LATA1 = 1;
+  2185                           ;user.c: 112: LATA1 = 1;
   2186  00050E  8289               	bsf	3977,1,c	;volatile
   2187                           
-  2188                           ;user.c: 68: LATA4 = 0;
+  2188                           ;user.c: 113: LATA4 = 0;
   2189  000510  9889               	bcf	3977,4,c	;volatile
   2190                           
-  2191                           ;user.c: 70: LATA2 = 0;
+  2191                           ;user.c: 116: LATA2 = 0;
   2192  000512  9489               	bcf	3977,2,c	;volatile
   2193                           
-  2194                           ;user.c: 71: LATA3 = 0;
+  2194                           ;user.c: 117: LATA3 = 0;
   2195  000514  9689               	bcf	3977,3,c	;volatile
   2196                           
-  2197                           ;user.c: 72: for(uint8_t i = 0; i<25; i++){
+  2197                           ;user.c: 119: for(uint8_t i = 0; i<25; i++){
   2198  000516  0E00               	movlw	0
   2199  000518  0100               	movlb	0	; () banked
   2200  00051A  6F66               	movwf	controllaColore@i& (0+255),b
-  2201  00051C                     l1743:
+  2201  00051C                     l1747:
   2202                           
   2203                           ; BSR set to: 0
   2204  00051C  0E18               	movlw	24
   2205  00051E  0100               	movlb	0	; () banked
   2206  000520  6566               	cpfsgt	controllaColore@i& (0+255),b
-  2207  000522  D001               	goto	l1747
-  2208  000524  D013               	goto	l1751
-  2209  000526                     l1747:
+  2207  000522  D001               	goto	l1751
+  2208  000524  D013               	goto	l1755
+  2209  000526                     l1751:
   2210                           
   2211                           ; BSR set to: 0
-  2212                           ;user.c: 73: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2212                           ;user.c: 120: _delay((unsigned long)((10)*(64000000/4000.0)));
   2213  000526  0ED0               	movlw	208
   2214  000528  0100               	movlb	0	; () banked
   2215  00052A  6F65               	movwf	??_controllaColore& (0+255),b
@@ -2226,7 +2226,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2220  000532  2F65               	decfsz	??_controllaColore& (0+255),f,b
   2221  000534  D7FC               	goto	u1377
   2222                           
-  2223                           ;user.c: 74: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2223                           ;user.c: 121: _delay((unsigned long)((10)*(64000000/4000.0)));
   2224  000536  0ED0               	movlw	208
   2225  000538  0100               	movlb	0	; () banked
   2226  00053A  6F65               	movwf	??_controllaColore& (0+255),b
@@ -2238,39 +2238,39 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2232  000544  D7FC               	goto	u1387
   2233  000546  0100               	movlb	0	; () banked
   2234  000548  2B66               	incf	controllaColore@i& (0+255),f,b
-  2235  00054A  D7E8               	goto	l1743
-  2236  00054C                     l1751:
+  2235  00054A  D7E8               	goto	l1747
+  2236  00054C                     l1755:
   2237                           
   2238                           ; BSR set to: 0
-  2239                           ;user.c: 75: }
-  2240                           ;user.c: 76: rossoPC = ADC_GetConversion(channel_AN4);
+  2239                           ;user.c: 122: }
+  2240                           ;user.c: 123: rossoPC = ADC_GetConversion(channel_AN4);
   2241  00054C  0E04               	movlw	4
   2242  00054E  ECFD  F004         	call	_ADC_GetConversion
   2243  000552  C060  F07A         	movff	?_ADC_GetConversion,_rossoPC
   2244  000556  C061  F07B         	movff	?_ADC_GetConversion+1,_rossoPC+1
   2245                           
-  2246                           ;user.c: 78: LATA2 = 0;
+  2246                           ;user.c: 126: LATA2 = 0;
   2247  00055A  9489               	bcf	3977,2,c	;volatile
   2248                           
-  2249                           ;user.c: 79: LATA3 = 1;
+  2249                           ;user.c: 127: LATA3 = 1;
   2250  00055C  8689               	bsf	3977,3,c	;volatile
   2251                           
-  2252                           ;user.c: 80: for(uint8_t i = 0; i<25; i++){
+  2252                           ;user.c: 128: for(uint8_t i = 0; i<25; i++){
   2253  00055E  0E00               	movlw	0
   2254  000560  0100               	movlb	0	; () banked
-  2255  000562  6F67               	movwf	controllaColore@i_746& (0+255),b
-  2256  000564                     l1759:
+  2255  000562  6F67               	movwf	controllaColore@i_763& (0+255),b
+  2256  000564                     l1763:
   2257                           
   2258                           ; BSR set to: 0
   2259  000564  0E18               	movlw	24
   2260  000566  0100               	movlb	0	; () banked
-  2261  000568  6567               	cpfsgt	controllaColore@i_746& (0+255),b
-  2262  00056A  D001               	goto	l1763
-  2263  00056C  D013               	goto	l1767
-  2264  00056E                     l1763:
+  2261  000568  6567               	cpfsgt	controllaColore@i_763& (0+255),b
+  2262  00056A  D001               	goto	l1767
+  2263  00056C  D013               	goto	l1771
+  2264  00056E                     l1767:
   2265                           
   2266                           ; BSR set to: 0
-  2267                           ;user.c: 81: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2267                           ;user.c: 129: _delay((unsigned long)((10)*(64000000/4000.0)));
   2268  00056E  0ED0               	movlw	208
   2269  000570  0100               	movlb	0	; () banked
   2270  000572  6F65               	movwf	??_controllaColore& (0+255),b
@@ -2281,7 +2281,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2275  00057A  2F65               	decfsz	??_controllaColore& (0+255),f,b
   2276  00057C  D7FC               	goto	u1397
   2277                           
-  2278                           ;user.c: 82: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2278                           ;user.c: 130: _delay((unsigned long)((10)*(64000000/4000.0)));
   2279  00057E  0ED0               	movlw	208
   2280  000580  0100               	movlb	0	; () banked
   2281  000582  6F65               	movwf	??_controllaColore& (0+255),b
@@ -2292,40 +2292,40 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2286  00058A  2F65               	decfsz	??_controllaColore& (0+255),f,b
   2287  00058C  D7FC               	goto	u1407
   2288  00058E  0100               	movlb	0	; () banked
-  2289  000590  2B67               	incf	controllaColore@i_746& (0+255),f,b
-  2290  000592  D7E8               	goto	l1759
-  2291  000594                     l1767:
+  2289  000590  2B67               	incf	controllaColore@i_763& (0+255),f,b
+  2290  000592  D7E8               	goto	l1763
+  2291  000594                     l1771:
   2292                           
   2293                           ; BSR set to: 0
-  2294                           ;user.c: 83: }
-  2295                           ;user.c: 84: bluPC = ADC_GetConversion(channel_AN4);
+  2294                           ;user.c: 131: }
+  2295                           ;user.c: 132: bluPC = ADC_GetConversion(channel_AN4);
   2296  000594  0E04               	movlw	4
   2297  000596  ECFD  F004         	call	_ADC_GetConversion
   2298  00059A  C060  F076         	movff	?_ADC_GetConversion,_bluPC
   2299  00059E  C061  F077         	movff	?_ADC_GetConversion+1,_bluPC+1
   2300                           
-  2301                           ;user.c: 86: LATA2 = 1;
+  2301                           ;user.c: 135: LATA2 = 1;
   2302  0005A2  8489               	bsf	3977,2,c	;volatile
   2303                           
-  2304                           ;user.c: 87: LATA3 = 1;
+  2304                           ;user.c: 136: LATA3 = 1;
   2305  0005A4  8689               	bsf	3977,3,c	;volatile
   2306                           
-  2307                           ;user.c: 88: for(uint8_t i = 0; i<25; i++){
+  2307                           ;user.c: 137: for(uint8_t i = 0; i<25; i++){
   2308  0005A6  0E00               	movlw	0
   2309  0005A8  0100               	movlb	0	; () banked
-  2310  0005AA  6F68               	movwf	controllaColore@i_747& (0+255),b
-  2311  0005AC                     l1775:
+  2310  0005AA  6F68               	movwf	controllaColore@i_764& (0+255),b
+  2311  0005AC                     l1779:
   2312                           
   2313                           ; BSR set to: 0
   2314  0005AC  0E18               	movlw	24
   2315  0005AE  0100               	movlb	0	; () banked
-  2316  0005B0  6568               	cpfsgt	controllaColore@i_747& (0+255),b
-  2317  0005B2  D001               	goto	l1779
-  2318  0005B4  D013               	goto	l1783
-  2319  0005B6                     l1779:
+  2316  0005B0  6568               	cpfsgt	controllaColore@i_764& (0+255),b
+  2317  0005B2  D001               	goto	l1783
+  2318  0005B4  D013               	goto	l1787
+  2319  0005B6                     l1783:
   2320                           
   2321                           ; BSR set to: 0
-  2322                           ;user.c: 89: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2322                           ;user.c: 138: _delay((unsigned long)((10)*(64000000/4000.0)));
   2323  0005B6  0ED0               	movlw	208
   2324  0005B8  0100               	movlb	0	; () banked
   2325  0005BA  6F65               	movwf	??_controllaColore& (0+255),b
@@ -2336,7 +2336,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2330  0005C2  2F65               	decfsz	??_controllaColore& (0+255),f,b
   2331  0005C4  D7FC               	goto	u1417
   2332                           
-  2333                           ;user.c: 90: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2333                           ;user.c: 139: _delay((unsigned long)((10)*(64000000/4000.0)));
   2334  0005C6  0ED0               	movlw	208
   2335  0005C8  0100               	movlb	0	; () banked
   2336  0005CA  6F65               	movwf	??_controllaColore& (0+255),b
@@ -2347,22 +2347,22 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2341  0005D2  2F65               	decfsz	??_controllaColore& (0+255),f,b
   2342  0005D4  D7FC               	goto	u1427
   2343  0005D6  0100               	movlb	0	; () banked
-  2344  0005D8  2B68               	incf	controllaColore@i_747& (0+255),f,b
-  2345  0005DA  D7E8               	goto	l1775
-  2346  0005DC                     l1783:
+  2344  0005D8  2B68               	incf	controllaColore@i_764& (0+255),f,b
+  2345  0005DA  D7E8               	goto	l1779
+  2346  0005DC                     l1787:
   2347                           
   2348                           ; BSR set to: 0
-  2349                           ;user.c: 91: }
-  2350                           ;user.c: 92: verdePC = ADC_GetConversion(channel_AN4);
+  2349                           ;user.c: 140: }
+  2350                           ;user.c: 141: verdePC = ADC_GetConversion(channel_AN4);
   2351  0005DC  0E04               	movlw	4
   2352  0005DE  ECFD  F004         	call	_ADC_GetConversion
   2353  0005E2  C060  F07C         	movff	?_ADC_GetConversion,_verdePC
   2354  0005E6  C061  F07D         	movff	?_ADC_GetConversion+1,_verdePC+1
   2355                           
-  2356                           ;user.c: 93: LATA4 = 1;
+  2356                           ;user.c: 144: LATA4 = 1;
   2357  0005EA  8889               	bsf	3977,4,c	;volatile
   2358                           
-  2359                           ;user.c: 94: if(rossoPC >= bluPC){
+  2359                           ;user.c: 148: if(rossoPC >= bluPC){
   2360  0005EC  0100               	movlb	0	; () banked
   2361  0005EE  5176               	movf	_bluPC& (0+255),w,b
   2362  0005F0  0100               	movlb	0	; () banked
@@ -2378,10 +2378,10 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2372  000604  0100               	movlb	0	; () banked
   2373  000606  5965               	subwfb	??_controllaColore& (0+255),w,b
   2374  000608  A0D8               	btfss	status,0,c
-  2375  00060A  D018               	goto	l1795
+  2375  00060A  D018               	goto	l1799
   2376                           
   2377                           ; BSR set to: 0
-  2378                           ;user.c: 95: if(rossoPC >= verdePC){
+  2378                           ;user.c: 149: if(rossoPC >= verdePC){
   2379  00060C  0100               	movlb	0	; () banked
   2380  00060E  517C               	movf	_verdePC& (0+255),w,b
   2381  000610  0100               	movlb	0	; () banked
@@ -2397,29 +2397,29 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2391  000624  0100               	movlb	0	; () banked
   2392  000626  5965               	subwfb	??_controllaColore& (0+255),w,b
   2393  000628  A0D8               	btfss	status,0,c
-  2394  00062A  D004               	goto	l1793
+  2394  00062A  D004               	goto	l1797
   2395                           
   2396                           ; BSR set to: 0
-  2397                           ;user.c: 96: colore = 0;
+  2397                           ;user.c: 150: colore = 0;
   2398  00062C  0E00               	movlw	0
   2399  00062E  0100               	movlb	0	; () banked
   2400  000630  6F7E               	movwf	_colore& (0+255),b
   2401                           
-  2402                           ;user.c: 97: }else{
+  2402                           ;user.c: 151: }else{
   2403  000632  0012               	return	
-  2404  000634                     l1793:
+  2404  000634                     l1797:
   2405                           
   2406                           ; BSR set to: 0
-  2407                           ;user.c: 98: colore = 2;
+  2407                           ;user.c: 152: colore = 2;
   2408  000634  0E02               	movlw	2
   2409  000636  0100               	movlb	0	; () banked
   2410  000638  6F7E               	movwf	_colore& (0+255),b
   2411                           
   2412                           ; BSR set to: 0
-  2413                           ;user.c: 99: }
-  2414                           ;user.c: 101: }else if(bluPC>=verdePC){
+  2413                           ;user.c: 153: }
+  2414                           ;user.c: 155: }else if(bluPC>=verdePC){
   2415  00063A  0012               	return	
-  2416  00063C                     l1795:
+  2416  00063C                     l1799:
   2417                           
   2418                           ; BSR set to: 0
   2419  00063C  0100               	movlb	0	; () banked
@@ -2437,20 +2437,20 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2431  000654  0100               	movlb	0	; () banked
   2432  000656  5965               	subwfb	??_controllaColore& (0+255),w,b
   2433  000658  A0D8               	btfss	status,0,c
-  2434  00065A  D004               	goto	l1799
+  2434  00065A  D004               	goto	l1803
   2435                           
   2436                           ; BSR set to: 0
-  2437                           ;user.c: 102: colore = 1;
+  2437                           ;user.c: 156: colore = 1;
   2438  00065C  0E01               	movlw	1
   2439  00065E  0100               	movlb	0	; () banked
   2440  000660  6F7E               	movwf	_colore& (0+255),b
   2441                           
-  2442                           ;user.c: 103: }else {
+  2442                           ;user.c: 157: }else {
   2443  000662  0012               	return	
-  2444  000664                     l1799:
+  2444  000664                     l1803:
   2445                           
   2446                           ; BSR set to: 0
-  2447                           ;user.c: 104: colore = 2;
+  2447                           ;user.c: 158: colore = 2;
   2448  000664  0E02               	movlw	2
   2449  000666  0100               	movlb	0	; () banked
   2450  000668  6F7E               	movwf	_colore& (0+255),b
@@ -2573,7 +2573,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2567                           
   2568 ;; *************** function _abbassaCarrello *****************
   2569 ;; Defined at:
-  2570 ;;		line 197 in file "user.c"
+  2570 ;;		line 231 in file "user.c"
   2571 ;; Parameters:    Size  Location     Type
   2572 ;;		None
   2573 ;; Auto vars:     Size  Location     Type
@@ -2608,7 +2608,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2602  00084C                     _abbassaCarrello:
   2603                           	opt stack 27
   2604                           
-  2605                           ;user.c: 198: uint8_t p = 0;
+  2605                           ;user.c: 232: uint8_t p = 0;
   2606                           
   2607                           ; BSR set to: 0
   2608                           ;incstack = 0
@@ -2616,7 +2616,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2610  00084E  0100               	movlb	0	; () banked
   2611  000850  6F61               	movwf	abbassaCarrello@p& (0+255),b
   2612                           
-  2613                           ;user.c: 199: for(uint8_t p = 0; p<43;p++){
+  2613                           ;user.c: 233: for(uint8_t p = 0; p<43;p++){
   2614  000852  0E00               	movlw	0
   2615  000854  0100               	movlb	0	; () banked
   2616  000856  6F62               	movwf	abbassaCarrello@p_774& (0+255),b
@@ -2631,23 +2631,23 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2625  000862                     l343:
   2626                           
   2627                           ; BSR set to: 0
-  2628                           ;user.c: 200: LATC7 = 1;
+  2628                           ;user.c: 234: LATC7 = 1;
   2629  000862  8E8B               	bsf	3979,7,c	;volatile
   2630                           
-  2631                           ;user.c: 201: LATC4=1;
+  2631                           ;user.c: 235: LATC4=1;
   2632  000864  888B               	bsf	3979,4,c	;volatile
   2633                           
-  2634                           ;user.c: 202: LATC5=1;
+  2634                           ;user.c: 236: LATC5=1;
   2635  000866  8A8B               	bsf	3979,5,c	;volatile
   2636                           
-  2637                           ;user.c: 203: LATC3=0;
+  2637                           ;user.c: 237: LATC3=0;
   2638  000868  968B               	bcf	3979,3,c	;volatile
   2639                           
-  2640                           ;user.c: 204: LATC6=0;
+  2640                           ;user.c: 238: LATC6=0;
   2641  00086A  9C8B               	bcf	3979,6,c	;volatile
   2642                           
   2643                           ; BSR set to: 0
-  2644                           ;user.c: 205: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2644                           ;user.c: 239: _delay((unsigned long)((10)*(64000000/4000.0)));
   2645  00086C  0ED0               	movlw	208
   2646  00086E  0100               	movlb	0	; () banked
   2647  000870  6F60               	movwf	??_abbassaCarrello& (0+255),b
@@ -2658,7 +2658,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2652  000878  2F60               	decfsz	??_abbassaCarrello& (0+255),f,b
   2653  00087A  D7FC               	goto	u1437
   2654                           
-  2655                           ;user.c: 206: _delay((unsigned long)((2)*(64000000/4000.0)));
+  2655                           ;user.c: 240: _delay((unsigned long)((2)*(64000000/4000.0)));
   2656  00087C  0E2A               	movlw	42
   2657  00087E  0100               	movlb	0	; () banked
   2658  000880  6F60               	movwf	??_abbassaCarrello& (0+255),b
@@ -2669,19 +2669,19 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2663  000888  2F60               	decfsz	??_abbassaCarrello& (0+255),f,b
   2664  00088A  D7FC               	goto	u1447
   2665                           
-  2666                           ;user.c: 207: LATC4=1;
+  2666                           ;user.c: 241: LATC4=1;
   2667  00088C  888B               	bsf	3979,4,c	;volatile
   2668                           
-  2669                           ;user.c: 208: LATC5=0;
+  2669                           ;user.c: 242: LATC5=0;
   2670  00088E  9A8B               	bcf	3979,5,c	;volatile
   2671                           
-  2672                           ;user.c: 209: LATC3=0;
+  2672                           ;user.c: 243: LATC3=0;
   2673  000890  968B               	bcf	3979,3,c	;volatile
   2674                           
-  2675                           ;user.c: 210: LATC6=1;
+  2675                           ;user.c: 244: LATC6=1;
   2676  000892  8C8B               	bsf	3979,6,c	;volatile
   2677                           
-  2678                           ;user.c: 211: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2678                           ;user.c: 245: _delay((unsigned long)((10)*(64000000/4000.0)));
   2679  000894  0ED0               	movlw	208
   2680  000896  0100               	movlb	0	; () banked
   2681  000898  6F60               	movwf	??_abbassaCarrello& (0+255),b
@@ -2692,7 +2692,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2686  0008A0  2F60               	decfsz	??_abbassaCarrello& (0+255),f,b
   2687  0008A2  D7FC               	goto	u1457
   2688                           
-  2689                           ;user.c: 212: _delay((unsigned long)((2)*(64000000/4000.0)));
+  2689                           ;user.c: 246: _delay((unsigned long)((2)*(64000000/4000.0)));
   2690  0008A4  0E2A               	movlw	42
   2691  0008A6  0100               	movlb	0	; () banked
   2692  0008A8  6F60               	movwf	??_abbassaCarrello& (0+255),b
@@ -2703,19 +2703,19 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2697  0008B0  2F60               	decfsz	??_abbassaCarrello& (0+255),f,b
   2698  0008B2  D7FC               	goto	u1467
   2699                           
-  2700                           ;user.c: 213: LATC4=0;
+  2700                           ;user.c: 247: LATC4=0;
   2701  0008B4  988B               	bcf	3979,4,c	;volatile
   2702                           
-  2703                           ;user.c: 214: LATC5=0;
+  2703                           ;user.c: 248: LATC5=0;
   2704  0008B6  9A8B               	bcf	3979,5,c	;volatile
   2705                           
-  2706                           ;user.c: 215: LATC3=1;
+  2706                           ;user.c: 249: LATC3=1;
   2707  0008B8  868B               	bsf	3979,3,c	;volatile
   2708                           
-  2709                           ;user.c: 216: LATC6=1;
+  2709                           ;user.c: 250: LATC6=1;
   2710  0008BA  8C8B               	bsf	3979,6,c	;volatile
   2711                           
-  2712                           ;user.c: 217: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2712                           ;user.c: 251: _delay((unsigned long)((10)*(64000000/4000.0)));
   2713  0008BC  0ED0               	movlw	208
   2714  0008BE  0100               	movlb	0	; () banked
   2715  0008C0  6F60               	movwf	??_abbassaCarrello& (0+255),b
@@ -2726,7 +2726,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2720  0008C8  2F60               	decfsz	??_abbassaCarrello& (0+255),f,b
   2721  0008CA  D7FC               	goto	u1477
   2722                           
-  2723                           ;user.c: 218: _delay((unsigned long)((2)*(64000000/4000.0)));
+  2723                           ;user.c: 252: _delay((unsigned long)((2)*(64000000/4000.0)));
   2724  0008CC  0E2A               	movlw	42
   2725  0008CE  0100               	movlb	0	; () banked
   2726  0008D0  6F60               	movwf	??_abbassaCarrello& (0+255),b
@@ -2737,19 +2737,19 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2731  0008D8  2F60               	decfsz	??_abbassaCarrello& (0+255),f,b
   2732  0008DA  D7FC               	goto	u1487
   2733                           
-  2734                           ;user.c: 219: LATC4=0;
+  2734                           ;user.c: 253: LATC4=0;
   2735  0008DC  988B               	bcf	3979,4,c	;volatile
   2736                           
-  2737                           ;user.c: 220: LATC5=1;
+  2737                           ;user.c: 254: LATC5=1;
   2738  0008DE  8A8B               	bsf	3979,5,c	;volatile
   2739                           
-  2740                           ;user.c: 221: LATC3=1;
+  2740                           ;user.c: 255: LATC3=1;
   2741  0008E0  868B               	bsf	3979,3,c	;volatile
   2742                           
-  2743                           ;user.c: 222: LATC6=0;
+  2743                           ;user.c: 256: LATC6=0;
   2744  0008E2  9C8B               	bcf	3979,6,c	;volatile
   2745                           
-  2746                           ;user.c: 223: _delay((unsigned long)((10)*(64000000/4000.0)));
+  2746                           ;user.c: 257: _delay((unsigned long)((10)*(64000000/4000.0)));
   2747  0008E4  0ED0               	movlw	208
   2748  0008E6  0100               	movlb	0	; () banked
   2749  0008E8  6F60               	movwf	??_abbassaCarrello& (0+255),b
@@ -2760,7 +2760,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2754  0008F0  2F60               	decfsz	??_abbassaCarrello& (0+255),f,b
   2755  0008F2  D7FC               	goto	u1497
   2756                           
-  2757                           ;user.c: 224: _delay((unsigned long)((2)*(64000000/4000.0)));
+  2757                           ;user.c: 258: _delay((unsigned long)((2)*(64000000/4000.0)));
   2758  0008F4  0E2A               	movlw	42
   2759  0008F6  0100               	movlb	0	; () banked
   2760  0008F8  6F60               	movwf	??_abbassaCarrello& (0+255),b
@@ -2776,8 +2776,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2770  00090A                     l344:
   2771                           
   2772                           ; BSR set to: 0
-  2773                           ;user.c: 227: }
-  2774                           ;user.c: 228: LATC7 = 0;
+  2773                           ;user.c: 261: }
+  2774                           ;user.c: 262: LATC7 = 0;
   2775  00090A  9E8B               	bcf	3979,7,c	;volatile
   2776                           
   2777                           ; BSR set to: 0
@@ -3632,7 +3632,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   3626                           
   3627 ;; *************** function _InitApp *****************
   3628 ;; Defined at:
-  3629 ;;		line 109 in file "user.c"
+  3629 ;;		line 30 in file "user.c"
   3630 ;; Parameters:    Size  Location     Type
   3631 ;;		None
   3632 ;; Auto vars:     Size  Location     Type
@@ -3666,45 +3666,45 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   3660  000BA0                     _InitApp:
   3661                           	opt stack 27
   3662                           
-  3663                           ;user.c: 112: TRISAbits.RA0 = 0;
+  3663                           ;user.c: 33: TRISAbits.RA0 = 0;
   3664                           
   3665                           ;incstack = 0
   3666  000BA0  9092               	bcf	3986,0,c	;volatile
   3667                           
-  3668                           ;user.c: 113: TRISAbits.RA1 = 0;
+  3668                           ;user.c: 34: TRISAbits.RA1 = 0;
   3669  000BA2  9292               	bcf	3986,1,c	;volatile
   3670                           
-  3671                           ;user.c: 114: TRISAbits.RA2 = 0;
+  3671                           ;user.c: 35: TRISAbits.RA2 = 0;
   3672  000BA4  9492               	bcf	3986,2,c	;volatile
   3673                           
-  3674                           ;user.c: 115: TRISAbits.RA3 = 0;
+  3674                           ;user.c: 36: TRISAbits.RA3 = 0;
   3675  000BA6  9692               	bcf	3986,3,c	;volatile
   3676                           
-  3677                           ;user.c: 116: TRISAbits.RA4 = 0;
+  3677                           ;user.c: 37: TRISAbits.RA4 = 0;
   3678  000BA8  9892               	bcf	3986,4,c	;volatile
   3679                           
-  3680                           ;user.c: 117: TRISAbits.RA5 = 1;
+  3680                           ;user.c: 38: TRISAbits.RA5 = 1;
   3681  000BAA  8A92               	bsf	3986,5,c	;volatile
   3682                           
-  3683                           ;user.c: 119: TRISBbits.RB0 = 0;
+  3683                           ;user.c: 40: TRISBbits.RB0 = 0;
   3684  000BAC  9093               	bcf	3987,0,c	;volatile
   3685                           
-  3686                           ;user.c: 120: TRISBbits.RB1 = 1;
+  3686                           ;user.c: 41: TRISBbits.RB1 = 1;
   3687  000BAE  8293               	bsf	3987,1,c	;volatile
   3688                           
-  3689                           ;user.c: 121: TRISBbits.RB2 = 1;
+  3689                           ;user.c: 42: TRISBbits.RB2 = 1;
   3690  000BB0  8493               	bsf	3987,2,c	;volatile
   3691                           
-  3692                           ;user.c: 122: TRISBbits.RB3 = 1;
+  3692                           ;user.c: 43: TRISBbits.RB3 = 1;
   3693  000BB2  8693               	bsf	3987,3,c	;volatile
   3694                           
-  3695                           ;user.c: 123: TRISBbits.RB4 = 1;
+  3695                           ;user.c: 44: TRISBbits.RB4 = 1;
   3696  000BB4  8893               	bsf	3987,4,c	;volatile
   3697                           
-  3698                           ;user.c: 124: TRISBbits.RB5 = 1;
+  3698                           ;user.c: 45: TRISBbits.RB5 = 1;
   3699  000BB6  8A93               	bsf	3987,5,c	;volatile
   3700                           
-  3701                           ;user.c: 127: TRISC = 0x00;
+  3701                           ;user.c: 48: TRISC = 0x00;
   3702  000BB8  0E00               	movlw	0
   3703  000BBA  6E94               	movwf	3988,c	;volatile
   3704  000BBC  0012               	return		;funcret
@@ -3853,7 +3853,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   3847                           
   3848 ;; *************** function _stop *****************
   3849 ;; Defined at:
-  3850 ;;		line 208 in file "main.c"
+  3850 ;;		line 240 in file "main.c"
   3851 ;; Parameters:    Size  Location     Type
   3852 ;;		None
   3853 ;; Auto vars:     Size  Location     Type
@@ -3970,25 +3970,25 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   3964  000936  CFF8 F031          	movff	tblptru,??_stop+13
   3965  00093A  CFF5 F032          	movff	tablat,??_stop+14
   3966                           
-  3967                           ;main.c: 210: if(INT1IE && INT1IF){
+  3967                           ;main.c: 242: if(INT1IE && INT1IF){
   3968  00093E  B6F0               	btfsc	intcon3,3,c	;volatile
   3969  000940  A0F0               	btfss	intcon3,0,c	;volatile
   3970  000942  D01C               	goto	i2l473
   3971                           
-  3972                           ;main.c: 211: CCP4_SetCompareCount(800);
+  3972                           ;main.c: 243: CCP4_SetCompareCount(800);
   3973  000944  0E03               	movlw	3
   3974  000946  6E21               	movwf	CCP4_SetCompareCount@compareCount+1,c
   3975  000948  0E20               	movlw	32
   3976  00094A  6E20               	movwf	CCP4_SetCompareCount@compareCount,c
   3977  00094C  EC00  F006         	call	_CCP4_SetCompareCount	;wreg free
   3978                           
-  3979                           ;main.c: 212: T1CONbits.TMR1ON = 1;
+  3979                           ;main.c: 244: T1CONbits.TMR1ON = 1;
   3980  000950  80CD               	bsf	4045,0,c	;volatile
   3981                           
-  3982                           ;main.c: 213: LATC0 = 0;
+  3982                           ;main.c: 245: LATC0 = 0;
   3983  000952  908B               	bcf	3979,0,c	;volatile
   3984                           
-  3985                           ;main.c: 214: for(i=0; i<100; i++){
+  3985                           ;main.c: 246: for(i=0; i<100; i++){
   3986  000954  0E00               	movlw	0
   3987  000956  6E3A               	movwf	_i+1,c
   3988  000958  0E00               	movlw	0
@@ -4001,7 +4001,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   3995  000964  B0D8               	btfsc	status,0,c
   3996  000966  D00A               	goto	i2l473
   3997                           
-  3998                           ;main.c: 215: _delay((unsigned long)((10)*(64000000/4000.0)));
+  3998                           ;main.c: 247: _delay((unsigned long)((10)*(64000000/4000.0)));
   3999  000968  0ED0               	movlw	208
   4000  00096A  6E24               	movwf	??_stop& (0+255),c
   4001  00096C  0ECA               	movlw	202
@@ -4470,7 +4470,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Wed Sep 16 11:18:54 2015
+Symbol Table                                                                                   Wed Sep 16 11:47:39 2015
 
                  _CCP4_Initialize 0BBE      __size_of_EPWM2_LoadDutyValue 003C  
                                _i 0039                                bsr 000FE0  
@@ -4491,21 +4491,21 @@ Symbol Table                                                                    
                             l2063 039E                              l2055 0384  
                             l2129 0506                              l2073 03FA  
                             l2083 0428                              l2091 0446  
-                            l2067 03C0                              l1703 068C  
-                            l2087 043E                              l2079 041E  
-                            l1723 073A                              l1715 06F8  
-                            l1709 06C2                              l1751 054C  
-                            l1743 051C                              l1727 0744  
-                            l1719 071C                              l1815 0796  
-                            l1737 0772                              l1763 056E  
-                            l1747 0526                              l1941 0132  
-                            l1933 00F0                              l1783 05DC  
-                            l1775 05AC                              l1767 0594  
-                            l1759 0564                              l1849 0858  
-                            l1793 0634                              l1953 0186  
-                            l1795 063C                              l1779 05B6  
-                            l1963 01BC                              l1947 0156  
-                            l1799 0664                              l1983 0252  
+                            l2067 03C0                              l2087 043E  
+                            l2079 041E                              l1713 06C2  
+                            l1803 0664                              l1731 0744  
+                            l1723 071C                              l1707 068C  
+                            l1741 0772                              l1751 0526  
+                            l1727 073A                              l1719 06F8  
+                            l1815 0796                              l1771 0594  
+                            l1763 0564                              l1755 054C  
+                            l1747 051C                              l1941 0132  
+                            l1933 00F0                              l1783 05B6  
+                            l1767 056E                              l1849 0858  
+                            l1953 0186                              l1787 05DC  
+                            l1779 05AC                              l1963 01BC  
+                            l1947 0156                              l1797 0634  
+                            l1799 063C                              l1983 0252  
                             l1975 0232                              l1995 0292  
                             l1979 023C                              l1999 029C  
                             _GIEH 007F97                              u1207 02F4  
@@ -4563,7 +4563,7 @@ Symbol Table                                                                    
                            status 000FD8           __end_of_CCP4_Initialize 0BD8  
                   __CFG_HFOFST$ON 000000                   _TMR2_StartTimer 0C24  
                   __CFG_PBADEN$ON 000000                   __initialization 09B8  
-            controllaColore@i_746 0067              controllaColore@i_747 0068  
+            controllaColore@i_763 0067              controllaColore@i_764 0068  
                     __end_of_main 050C                      __end_of_stop 09B8  
          __end_of_TMR2_Initialize 0C00                            ??_main 0069  
                           ??_stop 0024                     __activetblptr 000000  

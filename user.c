@@ -27,85 +27,6 @@
 
 /* <Initialize variables in user.h and insert code for user algorithms.> */
 
-
-
-void seguiLinea(){
-            EPWM1_LoadDutyValue(700);
-            EPWM2_LoadDutyValue(712);
-            MOT_EN = 1;
-            //attendi linea o attendi tempo
-            while(ADC_GetConversion(channel_AN13)<Front_POS){
-                    checkBatt();
-                    /**** INSEGUITORE DI LINEA***/
-                    deltaV =  ADC_GetConversion(channel_AN13);
-                    if(deltaV > 292){
-                        vel_DX=762;
-                        vel_SX = 655;
-                    }else if(deltaV < 252 && deltaV > 10){
-                    vel_SX=750;
-                    vel_DX = 667;
-                   }else if(deltaV > 10){
-                        vel_DX = 712;
-                        vel_SX = 700;
-                   }
-                    EPWM1_LoadDutyValue(vel_SX);
-                    EPWM2_LoadDutyValue(vel_DX);
-                    for(uint8_t T = 0; T < 8; T++){
-                        __delay_ms(1);
-                         if(ADC_GetConversion(channel_AN13)>=Front_POS){
-                            break;
-                        }
-
-                      }
-            }
-         
-}
-
-
-void controllaColore(){
-    S0 = 0;
-    S1 = 1;
-    COLORLED = 0;
-    //controllo rosso
-    S2 = 0;
-    S3 = 0;
-    for(uint8_t i = 0; i<25; i++){
-    __delay_ms(10);
-    __delay_ms(10);
-    }
-    rossoPC = ADC_GetConversion(channel_AN4);
-    //BLU
-    S2 = 0;
-    S3 = 1;
-    for(uint8_t i = 0; i<25; i++){
-    __delay_ms(10);
-    __delay_ms(10);
-    }
-    bluPC = ADC_GetConversion(channel_AN4);
-    //verde
-    S2 = 1;
-    S3 = 1;
-    for(uint8_t i = 0; i<25; i++){
-    __delay_ms(10);
-    __delay_ms(10);
-    }
-    verdePC  = ADC_GetConversion(channel_AN4);
-    COLORLED = 1;
-    if(rossoPC >= bluPC){
-        if(rossoPC >= verdePC){
-            colore = rosso;
-        }else{
-            colore = verde;
-        }
-
-    }else if(bluPC>=verdePC){
-        colore = blu;
-    }else {
-        colore = verde;
-    }
-
-}
-
 void InitApp(void)
 {
     /*******IMPOSTO IMPUT E OUTPUT******/
@@ -127,6 +48,119 @@ void InitApp(void)
     TRISC = 0x00;
 
 }
+
+
+/**********************************************************************/
+/********FUNZIONI UTENTE **********************************************/
+/**********************************************************************/
+
+void seguiLinea(){
+            //***vai avanti
+            EPWM1_LoadDutyValue(700);
+            EPWM2_LoadDutyValue(712);
+            MOT_EN = 1;
+            //se si rileva la linea di stop la routine si interrompe e la
+            //funzione finisce. Viceversa l'inseguitore continua a correggere
+            //la prorpia traiettoria per mantenersi sopra la linea
+            while(ADC_GetConversion(channel_AN13)<Front_POS){
+                    checkBatt();
+                    /**** INSEGUITORE DI LINEA***/
+                    deltaV =  ADC_GetConversion(channel_AN13);
+                    //basandosi sul valore di tensione centrale, con una 
+                    // comparazione è possibile stabilire la posizione della 
+                    //linea. 
+                    if(deltaV > 292){
+                        //linea a sinistra, incremento velocità di destra
+                        vel_DX=762;
+                        vel_SX = 655;
+                        
+                    }else if(deltaV < 252 && deltaV > 10){
+                        //linea a destra, incremento velocità di sinistra
+                    vel_SX=750;
+                    vel_DX = 667;
+                    
+                   }else if(deltaV > 10){
+                       //linea assente, proseguo in avanti finchè la linea 
+                       //non ritorna sul robot.
+                        vel_DX = 712;
+                        vel_SX = 700;
+                   }
+                    
+                    //alla fine della comparazione, si invia il dato di velocità
+                    //appena calcolato ai motori.
+                    EPWM1_LoadDutyValue(vel_SX);
+                    EPWM2_LoadDutyValue(vel_DX);
+                    
+                    //8ms fra una correzione e l'altra, in caso si 
+                    //****NB: Probabilmente inutile, il sistema è
+                    //completamente deterministico.
+                    for(uint8_t T = 0; T < 8; T++){
+                        __delay_ms(1);
+                         if(ADC_GetConversion(channel_AN13)>=Front_POS){
+                            break;
+                        }
+
+                      }
+            }
+         
+}
+
+
+void controllaColore(){
+    //INIZIALIZZO SENSORE, IMPOSTO PRESCALER E ACCENDO LED
+    S0 = 0;
+    S1 = 1;
+    COLORLED = 0;
+    
+    //controllo rosso
+    S2 = 0;
+    S3 = 0;
+    //attesa di 500ms per stabilizzare il sensore
+    for(uint8_t i = 0; i<25; i++){
+        __delay_ms(10);
+        __delay_ms(10);
+    }
+    rossoPC = ADC_GetConversion(channel_AN4);
+    
+    //BLU
+    S2 = 0;
+    S3 = 1;
+    for(uint8_t i = 0; i<25; i++){
+        __delay_ms(10);
+        __delay_ms(10);
+    }
+    bluPC = ADC_GetConversion(channel_AN4);
+    
+    //verde
+    S2 = 1;
+    S3 = 1;
+    for(uint8_t i = 0; i<25; i++){
+        __delay_ms(10);
+        __delay_ms(10);
+    }
+    verdePC  = ADC_GetConversion(channel_AN4);
+    
+    //finito, spengo i LED.
+    COLORLED = 1;
+    
+    //routine di decisione del colore. Con 3 comparazioni sul valore ASSOLUTO
+    //del sensore si decide quale sia il colore del pezzo.
+    if(rossoPC >= bluPC){
+        if(rossoPC >= verdePC){
+            colore = rosso;
+        }else{
+            colore = verde;
+        }
+
+    }else if(bluPC>=verdePC){
+        colore = blu;
+    }else {
+        colore = verde;
+    }
+
+}
+
+
 
 
 void stopM(void){

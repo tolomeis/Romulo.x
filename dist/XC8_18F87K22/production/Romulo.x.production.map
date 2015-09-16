@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/XC8_18F87K22/production\Romulo.x.production.sym \
   --cmf=dist/XC8_18F87K22/production\Romulo.x.production.cmf -z -Q18F24K22 \
-  -oC:\Users\Simone\AppData\Local\Temp\s7h0.2 \
+  -oC:\Users\Simone\AppData\Local\Temp\s2bc.2 \
   -Mdist/XC8_18F87K22/production/Romulo.x.production.map -E1 -ver=XC8 \
   -ASTACK=086h-02ffh -pstack=STACK -ACODE=00h-03FFFh -ACONST=00h-03FFFh \
   -ASMALLCONST=0300h-03FFhx61 -AMEDIUMCONST=0300h-03FFFh -ACOMRAM=01h-05Fh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Simone\AppData\Local\Temp\s7h0.obj \
+  C:\Users\Simone\AppData\Local\Temp\s2bc.obj \
   dist/XC8_18F87K22/production\Romulo.x.production.obj 
 
 Object code version is 3.11
@@ -34,7 +34,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Simone\AppData\Local\Temp\s7h0.obj
+C:\Users\Simone\AppData\Local\Temp\s2bc.obj
                 end_init                             A6       A6        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -609,8 +609,8 @@ abbassaCarrello@p                 cstackBANK0  000061
 abbassaCarrello@p_774             cstackBANK0  000062
 btemp                             temp         00003D
 controllaColore@i                 cstackBANK0  000066
-controllaColore@i_746             cstackBANK0  000067
-controllaColore@i_747             cstackBANK0  000068
+controllaColore@i_763             cstackBANK0  000067
+controllaColore@i_764             cstackBANK0  000068
 end_of_initialization             cinit        0009F0
 int$flags                         temp         00003D
 int_func                          intcode_body 00090E
@@ -689,7 +689,7 @@ Total ram usage:       13 bytes
 
  *************** function _stopM *****************
  Defined at:
-		line 132 in file "user.c"
+		line 166 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -720,7 +720,7 @@ Total ram usage:        1 bytes
 
  *************** function _sollevaCarrello *****************
  Defined at:
-		line 162 in file "user.c"
+		line 196 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -750,7 +750,7 @@ Total ram usage:        2 bytes
 
  *************** function _seguiLinea *****************
  Defined at:
-		line 32 in file "user.c"
+		line 57 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -783,7 +783,7 @@ Total ram usage:        2 bytes
 
  *************** function _checkBatt *****************
  Defined at:
-		line 149 in file "user.c"
+		line 183 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -878,7 +878,7 @@ Total ram usage:        4 bytes
 
  *************** function _controllaColore *****************
  Defined at:
-		line 65 in file "user.c"
+		line 109 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -942,7 +942,7 @@ Total ram usage:        5 bytes
 
  *************** function _abbassaCarrello *****************
  Defined at:
-		line 197 in file "user.c"
+		line 231 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1311,7 +1311,7 @@ Total ram usage:        0 bytes
 
  *************** function _InitApp *****************
  Defined at:
-		line 109 in file "user.c"
+		line 30 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1400,7 +1400,7 @@ Total ram usage:       14 bytes
 
  *************** function _stop *****************
  Defined at:
-		line 208 in file "main.c"
+		line 240 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
