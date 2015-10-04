@@ -56,52 +56,36 @@ void InitApp(void)
 
 void seguiLinea(){
             //***vai avanti
-            EPWM1_LoadDutyValue(700);
-            EPWM2_LoadDutyValue(712);
-            MOT_EN = 1;
-            //se si rileva la linea di stop la routine si interrompe e la
-            //funzione finisce. Viceversa l'inseguitore continua a correggere
-            //la prorpia traiettoria per mantenersi sopra la linea
-            while(ADC_GetConversion(channel_AN13)<Front_POS){
-                    checkBatt();
-                    /**** INSEGUITORE DI LINEA***/
-                    deltaV =  ADC_GetConversion(channel_AN13);
-                    //basandosi sul valore di tensione centrale, con una 
-                    // comparazione è possibile stabilire la posizione della 
-                    //linea. 
-                    if(deltaV > 292){
-                        //linea a sinistra, incremento velocità di destra
-                        vel_DX=762;
-                        vel_SX = 655;
-                        
-                    }else if(deltaV < 252 && deltaV > 10){
-                        //linea a destra, incremento velocità di sinistra
-                    vel_SX=750;
-                    vel_DX = 667;
-                    
-                   }else if(deltaV > 10){
-                       //linea assente, proseguo in avanti finchè la linea 
-                       //non ritorna sul robot.
-                        vel_DX = 712;
-                        vel_SX = 700;
-                   }
-                    
-                    //alla fine della comparazione, si invia il dato di velocità
-                    //appena calcolato ai motori.
-                    EPWM1_LoadDutyValue(vel_SX);
-                    EPWM2_LoadDutyValue(vel_DX);
-                    
-                    //8ms fra una correzione e l'altra, in caso si 
-                    //****NB: Probabilmente inutile, il sistema è
-                    //completamente deterministico.
-                    for(uint8_t T = 0; T < 8; T++){
-                        __delay_ms(1);
-                         if(ADC_GetConversion(channel_AN13)>=Front_POS){
-                            break;
-                        }
-
-                      }
+    EPWM1_LoadDutyValue(700);
+    EPWM2_LoadDutyValue(712);
+    MOT_EN = 1;
+    //se si rileva la linea di stop la routine si interrompe e la
+    //funzione finisce. Viceversa l'inseguitore continua a correggere
+    //la prorpia traiettoria per mantenersi sopra la linea
+    while(ADC_GetConversion(channel_AN13)<Front_POS){
+        deltaV =  ADC_GetConversion(channel_AN13);                  //basandosi sul valore di tensione centrale, con una 
+        if(deltaV > 292){                                           // comparazione è possibile stabilire la posizione della linea
+            vel_DX=762;                                             //linea a sinistra, incremento velocità di destra
+            vel_SX = 655;                                                    
+        }else if(deltaV < 252 && deltaV > 10){                      //linea a destra, incremento velocità di sinistra
+            vel_SX=750;
+            vel_DX = 667;
+       }else if(deltaV > 10){
+            vel_DX = 712;                                            //linea assente, proseguo in avanti finchè la linea 
+            vel_SX = 700;                                            //non ritorna sul robot.
+       }
+        EPWM1_LoadDutyValue(vel_SX);                                 //alla fine della comparazione, si invia il dato di velocità
+        EPWM2_LoadDutyValue(vel_DX);                                 //appena calcolato ai motori.
+        //8ms fra una correzione e l'altra, in caso si 
+        //****NB: Probabilmente inutile, il sistema è
+        //completamente deterministico.
+        for(uint8_t T = 0; T < 8; T++){
+            __delay_ms(1);
+             if(ADC_GetConversion(channel_AN13)>=Front_POS){
+                break;
             }
+          }
+    }
          
 }
 
@@ -111,7 +95,6 @@ void controllaColore(){
     S0 = 0;
     S1 = 1;
     COLORLED = 0;
-    
     //controllo rosso
     S2 = 0;
     S3 = 0;

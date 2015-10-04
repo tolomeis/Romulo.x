@@ -70,7 +70,7 @@ extern "C" {
 #define batt_scarica 656
 
 
-    #define Front_SX    523
+#define Front_SX    523
 #define Front_DX    196
 #define Front_C     294
 #define Back_SX     0
@@ -84,9 +84,6 @@ extern "C" {
 #define puls_verde  724
 
 
-#define rosso   0
-#define blu     1
-#define verde   2
 
 #ifdef	__cplusplus
 }
