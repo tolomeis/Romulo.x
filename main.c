@@ -28,15 +28,7 @@
 /*** VARBIABILI per memorizzazione                                    */
 /******************************************************************************/
 
-uint16_t V_pulsantiera;
-uint16_t V_frontale;
-uint16_t V_posteriore;
-
-
-
-uint8_t goal_color;
-
-
+uint16_t V_pulsantiera, V_frontale, V_posteriore;
 uint16_t i;
 
 /******************************************************************************/
@@ -81,11 +73,11 @@ void main(void)
         //sequenza, altrimenti torno a leggere la pulsantiera.
         if(V_pulsantiera <1000){
             if(puls_rosso-40 <= V_pulsantiera && V_pulsantiera <= puls_rosso+40){
-                goal_color = rosso;
+                goal_color = ROSSO;
             }else if(puls_verde-40 <= V_pulsantiera && V_pulsantiera <= puls_verde+40){
-                goal_color = verde;
+                goal_color = VERDE;
             }else if(puls_blu-40 <= V_pulsantiera && V_pulsantiera <= puls_blu+40){
-                goal_color = blu;
+                goal_color = BLU;
             }
  
             // OPZIONALE

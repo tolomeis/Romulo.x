@@ -9033,10 +9033,8 @@ typedef unsigned char bool;
 void ConfigureOscillator(void);
 
 # 6 "user.h"
-uint8_t colore;
-int16_t rossoPC;
-int16_t verdePC;
-int16_t bluPC;
+enum {ROSSO, BLU, VERDE} colore, goal_color;
+int16_t rossoPC, verdePC, bluPC;
 
 uint16_t V_batt;
 
@@ -9044,7 +9042,7 @@ uint16_t vel_DX = 712;
 uint16_t vel_SX = 700;
 uint16_t deltaV;
 
-# 24
+# 22
 void InitApp(void);
 
 void seguiLinea(void);
@@ -9187,15 +9185,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 
 # 31 "main.c"
-uint16_t V_pulsantiera;
-uint16_t V_frontale;
-uint16_t V_posteriore;
-
-
-
-uint8_t goal_color;
-
-
+uint16_t V_pulsantiera, V_frontale, V_posteriore;
 uint16_t i;
 
 
@@ -9230,18 +9220,18 @@ LATC3=0;
 LATC6=0;
 uint8_t numLinee = 0;
 
-# 78
+# 70
 while(1) {
 V_pulsantiera = ADC_GetConversion(channel_AN9);
 
 
 if(V_pulsantiera <1000){
 if(921-40 <= V_pulsantiera && V_pulsantiera <= 921+40){
-goal_color = 0;
+goal_color = ROSSO;
 }else if(724-40 <= V_pulsantiera && V_pulsantiera <= 724+40){
-goal_color = 2;
+goal_color = VERDE;
 }else if(532-40 <= V_pulsantiera && V_pulsantiera <= 532+40){
-goal_color = 1;
+goal_color = BLU;
 }
 
 
@@ -9298,7 +9288,7 @@ numLinee++;
 }
 }
 
-# 151
+# 143
 EPWM1_LoadDutyValue(700);
 EPWM2_LoadDutyValue(300);
 LATC0 = 1;
@@ -9327,7 +9317,7 @@ checkBatt();
 }
 stopM();
 
-# 183
+# 175
 EPWM1_LoadDutyValue(700);
 EPWM2_LoadDutyValue(300);
 LATC0 = 1;
@@ -9379,7 +9369,7 @@ stopM();
 }
 }
 
-# 240
+# 232
 void interrupt stop(void) {
 
 if(INT1IE && INT1IF){

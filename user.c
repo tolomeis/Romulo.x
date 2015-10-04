@@ -143,19 +143,18 @@ void controllaColore(){
     //finito, spengo i LED.
     COLORLED = 1;
     
-    //routine di decisione del colore. Con 3 comparazioni sul valore ASSOLUTO
-    //del sensore si decide quale sia il colore del pezzo.
     if(rossoPC >= bluPC){
-        if(rossoPC >= verdePC){
-            colore = rosso;
+        if(rossoPC >= verdePC){     //routine di decisione del colore. Con 3 comparazioni sul valore ASSOLUTO
+                                    //del sensore si decide quale sia il colore del pezzo.
+            colore = ROSSO;
         }else{
-            colore = verde;
+            colore = VERDE;
         }
 
     }else if(bluPC>=verdePC){
-        colore = blu;
+        colore = BLU;
     }else {
-        colore = verde;
+        colore = VERDE;
     }
 
 }
@@ -195,70 +194,71 @@ void checkBatt(void){
 
 void sollevaCarrello(void){
     uint8_t p = 0;
-    for(p=0; p<43;p++){
-                STEP_EN = 1;
-                    INAp=0;
-                    INBp=1;
-                    INAm=1;
-                    INBm=0;
-                    __delay_ms(10);
-                    __delay_ms(2);
-                    INAp=0;
-                    INBp=0;
-                    INAm=1;
-                    INBm=1;
-                    __delay_ms(10);
-                    __delay_ms(2);
-                    INAp=1;
-                    INBp=0;
-                    INAm=0;
-                    INBm=1;
-                    __delay_ms(10);
-                    __delay_ms(2);
-                    INAp=1;
-                    INBp=1;
-                    INAm=0;
-                    INBm=0;
-                    __delay_ms(10);
-                    __delay_ms(2);
+    for(p=0; p<43;p++)
+    {
+        STEP_EN = 1;
+        INAp=0;
+        INBp=1;
+        INAm=1;
+        INBm=0;
+        __delay_ms(10);
+        __delay_ms(2);
+        INAp=0;
+        INBp=0;
+        INAm=1;
+        INBm=1;
+        __delay_ms(10);
+        __delay_ms(2);
+        INAp=1;
+        INBp=0;
+        INAm=0;
+        INBm=1;
+        __delay_ms(10);
+        __delay_ms(2);
+        INAp=1;
+        INBp=1;
+        INAm=0;
+        INBm=0;
+        __delay_ms(10);
+        __delay_ms(2);
 
-
-            }
-            STEP_EN = 0;
+    }
+    STEP_EN = 0;
 }
 
 // per sollevare o abbassare servono 43 cicli di 4 passi ciascuno
 void abbassaCarrello(void){
     uint8_t p = 0;
-    for(uint8_t p = 0; p<43;p++){
-                    STEP_EN = 1;
-                    INAp=1;
-                    INBp=1;
-                    INAm=0;
-                    INBm=0;
-                    __delay_ms(10);
-                    __delay_ms(2);
-                    INAp=1;
-                    INBp=0;
-                    INAm=0;
-                    INBm=1;
-                    __delay_ms(10);
-                    __delay_ms(2);
-                    INAp=0;
-                    INBp=0;
-                    INAm=1;
-                    INBm=1;
-                    __delay_ms(10);
-                    __delay_ms(2);
-                    INAp=0;
-                    INBp=1;
-                    INAm=1;
-                    INBm=0;
-                    __delay_ms(10);
-                    __delay_ms(2);
+    for(uint8_t p = 0; p<43;p++)
+    {
+        STEP_EN = 1;
+        INAp=1;
+        INBp=1;
+        INAm=0;
+        INBm=0;
+        __delay_ms(10);
+        __delay_ms(2);
+        INAp=1;
+        INBp=0;
+        INAm=0;
+        INBm=1;
+        __delay_ms(10);
+        __delay_ms(2);
+        INAp=0;
+        INBp=0;
+        INAm=1;
+        INBm=1;
+        __delay_ms(10);
+        __delay_ms(2);
+        INAp=0;
+        INBp=1;
+        INAm=1;
+        INBm=0;
+        __delay_ms(10);
+        __delay_ms(2);
 
 
-            }
+    }
             STEP_EN = 0;
 
 }

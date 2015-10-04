@@ -1,4 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"6 user.h
+[c E7522 0 1 2 .. ]
+[n E7522 . ROSSO BLU VERDE  ]
 "7939 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f24k22.h
 [s S494 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S494 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
@@ -29,13 +32,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EPWM2_LoadDutyValue `(v ~T0 @X0 0 ef1`ui ]
 "18169 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f24k22.h
 [v _LATC0 `Vb ~T0 @X0 0 e@31832 ]
-"34 user.h
+"32 user.h
 [v _checkBatt `(v ~T0 @X0 0 ef ]
 "68 user.c
-[c E7551 29 30 31 4 8 9 11 13 .. ]
-[n E7551 . channel_CTMU channel_DAC channel_FVRBuf2 channel_AN4 channel_AN8 channel_AN9 channel_AN11 channel_AN13  ]
+[c E7556 29 30 31 4 8 9 11 13 .. ]
+[n E7556 . channel_CTMU channel_DAC channel_FVRBuf2 channel_AN4 channel_AN8 channel_AN9 channel_AN11 channel_AN13  ]
 "255 mcc_generated_files/adc.h
-[v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E7551 ]
+[v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E7556 ]
 [v F7486 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF7486 ~T0 @X0 0 e ]
@@ -7240,43 +7243,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
 "6 user.h
-[v _colore `uc ~T0 @X0 1 e ]
-[; ;user.h: 6: uint8_t colore;
+[v _colore `E7522 ~T0 @X0 1 e ]
+[v _goal_color `E7522 ~T0 @X0 1 e ]
+[; ;user.h: 6: enum {ROSSO, BLU, VERDE} colore, goal_color;
 "7
 [v _rossoPC `i ~T0 @X0 1 e ]
-[; ;user.h: 7: int16_t rossoPC;
-"8
 [v _verdePC `i ~T0 @X0 1 e ]
-[; ;user.h: 8: int16_t verdePC;
-"9
 [v _bluPC `i ~T0 @X0 1 e ]
-[; ;user.h: 9: int16_t bluPC;
-"11
+[; ;user.h: 7: int16_t rossoPC, verdePC, bluPC;
+"9
 [v _V_batt `ui ~T0 @X0 1 e ]
-[; ;user.h: 11: uint16_t V_batt;
-"13
+[; ;user.h: 9: uint16_t V_batt;
+"11
 [v _vel_DX `ui ~T0 @X0 1 e ]
 [i _vel_DX
 -> -> 712 `i `ui
 ]
-[; ;user.h: 13: uint16_t vel_DX = 712;
-"14
+[; ;user.h: 11: uint16_t vel_DX = 712;
+"12
 [v _vel_SX `ui ~T0 @X0 1 e ]
 [i _vel_SX
 -> -> 700 `i `ui
 ]
-[; ;user.h: 14: uint16_t vel_SX = 700;
-"15
+[; ;user.h: 12: uint16_t vel_SX = 700;
+"13
 [v _deltaV `ui ~T0 @X0 1 e ]
-[; ;user.h: 15: uint16_t deltaV;
-[; ;user.h: 24: void InitApp(void);
-[; ;user.h: 26: void seguiLinea(void);
-[; ;user.h: 28: void controllaColore(void);
-[; ;user.h: 30: void stopM(void);
-[; ;user.h: 32: void suonaBuzzer_1(void);
-[; ;user.h: 34: void checkBatt(void);
-[; ;user.h: 36: void sollevaCarrello(void);
-[; ;user.h: 37: void abbassaCarrello(void);
+[; ;user.h: 13: uint16_t deltaV;
+[; ;user.h: 22: void InitApp(void);
+[; ;user.h: 24: void seguiLinea(void);
+[; ;user.h: 26: void controllaColore(void);
+[; ;user.h: 28: void stopM(void);
+[; ;user.h: 30: void suonaBuzzer_1(void);
+[; ;user.h: 32: void checkBatt(void);
+[; ;user.h: 34: void sollevaCarrello(void);
+[; ;user.h: 35: void abbassaCarrello(void);
 [; ;pin_manager.h: 197: void PIN_MANAGER_Initialize (void);
 [; ;pin_manager.h: 209: void PIN_MANAGER_IOC(void);
 [; ;adc.h: 72: typedef uint16_t adc_result_t;
@@ -7409,7 +7409,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _checkBatt ..  ]
 [; ;user.c: 68: deltaV = ADC_GetConversion(channel_AN13);
 "68
-[e = _deltaV ( _ADC_GetConversion (1 . `E7551 7 ]
+[e = _deltaV ( _ADC_GetConversion (1 . `E7556 7 ]
 [; ;user.c: 72: if(deltaV > 292){
 "72
 [e $ ! > _deltaV -> -> 292 `i `ui 1113  ]
@@ -7472,7 +7472,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 [; ;user.c: 99: if(ADC_GetConversion(channel_AN13)>=750){
 "99
-[e $ ! >= ( _ADC_GetConversion (1 . `E7551 7 -> -> 750 `i `ui 1121  ]
+[e $ ! >= ( _ADC_GetConversion (1 . `E7556 7 -> -> 750 `i `ui 1121  ]
 {
 [; ;user.c: 100: break;
 "100
@@ -7492,7 +7492,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1110 ]
 "65
-[e $ < ( _ADC_GetConversion (1 . `E7551 7 -> -> 750 `i `ui 1111  ]
+[e $ < ( _ADC_GetConversion (1 . `E7556 7 -> -> 750 `i `ui 1111  ]
 [e :U 1112 ]
 [; ;user.c: 101: }
 [; ;user.c: 103: }
@@ -7548,7 +7548,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 122: }
 [; ;user.c: 123: rossoPC = ADC_GetConversion(channel_AN4);
 "123
-[e = _rossoPC -> ( _ADC_GetConversion (1 . `E7551 3 `i ]
+[e = _rossoPC -> ( _ADC_GetConversion (1 . `E7556 3 `i ]
 [; ;user.c: 126: LATA2 = 0;
 "126
 [e = _LATA2 -> -> 0 `i `b ]
@@ -7581,7 +7581,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 131: }
 [; ;user.c: 132: bluPC = ADC_GetConversion(channel_AN4);
 "132
-[e = _bluPC -> ( _ADC_GetConversion (1 . `E7551 3 `i ]
+[e = _bluPC -> ( _ADC_GetConversion (1 . `E7556 3 `i ]
 [; ;user.c: 135: LATA2 = 1;
 "135
 [e = _LATA2 -> -> 1 `i `b ]
@@ -7614,101 +7614,101 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 140: }
 [; ;user.c: 141: verdePC = ADC_GetConversion(channel_AN4);
 "141
-[e = _verdePC -> ( _ADC_GetConversion (1 . `E7551 3 `i ]
+[e = _verdePC -> ( _ADC_GetConversion (1 . `E7556 3 `i ]
 [; ;user.c: 144: LATA4 = 1;
 "144
 [e = _LATA4 -> -> 1 `i `b ]
-[; ;user.c: 148: if(rossoPC >= bluPC){
-"148
+[; ;user.c: 146: if(rossoPC >= bluPC){
+"146
 [e $ ! >= _rossoPC _bluPC 1132  ]
 {
-[; ;user.c: 149: if(rossoPC >= verdePC){
-"149
+[; ;user.c: 147: if(rossoPC >= verdePC){
+"147
 [e $ ! >= _rossoPC _verdePC 1133  ]
 {
-[; ;user.c: 150: colore = 0;
+[; ;user.c: 149: colore = ROSSO;
+"149
+[e = _colore . `E7522 0 ]
 "150
-[e = _colore -> -> 0 `i `uc ]
-"151
 }
-[; ;user.c: 151: }else{
+[; ;user.c: 150: }else{
 [e $U 1134  ]
 [e :U 1133 ]
 {
-[; ;user.c: 152: colore = 2;
+[; ;user.c: 151: colore = VERDE;
+"151
+[e = _colore . `E7522 2 ]
 "152
-[e = _colore -> -> 2 `i `uc ]
-"153
 }
 [e :U 1134 ]
-"155
+"154
 }
-[; ;user.c: 153: }
-[; ;user.c: 155: }else if(bluPC>=verdePC){
+[; ;user.c: 152: }
+[; ;user.c: 154: }else if(bluPC>=verdePC){
 [e $U 1135  ]
 [e :U 1132 ]
 [e $ ! >= _bluPC _verdePC 1136  ]
 {
-[; ;user.c: 156: colore = 1;
+[; ;user.c: 155: colore = BLU;
+"155
+[e = _colore . `E7522 1 ]
 "156
-[e = _colore -> -> 1 `i `uc ]
-"157
 }
-[; ;user.c: 157: }else {
+[; ;user.c: 156: }else {
 [e $U 1137  ]
 [e :U 1136 ]
 {
-[; ;user.c: 158: colore = 2;
+[; ;user.c: 157: colore = VERDE;
+"157
+[e = _colore . `E7522 2 ]
 "158
-[e = _colore -> -> 2 `i `uc ]
-"159
 }
 [e :U 1137 ]
 [e :U 1135 ]
-[; ;user.c: 159: }
-[; ;user.c: 161: }
-"161
+[; ;user.c: 158: }
+[; ;user.c: 160: }
+"160
 [e :UE 1122 ]
 }
-"166
+"165
 [v _stopM `(v ~T0 @X0 1 ef ]
 {
-[; ;user.c: 166: void stopM(void){
+[; ;user.c: 165: void stopM(void){
 [e :U _stopM ]
 [f ]
-[; ;user.c: 167: EPWM1_LoadDutyValue(511);
-"167
+[; ;user.c: 166: EPWM1_LoadDutyValue(511);
+"166
 [e ( _EPWM1_LoadDutyValue (1 -> -> 511 `i `ui ]
-[; ;user.c: 168: EPWM2_LoadDutyValue(511);
-"168
+[; ;user.c: 167: EPWM2_LoadDutyValue(511);
+"167
 [e ( _EPWM2_LoadDutyValue (1 -> -> 511 `i `ui ]
+[; ;user.c: 168: _delay((unsigned long)((10)*(64000000/4000.0)));
+"168
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 [; ;user.c: 169: _delay((unsigned long)((10)*(64000000/4000.0)));
 "169
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[; ;user.c: 170: _delay((unsigned long)((10)*(64000000/4000.0)));
+[; ;user.c: 170: LATC0 = 0;
 "170
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[; ;user.c: 171: LATC0 = 0;
-"171
 [e = _LATC0 -> -> 0 `i `b ]
-[; ;user.c: 172: }
-"172
+[; ;user.c: 171: }
+"171
 [e :UE 1138 ]
 }
-"174
+"173
 [v _suonaBuzzer_1 `(v ~T0 @X0 1 ef ]
 {
-[; ;user.c: 174: void suonaBuzzer_1(void){
+[; ;user.c: 173: void suonaBuzzer_1(void){
 [e :U _suonaBuzzer_1 ]
 [f ]
-[; ;user.c: 175: CCP4_SetCompareCount(800);
-"175
+[; ;user.c: 174: CCP4_SetCompareCount(800);
+"174
 [e ( _CCP4_SetCompareCount (1 -> -> 800 `i `ui ]
-[; ;user.c: 176: T1CONbits.TMR1ON = 1;
-"176
+[; ;user.c: 175: T1CONbits.TMR1ON = 1;
+"175
 [e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-[; ;user.c: 177: for (uint16_t T=0; T <= 100; T=T+1){
-"177
+[; ;user.c: 176: for (uint16_t T=0; T <= 100; T=T+1){
+"176
 {
 [v _T `ui ~T0 @X0 1 a ]
 [e = _T -> -> 0 `i `ui ]
@@ -7716,52 +7716,54 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1141  ]
 [e :U 1140 ]
 {
-[; ;user.c: 178: _delay((unsigned long)((10)*(64000000/4000.0)));
-"178
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"179
-}
+[; ;user.c: 177: _delay((unsigned long)((10)*(64000000/4000.0)));
 "177
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"178
+}
+"176
 [e = _T + _T -> -> 1 `i `ui ]
 [e $ <= _T -> -> 100 `i `ui 1140  ]
 [e :U 1141 ]
-"179
+"178
 }
-[; ;user.c: 179: }
-[; ;user.c: 180: T1CONbits.TMR1ON = 0;
-"180
+[; ;user.c: 178: }
+[; ;user.c: 179: T1CONbits.TMR1ON = 0;
+"179
 [e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
-[; ;user.c: 181: }
-"181
+[; ;user.c: 180: }
+"180
 [e :UE 1139 ]
 }
-"183
+"182
 [v _checkBatt `(v ~T0 @X0 1 ef ]
 {
-[; ;user.c: 183: void checkBatt(void){
+[; ;user.c: 182: void checkBatt(void){
 [e :U _checkBatt ]
 [f ]
-[; ;user.c: 194: }
-"194
+[; ;user.c: 193: }
+"193
 [e :UE 1143 ]
 }
-"196
+"195
 [v _sollevaCarrello `(v ~T0 @X0 1 ef ]
 {
-[; ;user.c: 196: void sollevaCarrello(void){
+[; ;user.c: 195: void sollevaCarrello(void){
 [e :U _sollevaCarrello ]
 [f ]
-"197
+"196
 [v _p `uc ~T0 @X0 1 a ]
-[; ;user.c: 197: uint8_t p = 0;
+[; ;user.c: 196: uint8_t p = 0;
 [e = _p -> -> 0 `i `uc ]
-[; ;user.c: 198: for(p=0; p<43;p++){
-"198
+[; ;user.c: 197: for(p=0; p<43;p++)
+"197
 {
 [e = _p -> -> 0 `i `uc ]
 [e $ < -> _p `i -> 43 `i 1145  ]
 [e $U 1146  ]
+"198
 [e :U 1145 ]
+[; ;user.c: 198: {
 {
 [; ;user.c: 199: LATC7 = 1;
 "199
@@ -7838,40 +7840,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 223: _delay((unsigned long)((2)*(64000000/4000.0)));
 "223
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"226
+"225
 }
-"198
+"197
 [e ++ _p -> -> 1 `i `uc ]
 [e $ < -> _p `i -> 43 `i 1145  ]
 [e :U 1146 ]
-"226
+"225
 }
-[; ;user.c: 226: }
-[; ;user.c: 227: LATC7 = 0;
-"227
+[; ;user.c: 225: }
+[; ;user.c: 226: LATC7 = 0;
+"226
 [e = _LATC7 -> -> 0 `i `b ]
-[; ;user.c: 228: }
-"228
+[; ;user.c: 227: }
+"227
 [e :UE 1144 ]
 }
-"231
+"230
 [v _abbassaCarrello `(v ~T0 @X0 1 ef ]
 {
-[; ;user.c: 231: void abbassaCarrello(void){
+[; ;user.c: 230: void abbassaCarrello(void){
 [e :U _abbassaCarrello ]
 [f ]
-"232
+"231
 [v _p `uc ~T0 @X0 1 a ]
-[; ;user.c: 232: uint8_t p = 0;
+[; ;user.c: 231: uint8_t p = 0;
 [e = _p -> -> 0 `i `uc ]
-[; ;user.c: 233: for(uint8_t p = 0; p<43;p++){
-"233
+[; ;user.c: 232: for(uint8_t p = 0; p<43;p++)
+"232
 {
 [v _p `uc ~T0 @X0 1 a ]
 [e = _p -> -> 0 `i `uc ]
 [e $ < -> _p `i -> 43 `i 1149  ]
 [e $U 1150  ]
+"233
 [e :U 1149 ]
+[; ;user.c: 233: {
 {
 [; ;user.c: 234: LATC7 = 1;
 "234
@@ -7950,7 +7954,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "261
 }
-"233
+"232
 [e ++ _p -> -> 1 `i `uc ]
 [e $ < -> _p `i -> 43 `i 1149  ]
 [e :U 1150 ]

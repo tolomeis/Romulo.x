@@ -3,10 +3,8 @@
 /******************************************************************************/
 
 /* TODO Application specific user parameters used in user.c may go here */
-uint8_t colore;
-int16_t rossoPC;
-int16_t verdePC;
-int16_t bluPC;
+enum {ROSSO, BLU, VERDE} colore, goal_color;
+int16_t rossoPC, verdePC, bluPC;
 
 uint16_t V_batt;
 

@@ -9030,10 +9030,8 @@ typedef uint16_t uintptr_t;
 typedef unsigned char bool;
 
 # 6 "user.h"
-uint8_t colore;
-int16_t rossoPC;
-int16_t verdePC;
-int16_t bluPC;
+enum {ROSSO, BLU, VERDE} colore, goal_color;
+int16_t rossoPC, verdePC, bluPC;
 
 uint16_t V_batt;
 
@@ -9041,7 +9039,7 @@ uint16_t vel_DX = 712;
 uint16_t vel_SX = 700;
 uint16_t deltaV;
 
-# 24
+# 22
 void InitApp(void);
 
 void seguiLinea(void);
@@ -9296,19 +9294,18 @@ verdePC = ADC_GetConversion(channel_AN4);
 
 LATA4 = 1;
 
-
-
 if(rossoPC >= bluPC){
 if(rossoPC >= verdePC){
-colore = 0;
+
+colore = ROSSO;
 }else{
-colore = 2;
+colore = VERDE;
 }
 
 }else if(bluPC>=verdePC){
-colore = 1;
+colore = BLU;
 }else {
-colore = 2;
+colore = VERDE;
 }
 
 }
@@ -9335,12 +9332,13 @@ T1CONbits.TMR1ON = 0;
 
 void checkBatt(void){
 
-# 194
+# 193
 }
 
 void sollevaCarrello(void){
 uint8_t p = 0;
-for(p=0; p<43;p++){
+for(p=0; p<43;p++)
+{
 LATC7 = 1;
 LATC4=0;
 LATC5=1;
@@ -9367,7 +9365,6 @@ LATC6=0;
 _delay((unsigned long)((10)*(64000000/4000.0)));
 _delay((unsigned long)((2)*(64000000/4000.0)));
 
-
 }
 LATC7 = 0;
 }
@@ -9375,7 +9372,8 @@ LATC7 = 0;
 
 void abbassaCarrello(void){
 uint8_t p = 0;
-for(uint8_t p = 0; p<43;p++){
+for(uint8_t p = 0; p<43;p++)
+{
 LATC7 = 1;
 LATC4=1;
 LATC5=1;

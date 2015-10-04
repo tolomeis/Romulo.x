@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/XC8_18F87K22/production\Romulo.x.production.sym \
   --cmf=dist/XC8_18F87K22/production\Romulo.x.production.cmf -z -Q18F24K22 \
-  -oC:\Users\Simone\AppData\Local\Temp\s2bc.2 \
+  -oC:\Users\Simone\AppData\Local\Temp\s6h0.2 \
   -Mdist/XC8_18F87K22/production/Romulo.x.production.map -E1 -ver=XC8 \
   -ASTACK=086h-02ffh -pstack=STACK -ACODE=00h-03FFFh -ACONST=00h-03FFFh \
   -ASMALLCONST=0300h-03FFhx61 -AMEDIUMCONST=0300h-03FFFh -ACOMRAM=01h-05Fh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Simone\AppData\Local\Temp\s2bc.obj \
+  C:\Users\Simone\AppData\Local\Temp\s6h0.obj \
   dist/XC8_18F87K22/production\Romulo.x.production.obj 
 
 Object code version is 3.11
@@ -34,7 +34,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Simone\AppData\Local\Temp\s2bc.obj
+C:\Users\Simone\AppData\Local\Temp\s6h0.obj
                 end_init                             A6       A6        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -606,11 +606,11 @@ _vel_DX                           dataBANK0    000080
 _vel_SX                           dataBANK0    000082
 _verdePC                          bssBANK0     00007C
 abbassaCarrello@p                 cstackBANK0  000061
-abbassaCarrello@p_774             cstackBANK0  000062
+abbassaCarrello@p_779             cstackBANK0  000062
 btemp                             temp         00003D
 controllaColore@i                 cstackBANK0  000066
-controllaColore@i_763             cstackBANK0  000067
-controllaColore@i_764             cstackBANK0  000068
+controllaColore@i_768             cstackBANK0  000067
+controllaColore@i_769             cstackBANK0  000068
 end_of_initialization             cinit        0009F0
 int$flags                         temp         00003D
 int_func                          intcode_body 00090E
@@ -619,15 +619,15 @@ intlevel1                         text         000000
 intlevel2                         text         000000
 intlevel3                         text         000000
 main@T                            cstackBANK0  00006E
-main@T_969                        cstackBANK0  000072
-main@T_970                        cstackBANK0  000073
-main@T_972                        cstackBANK0  000074
-main@T_975                        cstackBANK0  000075
-main@T_976                        cstackBANK0  000070
+main@T_978                        cstackBANK0  000072
+main@T_979                        cstackBANK0  000073
+main@T_981                        cstackBANK0  000074
+main@T_984                        cstackBANK0  000075
+main@T_985                        cstackBANK0  000070
 main@numLinee                     cstackBANK0  00006A
 main@t                            cstackBANK0  00006B
-main@t_968                        cstackBANK0  00006C
-main@t_973                        cstackBANK0  00006D
+main@t_977                        cstackBANK0  00006C
+main@t_982                        cstackBANK0  00006D
 seguiLinea@T                      cstackBANK0  000066
 sollevaCarrello@p                 cstackBANK0  000061
 stackhi                           (abs)        0002FF
@@ -640,7 +640,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 45 in file "main.c"
+		line 37 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -689,7 +689,7 @@ Total ram usage:       13 bytes
 
  *************** function _stopM *****************
  Defined at:
-		line 166 in file "user.c"
+		line 165 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -720,7 +720,7 @@ Total ram usage:        1 bytes
 
  *************** function _sollevaCarrello *****************
  Defined at:
-		line 196 in file "user.c"
+		line 195 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -783,7 +783,7 @@ Total ram usage:        2 bytes
 
  *************** function _checkBatt *****************
  Defined at:
-		line 183 in file "user.c"
+		line 182 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -942,7 +942,7 @@ Total ram usage:        5 bytes
 
  *************** function _abbassaCarrello *****************
  Defined at:
-		line 231 in file "user.c"
+		line 230 in file "user.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1400,7 +1400,7 @@ Total ram usage:       14 bytes
 
  *************** function _stop *****************
  Defined at:
-		line 240 in file "main.c"
+		line 232 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
