@@ -9041,8 +9041,10 @@ uint16_t V_batt;
 uint16_t vel_DX = 712;
 uint16_t vel_SX = 700;
 uint16_t deltaV;
+uint16_t T;
+uint16_t msec_10;
 
-# 22
+# 24
 void InitApp(void);
 
 void seguiLinea(void);
@@ -9057,6 +9059,8 @@ void checkBatt(void);
 
 void sollevaCarrello(void);
 void abbassaCarrello(void);
+
+void delay_mS(uint16_t Msec);
 
 # 197 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
@@ -9255,10 +9259,10 @@ controllaColore();
 
 if(colore != goal_color){
 
-
 LATC0 = 1;
 EPWM1_LoadDutyValue(700);
 EPWM2_LoadDutyValue(712);
+
 
 
 for(uint8_t t = 0; t<=100; t++){
@@ -9300,10 +9304,7 @@ checkBatt();
 EPWM1_LoadDutyValue(661);
 EPWM2_LoadDutyValue(670);
 LATC0 = 1;
-for (uint8_t T=0; T <= 200; T=T+1){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-checkBatt();
-}
+delay_mS(2000);
 
 stopM();
 sollevaCarrello();
@@ -9311,13 +9312,10 @@ sollevaCarrello();
 EPWM1_LoadDutyValue(361);
 EPWM2_LoadDutyValue(372);
 LATC0 = 1;
-for (uint8_t T=0; T <= 150; T=T+1){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-checkBatt();
-}
+delay_mS(1500);
 stopM();
 
-# 175
+# 169
 EPWM1_LoadDutyValue(700);
 EPWM2_LoadDutyValue(300);
 LATC0 = 1;
@@ -9333,9 +9331,7 @@ while (numLinee>0){
 EPWM1_LoadDutyValue(700);
 EPWM2_LoadDutyValue(712);
 LATC0 = 1;
-for(uint8_t t = 0; t<=35; t++){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-}
+delay_mS(350);
 seguiLinea();
 numLinee--;
 }
@@ -9349,27 +9345,21 @@ abbassaCarrello();
 EPWM1_LoadDutyValue(300);
 EPWM2_LoadDutyValue(300);
 LATC0 = 1;
-for (uint8_t T=0; T <=200; T=T+1){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-checkBatt();
-}
+delay_mS(2000);
 stopM();
 
 
 EPWM1_LoadDutyValue(700);
 EPWM2_LoadDutyValue(300);
 LATC0 = 1;
-for (uint16_t T=0; T <= 400; T=T+1){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-checkBatt();
-}
+delay_mS(4000);
 stopM();
 
 }
 }
 }
 
-# 232
+# 218
 void interrupt stop(void) {
 
 if(INT1IE && INT1IF){

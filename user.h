@@ -11,6 +11,8 @@ uint16_t V_batt;
 uint16_t vel_DX = 712;
 uint16_t vel_SX = 700;
 uint16_t deltaV;
+uint16_t T;
+uint16_t msec_10;
 /******************************************************************************/
 /* User Function Prototypes                                                   */
 /******************************************************************************/
@@ -33,4 +35,6 @@ void checkBatt(void);
 
 void sollevaCarrello(void);
 void abbassaCarrello(void);
+
+void delay_mS(uint16_t Msec);
 

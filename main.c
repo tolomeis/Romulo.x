@@ -100,13 +100,13 @@ void main(void)
             controllaColore();
            
             if(colore != goal_color){ 
-                //se il colore è SBAGLIATO reinizio a seguire la linea, altrimenti
-                //inizio il sollevamento
+                //se il colore è SBAGLIATO reinizio a seguire la linea
                 MOT_EN = 1;
                 EPWM1_LoadDutyValue(700);
                 EPWM2_LoadDutyValue(712);
                 //questo delay serve a sorpassare completamente la linea di stop
                 //ed evitare che il robot si rifermi subito.
+                //NB: è possibile toglierlo.
                 for(uint8_t t = 0; t<=100; t++){
                     __delay_ms(10);
                     }
@@ -135,7 +135,7 @@ void main(void)
             }
             //*********************************
             //***NB: A questo punto il robot si troverà per forza di fianco
-            //al colore desiderato. NElla variabile NumLinee è presente il 
+            //al colore desiderato. Nella variabile NumLinee è presente il 
             //numero di linee da "saltare" per tornare allla zona deposito.
             //Quindi, prima di tutto inizio la manovra di sollevamento, che si
             //basa su tempi.
@@ -151,10 +151,7 @@ void main(void)
             EPWM1_LoadDutyValue(661);
             EPWM2_LoadDutyValue(670);
             MOT_EN = 1;
-            for (uint8_t T=0; T <= 200; T=T+1){
-                __delay_ms(10);
-                checkBatt();
-                }
+            delay_mS(2000);
             // FERMO E SOLLEVO CARRELLO
             stopM();
             sollevaCarrello();
@@ -162,10 +159,7 @@ void main(void)
             EPWM1_LoadDutyValue(361);
             EPWM2_LoadDutyValue(372);
             MOT_EN = 1;
-            for (uint8_t T=0; T <= 150; T=T+1){
-                __delay_ms(10);
-                checkBatt();
-                }
+            delay_mS(1500);
             stopM();
 
             //******** INIZIO UNA ROTAZIONE DINAMICA, ovvero inizio a ruotare
@@ -187,9 +181,7 @@ void main(void)
                 EPWM1_LoadDutyValue(700);
                 EPWM2_LoadDutyValue(712);
                 MOT_EN = 1;
-                for(uint8_t t = 0; t<=35; t++){
-                    __delay_ms(10);
-                    }
+                delay_mS(350);
                 seguiLinea();
                 numLinee--;
             }
@@ -203,20 +195,14 @@ void main(void)
             EPWM1_LoadDutyValue(300);
             EPWM2_LoadDutyValue(300);
             MOT_EN = 1;
-            for (uint8_t T=0; T <=200; T=T+1){
-                __delay_ms(10);
-                checkBatt();
-                }
+            delay_mS(2000);
             stopM();
 
            //RUOTO PER 4,5 SECONDI
             EPWM1_LoadDutyValue(700);
             EPWM2_LoadDutyValue(300);
             MOT_EN = 1;
-            for (uint16_t T=0; T <= 400; T=T+1){
-                __delay_ms(10);
-                checkBatt();
-                }
+            delay_mS(4000);
             stopM();
             
             }

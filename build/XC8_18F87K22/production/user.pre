@@ -9038,8 +9038,10 @@ uint16_t V_batt;
 uint16_t vel_DX = 712;
 uint16_t vel_SX = 700;
 uint16_t deltaV;
+uint16_t T;
+uint16_t msec_10;
 
-# 22
+# 24
 void InitApp(void);
 
 void seguiLinea(void);
@@ -9054,6 +9056,8 @@ void checkBatt(void);
 
 void sollevaCarrello(void);
 void abbassaCarrello(void);
+
+void delay_mS(uint16_t Msec);
 
 # 197 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
@@ -9214,34 +9218,19 @@ LATC0 = 1;
 
 
 while(ADC_GetConversion(channel_AN13)<750){
-checkBatt();
-
 deltaV = ADC_GetConversion(channel_AN13);
-
-
-
 if(deltaV > 292){
-
 vel_DX=762;
 vel_SX = 655;
-
 }else if(deltaV < 252 && deltaV > 10){
-
 vel_SX=750;
 vel_DX = 667;
-
 }else if(deltaV > 10){
-
-
 vel_DX = 712;
 vel_SX = 700;
 }
-
-
-
 EPWM1_LoadDutyValue(vel_SX);
 EPWM2_LoadDutyValue(vel_DX);
-
 
 
 
@@ -9250,7 +9239,6 @@ _delay((unsigned long)((1)*(64000000/4000.0)));
 if(ADC_GetConversion(channel_AN13)>=750){
 break;
 }
-
 }
 }
 
@@ -9263,45 +9251,30 @@ LATA0 = 0;
 LATA1 = 1;
 LATA4 = 0;
 
-
 LATA2 = 0;
 LATA3 = 0;
 
-for(uint8_t i = 0; i<25; i++){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-_delay((unsigned long)((10)*(64000000/4000.0)));
-}
+delay_mS(500);
 rossoPC = ADC_GetConversion(channel_AN4);
 
 
 LATA2 = 0;
 LATA3 = 1;
-for(uint8_t i = 0; i<25; i++){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-_delay((unsigned long)((10)*(64000000/4000.0)));
-}
+delay_mS(500);
 bluPC = ADC_GetConversion(channel_AN4);
 
 
 LATA2 = 1;
 LATA3 = 1;
-for(uint8_t i = 0; i<25; i++){
-_delay((unsigned long)((10)*(64000000/4000.0)));
-_delay((unsigned long)((10)*(64000000/4000.0)));
-}
+delay_mS(500);
 verdePC = ADC_GetConversion(channel_AN4);
 
 
 LATA4 = 1;
 
+
 if(rossoPC >= bluPC){
-if(rossoPC >= verdePC){
-
-colore = ROSSO;
-}else{
-colore = VERDE;
-}
-
+if(rossoPC >= verdePC) colore = ROSSO; else colore = VERDE;
 }else if(bluPC>=verdePC){
 colore = BLU;
 }else {
@@ -9332,7 +9305,7 @@ T1CONbits.TMR1ON = 0;
 
 void checkBatt(void){
 
-# 193
+# 162
 }
 
 void sollevaCarrello(void){
@@ -9404,4 +9377,13 @@ _delay((unsigned long)((2)*(64000000/4000.0)));
 }
 LATC7 = 0;
 
+}
+
+
+void delay_mS(uint16_t m_sec){
+msec_10 = m_sec/10;
+for(T = 0; T<=msec_10; T++){
+_delay((unsigned long)((10)*(64000000/4000.0)));
+checkBatt();
+}
 }

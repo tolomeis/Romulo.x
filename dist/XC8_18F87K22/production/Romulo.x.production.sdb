@@ -20,8 +20,8 @@ ROSSO 0
 BLU 1
 VERDE 2
 ]
-"68 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[e E7556 . `uc
+"66 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+[e E7560 . `uc
 channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
@@ -38,7 +38,7 @@ BLU 1
 VERDE 2
 ]
 "71 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
-[e E7558 . `uc
+[e E7562 . `uc
 channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
@@ -58,6 +58,8 @@ channel_AN13 13
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 "20 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 3 0 ]
 "245
@@ -74,7 +76,7 @@ channel_AN13 13
 [v _low_isr low_isr `IIL(v  1 e 0 0 ]
 "37 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
 [v _main main `(v  1 e 0 0 ]
-"232
+"218
 [v _stop stop `II(v  1 e 0 0 ]
 "59 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 0 0 ]
@@ -110,16 +112,18 @@ channel_AN13 13
 [v _InitApp InitApp `(v  1 e 0 0 ]
 "57
 [v _seguiLinea seguiLinea `(v  1 e 0 0 ]
-"109
+"93
 [v _controllaColore controllaColore `(v  1 e 0 0 ]
-"165
+"134
 [v _stopM stopM `(v  1 e 0 0 ]
-"182
+"151
 [v _checkBatt checkBatt `(v  1 e 0 0 ]
-"195
+"164
 [v _sollevaCarrello sollevaCarrello `(v  1 e 0 0 ]
-"230
+"199
 [v _abbassaCarrello abbassaCarrello `(v  1 e 0 0 ]
+"236
+[v _delay_mS delay_mS `(v  1 e 0 0 ]
 "49 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f24k22.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
 "93
@@ -409,7 +413,7 @@ channel_AN13 13
 ]
 [u S46 . 1 `S31 1 . 1 0 `S34 1 . 1 0 `S43 1 . 1 0 ]
 [v _INTCON2bits INTCON2bits `VES46  1 e 1 @4081 ]
-[s S845 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S848 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -419,7 +423,7 @@ channel_AN13 13
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "16856
-[s S854 . 1 `uc 1 . 1 0 :1:0 
+[s S857 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -428,12 +432,12 @@ channel_AN13 13
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S863 . 1 `uc 1 . 1 0 :6:0 
+[s S866 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S880 . 1 `S845 1 . 1 0 `S854 1 . 1 0 `S863 1 . 1 0 `S854 1 . 1 0 `S863 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES880  1 e 1 @4082 ]
+[u S883 . 1 `S848 1 . 1 0 `S857 1 . 1 0 `S866 1 . 1 0 `S857 1 . 1 0 `S866 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES883  1 e 1 @4082 ]
 "17973
 [v _GIEH GIEH `VEb  1 e 0 @32663 ]
 "18045
@@ -485,54 +489,43 @@ channel_AN13 13
 [v _vel_SX vel_SX `ui  1 e 2 0 ]
 "13
 [v _deltaV deltaV `ui  1 e 2 0 ]
+"14
+[v _T T `ui  1 e 2 0 ]
+"15
+[v _msec_10 msec_10 `ui  1 e 2 0 ]
 "37 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
 [v _main main `(v  1 e 0 0 ]
 {
 "128
-[v main@t_977 t `uc  1 a 1 12 ]
-"190
-[v main@t_982 t `uc  1 a 1 13 ]
+[v main@t_983 t `uc  1 a 1 14 ]
 "110
-[v main@t t `uc  1 a 1 11 ]
-"216
-[v main@T_985 T `ui  1 a 2 16 ]
-"206
-[v main@T_984 T `uc  1 a 1 21 ]
-"165
-[v main@T_981 T `uc  1 a 1 20 ]
-"154
-[v main@T_979 T `uc  1 a 1 19 ]
+[v main@t t `uc  1 a 1 13 ]
 "146
-[v main@T_978 T `uc  1 a 1 18 ]
+[v main@T_984 T `uc  1 a 1 17 ]
 "85
-[v main@T T `ui  1 a 2 14 ]
+[v main@T T `ui  1 a 2 15 ]
 "64
-[v main@numLinee numLinee `uc  1 a 1 10 ]
-"224
+[v main@numLinee numLinee `uc  1 a 1 12 ]
+"210
 } 0
-"165 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+"134 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
 [v _stopM stopM `(v  1 e 0 0 ]
 {
-"171
+"140
 } 0
-"195
+"164
 [v _sollevaCarrello sollevaCarrello `(v  1 e 0 0 ]
 {
-"196
+"165
 [v sollevaCarrello@p p `uc  1 a 1 1 ]
-"227
+"196
 } 0
 "57
 [v _seguiLinea seguiLinea `(v  1 e 0 0 ]
 {
-"97
+"82
 [v seguiLinea@T T `uc  1 a 1 6 ]
-"106
-} 0
-"182
-[v _checkBatt checkBatt `(v  1 e 0 0 ]
-{
-"193
+"90
 } 0
 "91 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm2.c
 [v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 0 0 ]
@@ -546,16 +539,33 @@ channel_AN13 13
 [v EPWM1_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 0 ]
 "98
 } 0
-"109 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+"93 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
 [v _controllaColore controllaColore `(v  1 e 0 0 ]
 {
-"137
-[v controllaColore@i_769 i `uc  1 a 1 8 ]
-"128
-[v controllaColore@i_768 i `uc  1 a 1 7 ]
-"119
-[v controllaColore@i i `uc  1 a 1 6 ]
-"160
+"129
+} 0
+"236
+[v _delay_mS delay_mS `(v  1 e 0 0 ]
+{
+[v delay_mS@m_sec m_sec `ui  1 p 2 7 ]
+"242
+} 0
+"151
+[v _checkBatt checkBatt `(v  1 e 0 0 ]
+{
+"162
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+"8
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"31
 } 0
 "105 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
 [v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
@@ -566,14 +576,14 @@ channel_AN13 13
 [v ADC_GetConversion@channel channel `E7523  1 a 1 4 ]
 "124
 } 0
-"230 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+"199 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
 [v _abbassaCarrello abbassaCarrello `(v  1 e 0 0 ]
 {
-"232
+"201
 [v abbassaCarrello@p_779 p `uc  1 a 1 2 ]
-"231
+"200
 [v abbassaCarrello@p p `uc  1 a 1 1 ]
-"264
+"233
 } 0
 "106 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
@@ -645,10 +655,10 @@ channel_AN13 13
 {
 "63
 } 0
-"232 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
+"218 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
 [v _stop stop `II(v  1 e 0 0 ]
 {
-"245
+"231
 } 0
 "75 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/ccp4.c
 [v _CCP4_SetCompareCount CCP4_SetCompareCount `(v  1 e 0 0 ]

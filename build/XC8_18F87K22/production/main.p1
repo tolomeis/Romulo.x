@@ -7,7 +7,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
 "73
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"22 user.h
+"24 user.h
 [v _InitApp `(v ~T0 @X0 0 ef ]
 "18169 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f24k22.h
 [v _LATC0 `Vb ~T0 @X0 0 e@31832 ]
@@ -84,25 +84,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 "18181
 [v _LATC6 `Vb ~T0 @X0 0 e@31838 ]
 "71 main.c
-[c E7558 29 30 31 4 8 9 11 13 .. ]
-[n E7558 . channel_CTMU channel_DAC channel_FVRBuf2 channel_AN4 channel_AN8 channel_AN9 channel_AN11 channel_AN13  ]
+[c E7562 29 30 31 4 8 9 11 13 .. ]
+[n E7562 . channel_CTMU channel_DAC channel_FVRBuf2 channel_AN4 channel_AN8 channel_AN9 channel_AN11 channel_AN13  ]
 "255 mcc_generated_files/adc.h
-[v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E7558 ]
+[v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E7562 ]
 [v F7486 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF7486 ~T0 @X0 0 e ]
 [p i __delay ]
-"24 user.h
+"26 user.h
 [v _seguiLinea `(v ~T0 @X0 0 ef ]
-"28
+"30
 [v _stopM `(v ~T0 @X0 0 ef ]
-"26
+"28
 [v _controllaColore `(v ~T0 @X0 0 ef ]
-"32
-[v _checkBatt `(v ~T0 @X0 0 ef ]
 "34
+[v _checkBatt `(v ~T0 @X0 0 ef ]
+"39
+[v _delay_mS `(v ~T0 @X0 0 ef1`ui ]
+"36
 [v _sollevaCarrello `(v ~T0 @X0 0 ef ]
-"35
+"37
 [v _abbassaCarrello `(v ~T0 @X0 0 ef ]
 "18047 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f24k22.h
 [v _INT1IF `Vb ~T0 @X0 0 e@32640 ]
@@ -7296,14 +7298,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 "13
 [v _deltaV `ui ~T0 @X0 1 e ]
 [; ;user.h: 13: uint16_t deltaV;
-[; ;user.h: 22: void InitApp(void);
-[; ;user.h: 24: void seguiLinea(void);
-[; ;user.h: 26: void controllaColore(void);
-[; ;user.h: 28: void stopM(void);
-[; ;user.h: 30: void suonaBuzzer_1(void);
-[; ;user.h: 32: void checkBatt(void);
-[; ;user.h: 34: void sollevaCarrello(void);
-[; ;user.h: 35: void abbassaCarrello(void);
+"14
+[v _T `ui ~T0 @X0 1 e ]
+[; ;user.h: 14: uint16_t T;
+"15
+[v _msec_10 `ui ~T0 @X0 1 e ]
+[; ;user.h: 15: uint16_t msec_10;
+[; ;user.h: 24: void InitApp(void);
+[; ;user.h: 26: void seguiLinea(void);
+[; ;user.h: 28: void controllaColore(void);
+[; ;user.h: 30: void stopM(void);
+[; ;user.h: 32: void suonaBuzzer_1(void);
+[; ;user.h: 34: void checkBatt(void);
+[; ;user.h: 36: void sollevaCarrello(void);
+[; ;user.h: 37: void abbassaCarrello(void);
+[; ;user.h: 39: void delay_mS(uint16_t Msec);
 [; ;pin_manager.h: 197: void PIN_MANAGER_Initialize (void);
 [; ;pin_manager.h: 209: void PIN_MANAGER_IOC(void);
 [; ;adc.h: 72: typedef uint16_t adc_result_t;
@@ -7443,7 +7452,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;main.c: 71: V_pulsantiera = ADC_GetConversion(channel_AN9);
 "71
-[e = _V_pulsantiera ( _ADC_GetConversion (1 . `E7558 5 ]
+[e = _V_pulsantiera ( _ADC_GetConversion (1 . `E7562 5 ]
 [; ;main.c: 74: if(V_pulsantiera <1000){
 "74
 [e $ ! < _V_pulsantiera -> -> 1000 `i `ui 1112  ]
@@ -7530,14 +7539,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "102
 [e $ ! != -> _colore `i -> _goal_color `i 1121  ]
 {
-[; ;main.c: 105: LATC0 = 1;
-"105
+[; ;main.c: 104: LATC0 = 1;
+"104
 [e = _LATC0 -> -> 1 `i `b ]
-[; ;main.c: 106: EPWM1_LoadDutyValue(700);
-"106
+[; ;main.c: 105: EPWM1_LoadDutyValue(700);
+"105
 [e ( _EPWM1_LoadDutyValue (1 -> -> 700 `i `ui ]
-[; ;main.c: 107: EPWM2_LoadDutyValue(712);
-"107
+[; ;main.c: 106: EPWM2_LoadDutyValue(712);
+"106
 [e ( _EPWM2_LoadDutyValue (1 -> -> 712 `i `ui ]
 [; ;main.c: 110: for(uint8_t t = 0; t<=100; t++){
 "110
@@ -7665,286 +7674,184 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 153: LATC0 = 1;
 "153
 [e = _LATC0 -> -> 1 `i `b ]
-[; ;main.c: 154: for (uint8_t T=0; T <= 200; T=T+1){
+[; ;main.c: 154: delay_mS(2000);
 "154
-{
-[v _T `uc ~T0 @X0 1 a ]
-[e = _T -> -> 0 `i `uc ]
-[e $ <= -> _T `i -> 200 `i 1132  ]
-[e $U 1133  ]
-[e :U 1132 ]
-{
-[; ;main.c: 155: _delay((unsigned long)((10)*(64000000/4000.0)));
-"155
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[; ;main.c: 156: checkBatt();
+[e ( _delay_mS (1 -> -> 2000 `i `ui ]
+[; ;main.c: 156: stopM();
 "156
-[e ( _checkBatt ..  ]
-"157
-}
-"154
-[e = _T -> + -> _T `i -> 1 `i `uc ]
-[e $ <= -> _T `i -> 200 `i 1132  ]
-[e :U 1133 ]
-"157
-}
-[; ;main.c: 157: }
-[; ;main.c: 159: stopM();
-"159
 [e ( _stopM ..  ]
-[; ;main.c: 160: sollevaCarrello();
-"160
+[; ;main.c: 157: sollevaCarrello();
+"157
 [e ( _sollevaCarrello ..  ]
-[; ;main.c: 162: EPWM1_LoadDutyValue(361);
-"162
+[; ;main.c: 159: EPWM1_LoadDutyValue(361);
+"159
 [e ( _EPWM1_LoadDutyValue (1 -> -> 361 `i `ui ]
-[; ;main.c: 163: EPWM2_LoadDutyValue(372);
-"163
+[; ;main.c: 160: EPWM2_LoadDutyValue(372);
+"160
 [e ( _EPWM2_LoadDutyValue (1 -> -> 372 `i `ui ]
-[; ;main.c: 164: LATC0 = 1;
-"164
+[; ;main.c: 161: LATC0 = 1;
+"161
 [e = _LATC0 -> -> 1 `i `b ]
-[; ;main.c: 165: for (uint8_t T=0; T <= 150; T=T+1){
-"165
-{
-[v _T `uc ~T0 @X0 1 a ]
-[e = _T -> -> 0 `i `uc ]
-[e $ <= -> _T `i -> 150 `i 1135  ]
-[e $U 1136  ]
-[e :U 1135 ]
-{
-[; ;main.c: 166: _delay((unsigned long)((10)*(64000000/4000.0)));
-"166
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[; ;main.c: 167: checkBatt();
-"167
-[e ( _checkBatt ..  ]
-"168
-}
-"165
-[e = _T -> + -> _T `i -> 1 `i `uc ]
-[e $ <= -> _T `i -> 150 `i 1135  ]
-[e :U 1136 ]
-"168
-}
-[; ;main.c: 168: }
-[; ;main.c: 169: stopM();
+[; ;main.c: 162: delay_mS(1500);
+"162
+[e ( _delay_mS (1 -> -> 1500 `i `ui ]
+[; ;main.c: 163: stopM();
+"163
+[e ( _stopM ..  ]
+[; ;main.c: 169: EPWM1_LoadDutyValue(700);
 "169
-[e ( _stopM ..  ]
-[; ;main.c: 175: EPWM1_LoadDutyValue(700);
+[e ( _EPWM1_LoadDutyValue (1 -> -> 700 `i `ui ]
+[; ;main.c: 170: EPWM2_LoadDutyValue(300);
+"170
+[e ( _EPWM2_LoadDutyValue (1 -> -> 300 `i `ui ]
+[; ;main.c: 171: LATC0 = 1;
+"171
+[e = _LATC0 -> -> 1 `i `b ]
+[; ;main.c: 172: while(ADC_GetConversion(channel_AN13)<=300);
+"172
+[e $U 1132  ]
+[e :U 1133 ]
+[e :U 1132 ]
+[e $ <= ( _ADC_GetConversion (1 . `E7562 7 -> -> 300 `i `ui 1133  ]
+[e :U 1134 ]
+[; ;main.c: 174: EPWM1_LoadDutyValue(700);
+"174
+[e ( _EPWM1_LoadDutyValue (1 -> -> 700 `i `ui ]
+[; ;main.c: 175: EPWM2_LoadDutyValue(712);
 "175
-[e ( _EPWM1_LoadDutyValue (1 -> -> 700 `i `ui ]
-[; ;main.c: 176: EPWM2_LoadDutyValue(300);
+[e ( _EPWM2_LoadDutyValue (1 -> -> 712 `i `ui ]
+[; ;main.c: 176: LATC0 = 1;
 "176
-[e ( _EPWM2_LoadDutyValue (1 -> -> 300 `i `ui ]
-[; ;main.c: 177: LATC0 = 1;
+[e = _LATC0 -> -> 1 `i `b ]
+[; ;main.c: 177: seguiLinea();
 "177
-[e = _LATC0 -> -> 1 `i `b ]
-[; ;main.c: 178: while(ADC_GetConversion(channel_AN13)<=300);
-"178
-[e $U 1138  ]
-[e :U 1139 ]
-[e :U 1138 ]
-[e $ <= ( _ADC_GetConversion (1 . `E7558 7 -> -> 300 `i `ui 1139  ]
-[e :U 1140 ]
-[; ;main.c: 180: EPWM1_LoadDutyValue(700);
+[e ( _seguiLinea ..  ]
+[; ;main.c: 180: while (numLinee>0){
 "180
-[e ( _EPWM1_LoadDutyValue (1 -> -> 700 `i `ui ]
-[; ;main.c: 181: EPWM2_LoadDutyValue(712);
+[e $U 1135  ]
+[e :U 1136 ]
+{
+[; ;main.c: 181: EPWM1_LoadDutyValue(700);
 "181
-[e ( _EPWM2_LoadDutyValue (1 -> -> 712 `i `ui ]
-[; ;main.c: 182: LATC0 = 1;
+[e ( _EPWM1_LoadDutyValue (1 -> -> 700 `i `ui ]
+[; ;main.c: 182: EPWM2_LoadDutyValue(712);
 "182
-[e = _LATC0 -> -> 1 `i `b ]
-[; ;main.c: 183: seguiLinea();
-"183
-[e ( _seguiLinea ..  ]
-[; ;main.c: 186: while (numLinee>0){
-"186
-[e $U 1141  ]
-[e :U 1142 ]
-{
-[; ;main.c: 187: EPWM1_LoadDutyValue(700);
-"187
-[e ( _EPWM1_LoadDutyValue (1 -> -> 700 `i `ui ]
-[; ;main.c: 188: EPWM2_LoadDutyValue(712);
-"188
 [e ( _EPWM2_LoadDutyValue (1 -> -> 712 `i `ui ]
-[; ;main.c: 189: LATC0 = 1;
-"189
+[; ;main.c: 183: LATC0 = 1;
+"183
 [e = _LATC0 -> -> 1 `i `b ]
-[; ;main.c: 190: for(uint8_t t = 0; t<=35; t++){
-"190
-{
-[v _t `uc ~T0 @X0 1 a ]
-[e = _t -> -> 0 `i `uc ]
-[e $ <= -> _t `i -> 35 `i 1144  ]
-[e $U 1145  ]
-[e :U 1144 ]
-{
-[; ;main.c: 191: _delay((unsigned long)((10)*(64000000/4000.0)));
-"191
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"192
-}
-"190
-[e ++ _t -> -> 1 `i `uc ]
-[e $ <= -> _t `i -> 35 `i 1144  ]
-[e :U 1145 ]
-"192
-}
-[; ;main.c: 192: }
-[; ;main.c: 193: seguiLinea();
-"193
+[; ;main.c: 184: delay_mS(350);
+"184
+[e ( _delay_mS (1 -> -> 350 `i `ui ]
+[; ;main.c: 185: seguiLinea();
+"185
 [e ( _seguiLinea ..  ]
-[; ;main.c: 194: numLinee--;
-"194
-[e -- _numLinee -> -> 1 `i `uc ]
-"195
-}
-[e :U 1141 ]
+[; ;main.c: 186: numLinee--;
 "186
-[e $ > -> _numLinee `i -> 0 `i 1142  ]
-[e :U 1143 ]
-[; ;main.c: 195: }
-[; ;main.c: 200: stopM();
-"200
+[e -- _numLinee -> -> 1 `i `uc ]
+"187
+}
+[e :U 1135 ]
+"180
+[e $ > -> _numLinee `i -> 0 `i 1136  ]
+[e :U 1137 ]
+[; ;main.c: 187: }
+[; ;main.c: 192: stopM();
+"192
 [e ( _stopM ..  ]
-[; ;main.c: 201: abbassaCarrello();
-"201
+[; ;main.c: 193: abbassaCarrello();
+"193
 [e ( _abbassaCarrello ..  ]
-[; ;main.c: 203: EPWM1_LoadDutyValue(300);
-"203
+[; ;main.c: 195: EPWM1_LoadDutyValue(300);
+"195
 [e ( _EPWM1_LoadDutyValue (1 -> -> 300 `i `ui ]
-[; ;main.c: 204: EPWM2_LoadDutyValue(300);
-"204
+[; ;main.c: 196: EPWM2_LoadDutyValue(300);
+"196
 [e ( _EPWM2_LoadDutyValue (1 -> -> 300 `i `ui ]
-[; ;main.c: 205: LATC0 = 1;
-"205
+[; ;main.c: 197: LATC0 = 1;
+"197
 [e = _LATC0 -> -> 1 `i `b ]
-[; ;main.c: 206: for (uint8_t T=0; T <=200; T=T+1){
-"206
-{
-[v _T `uc ~T0 @X0 1 a ]
-[e = _T -> -> 0 `i `uc ]
-[e $ <= -> _T `i -> 200 `i 1147  ]
-[e $U 1148  ]
-[e :U 1147 ]
-{
-[; ;main.c: 207: _delay((unsigned long)((10)*(64000000/4000.0)));
-"207
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[; ;main.c: 208: checkBatt();
-"208
-[e ( _checkBatt ..  ]
-"209
-}
-"206
-[e = _T -> + -> _T `i -> 1 `i `uc ]
-[e $ <= -> _T `i -> 200 `i 1147  ]
-[e :U 1148 ]
-"209
-}
-[; ;main.c: 209: }
-[; ;main.c: 210: stopM();
-"210
+[; ;main.c: 198: delay_mS(2000);
+"198
+[e ( _delay_mS (1 -> -> 2000 `i `ui ]
+[; ;main.c: 199: stopM();
+"199
 [e ( _stopM ..  ]
-[; ;main.c: 213: EPWM1_LoadDutyValue(700);
-"213
+[; ;main.c: 202: EPWM1_LoadDutyValue(700);
+"202
 [e ( _EPWM1_LoadDutyValue (1 -> -> 700 `i `ui ]
-[; ;main.c: 214: EPWM2_LoadDutyValue(300);
-"214
+[; ;main.c: 203: EPWM2_LoadDutyValue(300);
+"203
 [e ( _EPWM2_LoadDutyValue (1 -> -> 300 `i `ui ]
-[; ;main.c: 215: LATC0 = 1;
-"215
+[; ;main.c: 204: LATC0 = 1;
+"204
 [e = _LATC0 -> -> 1 `i `b ]
-[; ;main.c: 216: for (uint16_t T=0; T <= 400; T=T+1){
-"216
-{
-[v _T `ui ~T0 @X0 1 a ]
-[e = _T -> -> 0 `i `ui ]
-[e $ <= _T -> -> 400 `i `ui 1150  ]
-[e $U 1151  ]
-[e :U 1150 ]
-{
-[; ;main.c: 217: _delay((unsigned long)((10)*(64000000/4000.0)));
-"217
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[; ;main.c: 218: checkBatt();
-"218
-[e ( _checkBatt ..  ]
-"219
-}
-"216
-[e = _T + _T -> -> 1 `i `ui ]
-[e $ <= _T -> -> 400 `i `ui 1150  ]
-[e :U 1151 ]
-"219
-}
-[; ;main.c: 219: }
-[; ;main.c: 220: stopM();
-"220
+[; ;main.c: 205: delay_mS(4000);
+"205
+[e ( _delay_mS (1 -> -> 4000 `i `ui ]
+[; ;main.c: 206: stopM();
+"206
 [e ( _stopM ..  ]
-"222
+"208
 }
 [e :U 1112 ]
-"223
+"209
 }
 [e :U 1109 ]
 "70
 [e $U 1110  ]
 [e :U 1111 ]
-[; ;main.c: 222: }
-[; ;main.c: 223: }
-[; ;main.c: 224: }
-"224
+[; ;main.c: 208: }
+[; ;main.c: 209: }
+[; ;main.c: 210: }
+"210
 [e :UE 1108 ]
 }
-[v F7663 `(v ~T0 @X0 1 tf ]
-"232
-[v _stop `IF7663 ~T0 @X0 1 e ]
+[v F7657 `(v ~T0 @X0 1 tf ]
+"218
+[v _stop `IF7657 ~T0 @X0 1 e ]
 {
-[; ;main.c: 232: void interrupt stop(void) {
+[; ;main.c: 218: void interrupt stop(void) {
 [e :U _stop ]
 [f ]
-[; ;main.c: 234: if(INT1IE && INT1IF){
-"234
-[e $ ! && _INT1IE _INT1IF 1154  ]
+[; ;main.c: 220: if(INT1IE && INT1IF){
+"220
+[e $ ! && _INT1IE _INT1IF 1139  ]
 {
-[; ;main.c: 235: CCP4_SetCompareCount(800);
-"235
+[; ;main.c: 221: CCP4_SetCompareCount(800);
+"221
 [e ( _CCP4_SetCompareCount (1 -> -> 800 `i `ui ]
-[; ;main.c: 236: T1CONbits.TMR1ON = 1;
-"236
+[; ;main.c: 222: T1CONbits.TMR1ON = 1;
+"222
 [e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 237: LATC0 = 0;
-"237
+[; ;main.c: 223: LATC0 = 0;
+"223
 [e = _LATC0 -> -> 0 `i `b ]
-[; ;main.c: 238: for(i=0; i<100; i++){
-"238
+[; ;main.c: 224: for(i=0; i<100; i++){
+"224
 {
 [e = _i -> -> 0 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1155  ]
-[e $U 1156  ]
-[e :U 1155 ]
+[e $ < _i -> -> 100 `i `ui 1140  ]
+[e $U 1141  ]
+[e :U 1140 ]
 {
-[; ;main.c: 239: _delay((unsigned long)((10)*(64000000/4000.0)));
-"239
+[; ;main.c: 225: _delay((unsigned long)((10)*(64000000/4000.0)));
+"225
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"240
+"226
 }
-"238
+"224
 [e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1155  ]
-[e :U 1156 ]
-"240
+[e $ < _i -> -> 100 `i `ui 1140  ]
+[e :U 1141 ]
+"226
 }
-"242
+"228
 }
-[e :U 1154 ]
-[; ;main.c: 240: }
-[; ;main.c: 242: }
-[; ;main.c: 245: }
-"245
-[e :UE 1153 ]
+[e :U 1139 ]
+[; ;main.c: 226: }
+[; ;main.c: 228: }
+[; ;main.c: 231: }
+"231
+[e :UE 1138 ]
 }

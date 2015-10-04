@@ -99,41 +99,27 @@ void controllaColore(){
     S2 = 0;
     S3 = 0;
     //attesa di 500ms per stabilizzare il sensore
-    for(uint8_t i = 0; i<25; i++){
-        __delay_ms(10);
-        __delay_ms(10);
-    }
+    delay_mS(500);
     rossoPC = ADC_GetConversion(channel_AN4);
     
     //BLU
     S2 = 0;
     S3 = 1;
-    for(uint8_t i = 0; i<25; i++){
-        __delay_ms(10);
-        __delay_ms(10);
-    }
+    delay_mS(500);
     bluPC = ADC_GetConversion(channel_AN4);
     
     //verde
     S2 = 1;
     S3 = 1;
-    for(uint8_t i = 0; i<25; i++){
-        __delay_ms(10);
-        __delay_ms(10);
-    }
+    delay_mS(500);
     verdePC  = ADC_GetConversion(channel_AN4);
     
     //finito, spengo i LED.
     COLORLED = 1;
-    
+    //routine di decisione del colore. Con 3 comparazioni sul valore ASSOLUTO
+    //del sensore si decide quale sia il colore del pezzo
     if(rossoPC >= bluPC){
-        if(rossoPC >= verdePC){     //routine di decisione del colore. Con 3 comparazioni sul valore ASSOLUTO
-                                    //del sensore si decide quale sia il colore del pezzo.
-            colore = ROSSO;
-        }else{
-            colore = VERDE;
-        }
-
+        if(rossoPC >= verdePC) colore = ROSSO; else colore = VERDE;
     }else if(bluPC>=verdePC){
         colore = BLU;
     }else {
@@ -244,4 +230,13 @@ void abbassaCarrello(void){
     }
             STEP_EN = 0;
 
+}
+
+
+void delay_mS(uint16_t m_sec){
+    msec_10 = m_sec/10;
+    for(T = 0; T<=msec_10; T++){
+        __delay_ms(10);
+        checkBatt();
+    }
 }
