@@ -69,10 +69,13 @@ extern "C" {
 
 #define batt_scarica 656
 
-
-#define Front_SX    511
-#define Front_DX    164
-#define Front_C     287
+///***** LE SOGLIE DEI SENSORI SON DIVISE PER 10 PER METTER UN PO PIU' DI TOLLERANZA
+#define Front_SX    51
+#define Front_DX    16
+#define Front_C     28
+#define Front_CSX   68
+#define Front_CDX   40 // da rivedere
+    
 #define Back_SX     0
 #define Back_DX     0
 #define Back_C      0

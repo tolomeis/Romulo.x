@@ -90,9 +90,57 @@ void seguiLinea(){
 }
 
 void taratura(){
-    
-    
-    
+    S0 = 0;
+    S1 = 0;
+    S2 = 0;
+    // divido per 10 per avere un po di tolleranza
+    // le soglie sono già divise per 10, vedi alias.h
+    delay_mS(1000);
+    while(PORTBbits.RB1){
+        uint16_t v_sensori = ADC_GetConversion(channel_AN13)/10;
+        switch (v_sensori){
+            case Front_DX:
+                S0 = 1;
+                S1 = 0;
+                S2 = 0;
+                break;
+            case Front_C:
+                S0 = 0;
+                S1 = 1;
+                S2 = 0;
+                break;
+            case Front_SX:
+                S0 = 0;
+                S1 = 0;
+                S2 = 1;
+                break;
+            case Front_CDX:
+                S0 = 1;
+                S1 = 1;
+                S2 = 0;
+                break;
+            case Front_CSX:
+                S0 = 0;
+                S1 = 1;
+                S2 = 1;
+                break;
+            case Front_POS:
+                S0 = 1;
+                S1 = 1;
+                S2 = 1;
+                break;
+            default:
+                S0 = 0;
+                S1 = 0;
+                S2 = 0;
+                break;
+        }
+    }  
+    //eventualmente suona il buzzer
+    S0 = 0;
+    S1 = 0;
+    S2 = 0;
+    ei();
 }
 void controllaColore(){
     //INIZIALIZZO SENSORE, IMPOSTO PRESCALER E ACCENDO LED
