@@ -9058,6 +9058,7 @@ void sollevaCarrello(void);
 void abbassaCarrello(void);
 
 void delay_mS(uint16_t Msec);
+void taratura(void);
 
 # 197 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
@@ -9244,7 +9245,59 @@ break;
 
 }
 
+void taratura(){
+LATA0 = 0;
+LATA1 = 0;
+LATA2 = 0;
 
+
+delay_mS(1000);
+while(PORTBbits.RB1){
+uint16_t v_sensori = ADC_GetConversion(channel_AN13)/10;
+switch (v_sensori){
+case 16:
+LATA0 = 1;
+LATA1 = 0;
+LATA2 = 0;
+break;
+case 28:
+LATA0 = 0;
+LATA1 = 1;
+LATA2 = 0;
+break;
+case 51:
+LATA0 = 0;
+LATA1 = 0;
+LATA2 = 1;
+break;
+case 40:
+LATA0 = 1;
+LATA1 = 1;
+LATA2 = 0;
+break;
+case 68:
+LATA0 = 0;
+LATA1 = 1;
+LATA2 = 1;
+break;
+case 750:
+LATA0 = 1;
+LATA1 = 1;
+LATA2 = 1;
+break;
+default:
+LATA0 = 0;
+LATA1 = 0;
+LATA2 = 0;
+break;
+}
+}
+
+LATA0 = 0;
+LATA1 = 0;
+LATA2 = 0;
+(INTCONbits.GIE = 1);
+}
 void controllaColore(){
 
 LATA0 = 0;
@@ -9305,7 +9358,7 @@ T1CONbits.TMR1ON = 0;
 
 void checkBatt(void){
 
-# 162
+# 214
 }
 
 void sollevaCarrello(void){

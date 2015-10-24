@@ -73,7 +73,6 @@ void main(void)
         //se premuto un colore, lo memorizzo in goal_color e avvio tutta la 
         //sequenza, altrimenti torno a leggere la pulsantiera.
         //se premuto pulsante di attivazione taratura, inizo la routine di tara
-        
         if(PORTBbits.RB1 == 0 && puls_blu-40 <= V_pulsantiera && V_pulsantiera <= puls_blu+40){
             taratura();
         }else if(V_pulsantiera <1000){
