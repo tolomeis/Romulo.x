@@ -30,7 +30,7 @@
 
 uint16_t V_pulsantiera, V_frontale, V_posteriore;
 uint16_t i;
-
+//NB: inserire una funzione inline per la comprazione con tolleranza
 /******************************************************************************/
 /* Main Program                                                              */
 /******************************************************************************/
@@ -53,8 +53,9 @@ void main(void)
     INTEDG1 = 0;        //imposto trigger di INT1 su fronte di salita
     INT1IP = 1;         //imposto INT1 come alta priorità
     INT1IE = 1;         //attivo interrupt su RB1
-    ei();      //***** ATTIVO INTERRUPT GENERALE E ALTA PRIORITÀ
-    GIEH =1;
+    di();      //***** DISATTIVO INTERRUPT GENERALE E ALTA PRIORITÀ
+               //** disattivato perchè viene utilizzato per avviare taratura
+    
     /***********FINE INIZIALIZZAZIONE INTERRUPT */
     //Pongo a 0 i segnali dello stepper.
     INAp=0;
@@ -71,7 +72,11 @@ void main(void)
         V_pulsantiera = ADC_GetConversion(channel_AN9);
         //se premuto un colore, lo memorizzo in goal_color e avvio tutta la 
         //sequenza, altrimenti torno a leggere la pulsantiera.
-        if(V_pulsantiera <1000){
+        //se premuto pulsante di attivazione taratura, inizo la routine di tara
+        
+        if(PORTBbits.RB1 == 0 && puls_blu-40 <= V_pulsantiera && V_pulsantiera <= puls_blu+40){
+            taratura();
+        }else if(V_pulsantiera <1000){
             if(puls_rosso-40 <= V_pulsantiera && V_pulsantiera <= puls_rosso+40){
                 goal_color = ROSSO;
             }else if(puls_verde-40 <= V_pulsantiera && V_pulsantiera <= puls_verde+40){

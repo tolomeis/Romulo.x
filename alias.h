@@ -70,9 +70,9 @@ extern "C" {
 #define batt_scarica 656
 
 
-#define Front_SX    523
-#define Front_DX    196
-#define Front_C     294
+#define Front_SX    511
+#define Front_DX    164
+#define Front_C     287
 #define Back_SX     0
 #define Back_DX     0
 #define Back_C      0

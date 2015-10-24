@@ -89,7 +89,11 @@ void seguiLinea(){
          
 }
 
-
+void taratura(){
+    
+    
+    
+}
 void controllaColore(){
     //INIZIALIZZO SENSORE, IMPOSTO PRESCALER E ACCENDO LED
     S0 = 0;
