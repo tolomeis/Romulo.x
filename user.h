@@ -37,4 +37,4 @@ void sollevaCarrello(void);
 void abbassaCarrello(void);
 
 void delay_mS(uint16_t Msec);
-
+void taratura(void);

@@ -1,4 +1,12 @@
 /******************************************************************************/
+/******************************************************************************/
+/**** ROMULO 1.2 - ROBOT CARRELLO ELEVATORE************************************/
+/**Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione -
+ *  Condividi allo stesso modo 4.0 Internazionale. Per leggere una copia della
+ *  licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.*/
+/******************************************************************************/
+
+/******************************************************************************/
 /* Files to Include                                                           */
 /******************************************************************************/
 
@@ -30,6 +38,7 @@
 
 uint16_t V_pulsantiera, V_frontale, V_posteriore;
 uint16_t i;
+//NB: inserire una funzione inline per la comprazione con tolleranza
 
 /******************************************************************************/
 /* Main Program                                                              */
@@ -40,7 +49,7 @@ void main(void)
     SYSTEM_Initialize();
     InitApp();
     
-    /***********DISATTIVO MOTORI PER EVITARE PARTENZE****/
+    /***********DISATTIVO MOTORI****/
     MOT_EN = 0;
     STEP_EN = 0;
     EPWM1_LoadDutyValue(511);
@@ -48,13 +57,14 @@ void main(void)
     /*** DISATTIVO TIMER, SPENGO LED****/
     T1CONbits.TMR1ON = 0;
     COLORLED= 1;
-    //***** INIZIALIZZO INTERRUPT IN1 SU RB1*****
+    //***** INIZIALIZZO INTERRUPT IN1 SU RB1 (PULSANTE DI ARRESTO)*****
     TRISBbits.RB1 = 1;  //RB1 è un ingresso
     INTEDG1 = 0;        //imposto trigger di INT1 su fronte di salita
     INT1IP = 1;         //imposto INT1 come alta priorità
     INT1IE = 1;         //attivo interrupt su RB1
-    ei();      //***** ATTIVO INTERRUPT GENERALE E ALTA PRIORITÀ
-    GIEH =1;
+    di();      //***** DISATTIVO INTERRUPT GENERALE E ALTA PRIORITÀ
+               //** disattivato perchè viene utilizzato per avviare taratura
+    
     /***********FINE INIZIALIZZAZIONE INTERRUPT */
     //Pongo a 0 i segnali dello stepper.
     INAp=0;
@@ -64,14 +74,16 @@ void main(void)
     uint8_t numLinee = 0;
     
     /**********************************************************************/
-    /********FINE INIZIALIZZAZIONE. INIZIO CICLO DI LOOP ******************/
+    /********FINE INIZIALIZZAZIONE. ROBOT OPERATIVO ***********************/
     /**********************************************************************/
-    
     while(1) {
         V_pulsantiera = ADC_GetConversion(channel_AN9);
         //se premuto un colore, lo memorizzo in goal_color e avvio tutta la 
         //sequenza, altrimenti torno a leggere la pulsantiera.
-        if(V_pulsantiera <1000){
+        //se premuto pulsante di attivazione taratura, inizo la routine di tara
+        if(PORTBbits.RB1 == 0 && puls_blu-40 <= V_pulsantiera && V_pulsantiera <= puls_blu+40){
+            taratura();
+        }else if(V_pulsantiera <1000){
             if(puls_rosso-40 <= V_pulsantiera && V_pulsantiera <= puls_rosso+40){
                 goal_color = ROSSO;
             }else if(puls_verde-40 <= V_pulsantiera && V_pulsantiera <= puls_verde+40){
