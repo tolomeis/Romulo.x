@@ -11,7 +11,7 @@ The idea of a state machine remains, and someday it will be implemented
 
 Youtube video:
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/i_6BtVZXTvE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/i_6BtVZXTvE/0.jpg)](http://www.youtube.com/watch?v=i_6BtVZXTvE)
 
 
 ----------
