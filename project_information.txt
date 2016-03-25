@@ -1,11 +1,11 @@
 <Application Description for Project Goes Here>
 
-Project Owner(s):
-Author(s):
-Hardware Platform:
-Debuggers Used:
-Programmers Used:
-MPLAB Version:
+Project Owner(s): Simone Tolomei
+Author(s): Simone Tolomei
+Hardware Platform: Romulo Board - PIC18F24K22
+Debuggers Used: PICKit3
+Programmers Used: PICKit3
+MPLAB Version: 
 C Compiler Version:
 Final Checksum:
 

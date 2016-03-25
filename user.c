@@ -54,6 +54,11 @@ void InitApp(void)
 /********FUNZIONI UTENTE **********************************************/
 /**********************************************************************/
 
+
+/********** FUNZIONE DI COMPARAZIONE CON TOLLERANZA******/
+inline uint8_t comapara(uint16_t valore, uint16_t soglia, uint16_t tolleranza) return  (soglia - tolleranza <= valore) && (valore <= soglia + tolleranza);
+
+/************ INSEGUITORE DI LINEA ****************/
 void seguiLinea(){
             //***vai avanti
     EPWM1_LoadDutyValue(700);

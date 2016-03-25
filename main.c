@@ -45,7 +45,6 @@ uint16_t i;
 /******************************************************************************/
 void main(void)
 {
-    OSCILLATOR_Initialize();
     SYSTEM_Initialize();
     InitApp();
     
@@ -63,7 +62,6 @@ void main(void)
     INT1IP = 1;         //imposto INT1 come alta priorità
     INT1IE = 1;         //attivo interrupt su RB1
     di();      //***** DISATTIVO INTERRUPT GENERALE E ALTA PRIORITÀ
-               //** disattivato perchè viene utilizzato per avviare taratura
     
     /***********FINE INIZIALIZZAZIONE INTERRUPT */
     //Pongo a 0 i segnali dello stepper.
@@ -71,6 +69,8 @@ void main(void)
     INBp=0;
     INAm=0;
     INBm=0;
+
+    //numero di linee "percorse"
     uint8_t numLinee = 0;
     
     /**********************************************************************/
@@ -81,14 +81,14 @@ void main(void)
         //se premuto un colore, lo memorizzo in goal_color e avvio tutta la 
         //sequenza, altrimenti torno a leggere la pulsantiera.
         //se premuto pulsante di attivazione taratura, inizo la routine di tara
-        if(PORTBbits.RB1 == 0 && puls_blu-40 <= V_pulsantiera && V_pulsantiera <= puls_blu+40){
+        if(PORTBbits.RB1 == 0 && compara(V_pulsantiera,puls_blu,40)){
             taratura();
         }else if(V_pulsantiera <1000){
-            if(puls_rosso-40 <= V_pulsantiera && V_pulsantiera <= puls_rosso+40){
+            if(compara(V_pulsantiera,puls_rosso,40)){
                 goal_color = ROSSO;
-            }else if(puls_verde-40 <= V_pulsantiera && V_pulsantiera <= puls_verde+40){
+            }else if(compara(V_pulsantiera,puls_verde,40)){
                 goal_color = VERDE;
-            }else if(puls_blu-40 <= V_pulsantiera && V_pulsantiera <= puls_blu+40){
+            }else if(compara(V_pulsantiera,puls_blu,40)){
                 goal_color = BLU;
             }
  
@@ -227,6 +227,7 @@ void main(void)
 /*****************************************************************/
 /*********** ROUTINE DI INTERRUPT PER IL PULSANTE DI ARRESTO******/
 /*****************************************************************/
+//NB: non funzionante
 void interrupt  stop(void) {
     //**CONTROLLO CHE L'INTERRUPT SIA CORRETTO
     if(INT1IE && INT1IF){

@@ -23,6 +23,8 @@ uint16_t msec_10;
 
 void InitApp(void);/* I/O and Peripheral Initialization */
 
+inline uint16_t compara(uint16_t,uint16_t,uint16_t);
+
 void seguiLinea(void);
 
 void controllaColore(void);
