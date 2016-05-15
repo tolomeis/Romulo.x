@@ -94,9 +94,7 @@ void main(void)
  
             // OPZIONALE
             //ATTENDO MEZZO SECONDO
-            for (uint16_t T=0; T <= 50; T=T+1){
-                __delay_ms(10);
-            }
+            delay_mS(500);
             //AVVIO MOTORI, SEGUO LA LINA
             EPWM1_LoadDutyValue(514);
             EPWM2_LoadDutyValue(514);
@@ -119,9 +117,7 @@ void main(void)
                 //questo delay serve a sorpassare completamente la linea di stop
                 //ed evitare che il robot si rifermi subito.
                 //NB: è possibile toglierlo.
-                for(uint8_t t = 0; t<=100; t++){
-                    __delay_ms(10);
-                    }
+                delay_mS(500);
                 seguiLinea();
                 stopM();
                 //controllo colore
@@ -137,9 +133,8 @@ void main(void)
                     MOT_EN = 1;
                     EPWM1_LoadDutyValue(700);
                     EPWM2_LoadDutyValue(712);
-                    for(uint8_t t = 0; t<=100; t++){
-                    __delay_ms(10);
-                    }
+                    
+                    delay_mS(1000);
                     seguiLinea();
                     stopM();
                     numLinee++;
@@ -155,10 +150,8 @@ void main(void)
             EPWM1_LoadDutyValue(700);
             EPWM2_LoadDutyValue(300);
             MOT_EN = 1;
-            for (uint8_t T=0; T <= 190; T=T+1){
-                __delay_ms(10);
-                checkBatt();
-                }
+            delay_mS(1900);
+            
             // MI AVVICINO PER PRENDERE PEZZO
             EPWM1_LoadDutyValue(661);
             EPWM2_LoadDutyValue(670);

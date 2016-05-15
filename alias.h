@@ -66,7 +66,7 @@ extern "C" {
 #define INBp    LATC5
 #define INBm    LATC6
 #define STEP_EN LATC7
-
+ //*variabile batteria scarica
 #define batt_scarica 656
 
 ///***** LE SOGLIE DEI SENSORI SON DIVISE PER 10 PER METTER UN PO PIU' DI TOLLERANZA

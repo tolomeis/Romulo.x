@@ -27,6 +27,7 @@ inline uint16_t compara(uint16_t,uint16_t,uint16_t);
 
 void seguiLinea(void);
 
+
 void controllaColore(void);
 
 void stopM(void);
