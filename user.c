@@ -81,9 +81,8 @@ void seguiLinea(){
        }
         EPWM1_LoadDutyValue(vel_SX);                                 //alla fine della comparazione, si invia il dato di velocità
         EPWM2_LoadDutyValue(vel_DX);                                 //appena calcolato ai motori.
-        //8ms fra una correzione e l'altra, in caso si 
-        //****NB: Probabilmente inutile, il sistema è
-        //completamente deterministico.
+        //8ms fra una correzione e l'altra
+        //****NB: Probabilmente inutile
         for(uint8_t T = 0; T < 8; T++){
             __delay_ms(1);
              if(ADC_GetConversion(channel_AN13)>=Front_POS){
@@ -93,6 +92,50 @@ void seguiLinea(){
     }
          
 }
+
+//************* INSEGUITORE DI LINEA CON RILEVAZIONE DI MEZZA******
+//***** ancora beta
+/*
+void NUOVoseguiLinea(){
+    //vado avanti
+    EPWM1_LoadDutyValue(700);
+    EPWM2_LoadDutyValue(712);
+    MOT_EN = 1;
+    //leggo il sensore di linea. divido per 10 per avere un po di tolleranza
+    //le soglie sono già divise per 10, vedere alias.h
+    uint16_t v_linea = ADC_GetConversion(channel_AN13)/10;
+    //finchè non trovo la linea di stop, comparo con le soglie e scelgo le velocità di correzione per i motori
+    while(ADC_GetConversion(channel_AN13)<Front_POS){
+        switch(v_sensori){
+            case Front_C:
+                vel_SX=700;
+                vel_DX=712;
+                break;
+            case Front_DX:
+                vel_DX=762;
+                vel_SX = 655; 
+                break;
+             case Front_SX:
+                vel_SX=750;
+                vel_DX = 667;
+                break;
+            case Front_CDX:
+                vel_DX = 730;
+                vel_SX = 675;
+                break;
+            case Front_CSX:
+                vel_SX = 725;
+                vel_DX = 680;
+                break;
+        }
+        //muovo i motori alla velocità appena decisa
+        EPWM1_LoadDutyValue(vel_SX);
+        EPWM2_LoadDutyValue(vel_DX); 
+    }
+    //la funzione ritorna non appena si trova la linea di stop.
+}
+
+*/
 
 void taratura(){
     S0 = 0;
@@ -206,16 +249,16 @@ void suonaBuzzer_1(void){
 }
 
 void checkBatt(void){
-    /*
+    
     V_batt = ADC_GetConversion(V_BATTERIA);
     if(V_batt <= batt_scarica){
         MOT_EN = 0;
         STEP_EN = 0;
         COLORLED = 1;
-        suonaBuzzer_1();
+        //suonaBuzzer_1();
         
         while(1);
-    }*/
+    }
 }
 
 void sollevaCarrello(void){
