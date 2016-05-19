@@ -221,7 +221,8 @@ void main(void)
 /*********** ROUTINE DI INTERRUPT PER IL PULSANTE DI ARRESTO******/
 /*****************************************************************/
 //NB: non funzionante
-void interrupt  stop(void) {
+/*
+ void interrupt  stop(void) {
     //**CONTROLLO CHE L'INTERRUPT SIA CORRETTO
     if(INT1IE && INT1IF){
     CCP4_SetCompareCount(800);
@@ -229,12 +230,10 @@ void interrupt  stop(void) {
     MOT_EN = 0;
     for(i=0; i<100; i++){
         __delay_ms(10);
+        }
     }
-        
-    }
-
-
 }
+ */
 
 
 

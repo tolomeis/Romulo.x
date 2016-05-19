@@ -4,7 +4,7 @@
 [d chip 18F24K22 ]
 [d frameptr 4065 ]
 "81 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
-[e E7523 . `uc
+[e E7379 . `uc
 channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
@@ -15,13 +15,13 @@ channel_AN11 11
 channel_AN13 13
 ]
 "6 C:\Users\Simone\Documents\GitHub\Romulo.x\user.h
-[e E7522 . `uc
+[e E7378 . `uc
 ROSSO 0
 BLU 1
 VERDE 2
 ]
-"66 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[e E7562 . `uc
+"72 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+[e E7422 . `uc
 channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
@@ -32,13 +32,13 @@ channel_AN11 11
 channel_AN13 13
 ]
 "6 C:\Users\Simone\Documents\GitHub\Romulo.x\user.h
-[e E7524 . `uc
+[e E7380 . `uc
 ROSSO 0
 BLU 1
 VERDE 2
 ]
-"72 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
-[e E7564 . `uc
+"80 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
+[e E7424 . `uc
 channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
@@ -48,85 +48,85 @@ channel_AN9 9
 channel_AN11 11
 channel_AN13 13
 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
-"86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
+"86 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"54 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftdiv.c
+"54 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c
+"62 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
-"20 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftsub.c
+"20 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"10 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
+"10 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 3 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 3 0 ]
-"11 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+"11 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 3 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul32.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "27 C:\Users\Simone\Documents\GitHub\Romulo.x\interrupts.c
-[v _high_isr high_isr `II(v  1 e 0 0 ]
+[v _high_isr high_isr `II(v  1 e 1 0 ]
 "67
-[v _low_isr low_isr `IIL(v  1 e 0 0 ]
-"37 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
-[v _main main `(v  1 e 0 0 ]
-"223
-[v _stop stop `II(v  1 e 0 0 ]
+[v _low_isr low_isr `IIL(v  1 e 1 0 ]
+"46 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
+[v _main main `(v  1 e 1 0 ]
 "59 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
-[v _ADC_Initialize ADC_Initialize `(v  1 e 0 0 ]
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 "105
 [v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
 "58 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/ccp4.c
-[v _CCP4_Initialize CCP4_Initialize `(v  1 e 0 0 ]
+[v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
 "75
-[v _CCP4_SetCompareCount CCP4_SetCompareCount `(v  1 e 0 0 ]
+[v _CCP4_SetCompareCount CCP4_SetCompareCount `(v  1 e 1 0 ]
 "64 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm1.c
-[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 0 0 ]
+[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
 "91
-[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 0 0 ]
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
 "64 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm2.c
-[v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 0 0 ]
+[v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 1 0 ]
 "91
-[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 0 0 ]
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
 "106 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "118
-[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "50 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "63 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr1.c
-[v _TMR1_Initialize TMR1_Initialize `(v  1 e 0 0 ]
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "89
-[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 0 0 ]
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
 "58 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr2.c
-[v _TMR2_Initialize TMR2_Initialize `(v  1 e 0 0 ]
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "78
-[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 0 0 ]
+[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
 "30 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[v _InitApp InitApp `(v  1 e 0 0 ]
-"57
-[v _seguiLinea seguiLinea `(v  1 e 0 0 ]
-"92
-[v _taratura taratura `(v  1 e 0 0 ]
-"145
-[v _controllaColore controllaColore `(v  1 e 0 0 ]
-"186
-[v _stopM stopM `(v  1 e 0 0 ]
-"203
-[v _checkBatt checkBatt `(v  1 e 0 0 ]
-"216
-[v _sollevaCarrello sollevaCarrello `(v  1 e 0 0 ]
-"251
-[v _abbassaCarrello abbassaCarrello `(v  1 e 0 0 ]
-"288
-[v _delay_mS delay_mS `(v  1 e 0 0 ]
-"49 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f24k22.h
+[v _InitApp InitApp `(v  1 e 1 0 ]
+"59
+[v _compara compara `(uc  1 e 1 0 ]
+"63
+[v _seguiLinea seguiLinea `(v  1 e 1 0 ]
+"141
+[v _taratura taratura `(v  1 e 1 0 ]
+"194
+[v _controllaColore controllaColore `(v  1 e 1 0 ]
+"235
+[v _stopM stopM `(v  1 e 1 0 ]
+"252
+[v _checkBatt checkBatt `(v  1 e 1 0 ]
+"265
+[v _sollevaCarrello sollevaCarrello `(v  1 e 1 0 ]
+"300
+[v _abbassaCarrello abbassaCarrello `(v  1 e 1 0 ]
+"337
+[v _delay_mS delay_mS `(v  1 e 1 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f24k22.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
 "93
 [v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
@@ -262,13 +262,13 @@ channel_AN13 13
 ]
 [u S771 . 1 `S641 1 . 1 0 `S709 1 . 1 0 `S718 1 . 1 0 `S727 1 . 1 0 `S736 1 . 1 0 `S745 1 . 1 0 `S752 1 . 1 0 `S759 1 . 1 0 `S761 1 . 1 0 `S768 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES771  1 e 1 @3969 ]
-"7532
+"7337
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-"7664
+"7469
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-"7796
+"7601
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-"7928
+"7733
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 [s S592 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
@@ -279,7 +279,7 @@ channel_AN13 13
 `uc 1 TRISA6 1 0 :1:6 
 `uc 1 TRISA7 1 0 :1:7 
 ]
-"7960
+"7765
 [s S601 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
@@ -291,7 +291,7 @@ channel_AN13 13
 ]
 [u S610 . 1 `S592 1 . 1 0 `S601 1 . 1 0 ]
 [v _TRISAbits TRISAbits `VES610  1 e 1 @3986 ]
-"8149
+"7954
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 [s S632 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
@@ -302,12 +302,12 @@ channel_AN13 13
 `uc 1 TRISB6 1 0 :1:6 
 `uc 1 TRISB7 1 0 :1:7 
 ]
-"8181
+"7986
 [u S650 . 1 `S632 1 . 1 0 `S641 1 . 1 0 ]
 [v _TRISBbits TRISBbits `VES650  1 e 1 @3987 ]
-"8370
+"8175
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-"8611
+"8416
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
 [s S175 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
@@ -317,7 +317,7 @@ channel_AN13 13
 `uc 1 RC1IF 1 0 :1:5 
 `uc 1 ADIF 1 0 :1:6 
 ]
-"9057
+"8862
 [s S183 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
@@ -325,19 +325,19 @@ channel_AN13 13
 ]
 [u S188 . 1 `S175 1 . 1 0 `S183 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES188  1 e 1 @3998 ]
-"11291
+"11096
 [v _ECCP1AS ECCP1AS `VEuc  1 e 1 @4022 ]
-"11672
+"11477
 [v _PWM1CON PWM1CON `VEuc  1 e 1 @4023 ]
-"12714
+"12519
 [v _PSTR1CON PSTR1CON `VEuc  1 e 1 @4025 ]
-"12887
+"12692
 [v _T2CON T2CON `VEuc  1 e 1 @4026 ]
 [s S447 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
-"12908
+"12713
 [s S451 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -348,26 +348,26 @@ channel_AN13 13
 ]
 [u S459 . 1 `S447 1 . 1 0 `S451 1 . 1 0 ]
 [v _T2CONbits T2CONbits `VES459  1 e 1 @4026 ]
-"12957
+"12762
 [v _PR2 PR2 `VEuc  1 e 1 @4027 ]
-"12976
+"12781
 [v _TMR2 TMR2 `VEuc  1 e 1 @4028 ]
-"12995
+"12800
 [v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
-"13082
+"12887
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
-"13101
+"12906
 [v _CCPR1H CCPR1H `VEuc  1 e 1 @4031 ]
-"13120
+"12925
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
-"13190
+"12995
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
-"13257
+"13062
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
 [s S503 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
-"13302
+"13107
 [s S506 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
@@ -397,16 +397,16 @@ channel_AN13 13
 ]
 [u S533 . 1 `S503 1 . 1 0 `S506 1 . 1 0 `S510 1 . 1 0 `S518 1 . 1 0 `S521 1 . 1 0 `S524 1 . 1 0 `S527 1 . 1 0 `S530 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES533  1 e 1 @4034 ]
-"13387
+"13192
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
-"13406
+"13211
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-"15490
+"15295
 [v _T1GCON T1GCON `VEuc  1 e 1 @4044 ]
 [s S259 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 T1GGO_NOT_DONE 1 0 :1:3 
 ]
-"15520
+"15325
 [s S262 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
@@ -425,12 +425,12 @@ channel_AN13 13
 ]
 [u S278 . 1 `S259 1 . 1 0 `S262 1 . 1 0 `S270 1 . 1 0 `S275 1 . 1 0 ]
 [v _T1GCONbits T1GCONbits `VES278  1 e 1 @4044 ]
-"15584
+"15389
 [v _T1CON T1CON `VEuc  1 e 1 @4045 ]
 [s S209 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T1SYNC 1 0 :1:2 
 ]
-"15617
+"15422
 [s S212 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 T1RD16 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
@@ -452,20 +452,20 @@ channel_AN13 13
 ]
 [u S231 . 1 `S209 1 . 1 0 `S212 1 . 1 0 `S219 1 . 1 0 `S228 1 . 1 0 ]
 [v _T1CONbits T1CONbits `VES231  1 e 1 @4045 ]
-"15696
+"15501
 [v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
-"15702
+"15507
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
-"15721
+"15526
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-"15899
+"15704
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
-"15955
+"15760
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 [s S31 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
-"16765
+"16570
 [s S34 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
@@ -489,7 +489,7 @@ channel_AN13 13
 `uc 1 PEIE_GIEL 1 0 :1:6 
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
-"16856
+"16646
 [s S863 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -503,47 +503,43 @@ channel_AN13 13
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S889 . 1 `S854 1 . 1 0 `S863 1 . 1 0 `S872 1 . 1 0 `S863 1 . 1 0 `S872 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES889  1 e 1 @4082 ]
-"18045
+[u S876 . 1 `S854 1 . 1 0 `S863 1 . 1 0 `S872 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES876  1 e 1 @4082 ]
+"17823
 [v _INT1IE INT1IE `VEb  1 e 0 @32643 ]
-"18047
-[v _INT1IF INT1IF `VEb  1 e 0 @32640 ]
-"18049
+"17827
 [v _INT1IP INT1IP `VEb  1 e 0 @32646 ]
-"18069
+"17847
 [v _INTEDG1 INTEDG1 `VEb  1 e 0 @32653 ]
-"18137
+"17915
 [v _LATA0 LATA0 `VEb  1 e 0 @31816 ]
-"18139
+"17917
 [v _LATA1 LATA1 `VEb  1 e 0 @31817 ]
-"18141
+"17919
 [v _LATA2 LATA2 `VEb  1 e 0 @31818 ]
-"18143
+"17921
 [v _LATA3 LATA3 `VEb  1 e 0 @31819 ]
-"18145
+"17923
 [v _LATA4 LATA4 `VEb  1 e 0 @31820 ]
-"18169
+"17947
 [v _LATC0 LATC0 `VEb  1 e 0 @31832 ]
-"18175
+"17953
 [v _LATC3 LATC3 `VEb  1 e 0 @31835 ]
-"18177
+"17955
 [v _LATC4 LATC4 `VEb  1 e 0 @31836 ]
-"18179
+"17957
 [v _LATC5 LATC5 `VEb  1 e 0 @31837 ]
-"18181
+"17959
 [v _LATC6 LATC6 `VEb  1 e 0 @31838 ]
-"18183
+"17961
 [v _LATC7 LATC7 `VEb  1 e 0 @31839 ]
-"31 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
+"39 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
 [v _V_pulsantiera V_pulsantiera `ui  1 e 2 0 ]
-"32
-[v _i i `ui  1 e 2 0 ]
 "57 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEui  1 e 2 0 ]
 "6 C:\Users\Simone\Documents\GitHub\Romulo.x\user.h
-[v _colore colore `E7522  1 e 1 0 ]
-[v _goal_color goal_color `E7522  1 e 1 0 ]
+[v _colore colore `E7378  1 e 1 0 ]
+[v _goal_color goal_color `E7378  1 e 1 0 ]
 "7
 [v _rossoPC rossoPC `i  1 e 2 0 ]
 [v _verdePC verdePC `i  1 e 2 0 ]
@@ -558,189 +554,172 @@ channel_AN13 13
 [v _T T `ui  1 e 2 0 ]
 "15
 [v _msec_10 msec_10 `ui  1 e 2 0 ]
-"37 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
-[v _main main `(v  1 e 0 0 ]
+"46 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
+[v _main main `(v  1 e 1 0 ]
 {
-"133
-[v main@t_1273 t `uc  1 a 1 22 ]
-"115
-[v main@t t `uc  1 a 1 21 ]
-"151
-[v main@T_1274 T `uc  1 a 1 25 ]
-"90
-[v main@T T `ui  1 a 2 23 ]
-"65
-[v main@numLinee numLinee `uc  1 a 1 20 ]
+"74
+[v main@numLinee numLinee `uc  1 a 1 17 ]
 "215
 } 0
-"92 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[v _taratura taratura `(v  1 e 0 0 ]
+"141 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+[v _taratura taratura `(v  1 e 1 0 ]
 {
-"100
-[v taratura@v_sensori v_sensori `ui  1 a 2 17 ]
-"144
+"149
+[v taratura@v_sensori v_sensori `ui  1 a 2 15 ]
+"193
 } 0
-"186
-[v _stopM stopM `(v  1 e 0 0 ]
+"235
+[v _stopM stopM `(v  1 e 1 0 ]
 {
-"192
+"241
 } 0
-"216
-[v _sollevaCarrello sollevaCarrello `(v  1 e 0 0 ]
+"265
+[v _sollevaCarrello sollevaCarrello `(v  1 e 1 0 ]
 {
-"217
-[v sollevaCarrello@p p `uc  1 a 1 1 ]
-"248
+"266
+[v sollevaCarrello@p p `uc  1 a 1 32 ]
+"297
 } 0
-"57
-[v _seguiLinea seguiLinea `(v  1 e 0 0 ]
+"63
+[v _seguiLinea seguiLinea `(v  1 e 1 0 ]
 {
-"82
-[v seguiLinea@T T `uc  1 a 1 6 ]
-"90
+"87
+[v seguiLinea@T T `uc  1 a 1 4 ]
+"95
 } 0
 "91 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm2.c
-[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 0 0 ]
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v EPWM2_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 0 ]
+[v EPWM2_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 31 ]
 "98
 } 0
 "91 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm1.c
-[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 0 0 ]
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v EPWM1_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 0 ]
+[v EPWM1_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 31 ]
 "98
 } 0
-"145 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[v _controllaColore controllaColore `(v  1 e 0 0 ]
+"194 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+[v _controllaColore controllaColore `(v  1 e 1 0 ]
 {
-"181
+"230
 } 0
-"288
-[v _delay_mS delay_mS `(v  1 e 0 0 ]
+"337
+[v _delay_mS delay_mS `(v  1 e 1 0 ]
 {
-[v delay_mS@m_sec m_sec `ui  1 p 2 12 ]
-"294
+[v delay_mS@m_sec m_sec `ui  1 p 2 10 ]
+"343
 } 0
-"203
-[v _checkBatt checkBatt `(v  1 e 0 0 ]
+"252
+[v _checkBatt checkBatt `(v  1 e 1 0 ]
 {
-"214
+"263
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
-[v ___lwdiv@quotient quotient `ui  1 a 2 9 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 8 ]
 "12
-[v ___lwdiv@counter counter `uc  1 a 1 11 ]
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
 "8
-[v ___lwdiv@dividend dividend `ui  1 p 2 5 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 7 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 3 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 5 ]
 "31
 } 0
 "105 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
 [v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
 {
-[v ADC_GetConversion@channel channel `E7523  1 a 1 wreg ]
-[v ADC_GetConversion@channel channel `E7523  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E7379  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E7379  1 a 1 wreg ]
 "108
-[v ADC_GetConversion@channel channel `E7523  1 a 1 4 ]
+[v ADC_GetConversion@channel channel `E7379  1 a 1 2 ]
 "124
 } 0
-"251 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[v _abbassaCarrello abbassaCarrello `(v  1 e 0 0 ]
+"59 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+[v _compara compara `(uc  1 e 1 0 ]
 {
-"253
-[v abbassaCarrello@p_1028 p `uc  1 a 1 2 ]
-"252
-[v abbassaCarrello@p p `uc  1 a 1 1 ]
-"285
+[v compara@valore valore `ui  1 p 2 0 ]
+[v compara@soglia soglia `ui  1 p 2 2 ]
+[v compara@tolleranza tolleranza `ui  1 p 2 4 ]
+"61
+} 0
+"300
+[v _abbassaCarrello abbassaCarrello `(v  1 e 1 0 ]
+{
+"302
+[v abbassaCarrello@p_1005 p `uc  1 a 1 1 ]
+"301
+[v abbassaCarrello@p p `uc  1 a 1 0 ]
+"334
 } 0
 "106 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "116
 } 0
 "58 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr2.c
-[v _TMR2_Initialize TMR2_Initialize `(v  1 e 0 0 ]
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "76
 } 0
 "78
-[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 0 0 ]
+[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
 {
 "82
 } 0
 "63 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr1.c
-[v _TMR1_Initialize TMR1_Initialize `(v  1 e 0 0 ]
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "87
 } 0
 "89
-[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 0 0 ]
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
 {
 "93
 } 0
 "50 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "68
 } 0
 "118 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/mcc.c
-[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "128
 } 0
 "64 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm2.c
-[v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 0 0 ]
+[v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 1 0 ]
 {
 "89
 } 0
 "64 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm1.c
-[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 0 0 ]
+[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
 {
 "89
 } 0
 "58 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/ccp4.c
-[v _CCP4_Initialize CCP4_Initialize `(v  1 e 0 0 ]
+[v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
 {
 "73
 } 0
 "59 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
-[v _ADC_Initialize ADC_Initialize `(v  1 e 0 0 ]
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
 "30 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[v _InitApp InitApp `(v  1 e 0 0 ]
+[v _InitApp InitApp `(v  1 e 1 0 ]
 {
 "50
 } 0
 "67 C:\Users\Simone\Documents\GitHub\Romulo.x\interrupts.c
-[v _low_isr low_isr `IIL(v  1 e 0 0 ]
+[v _low_isr low_isr `IIL(v  1 e 1 0 ]
 {
 "102
 } 0
 "27
-[v _high_isr high_isr `II(v  1 e 0 0 ]
+[v _high_isr high_isr `II(v  1 e 1 0 ]
 {
 "63
-} 0
-"223 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
-[v _stop stop `II(v  1 e 0 0 ]
-{
-"236
-} 0
-"75 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/ccp4.c
-[v _CCP4_SetCompareCount CCP4_SetCompareCount `(v  1 e 0 0 ]
-{
-[s S133 . 2 `uc 1 ccpr4l 1 0 `uc 1 ccpr4h 1 1 ]
-"77
-[s S136 . 2 `ui 1 ccpr4_16Bit 2 0 ]
-[u S138 CCPR4Reg_tag 2 `S133 1 . 2 0 `S136 1 . 2 0 ]
-[v CCP4_SetCompareCount@module module `S138  1 a 2 33 ]
-"75
-[v CCP4_SetCompareCount@compareCount compareCount `ui  1 p 2 31 ]
-"84
 } 0

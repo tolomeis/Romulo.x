@@ -56,8 +56,9 @@ void InitApp(void)
 
 
 /********** FUNZIONE DI COMPARAZIONE CON TOLLERANZA******/
-inline uint8_t comapara(uint16_t valore, uint16_t soglia, uint16_t tolleranza) return  (soglia - tolleranza <= valore) && (valore <= soglia + tolleranza);
-
+ uint8_t compara(uint16_t valore, uint16_t soglia, uint16_t tolleranza){
+    return  (soglia - tolleranza <= valore) && (valore <= soglia + tolleranza);
+}
 /************ INSEGUITORE DI LINEA ****************/
 void seguiLinea(){
             //***vai avanti
@@ -249,16 +250,16 @@ void suonaBuzzer_1(void){
 }
 
 void checkBatt(void){
-    
+    /*
     V_batt = ADC_GetConversion(V_BATTERIA);
     if(V_batt <= batt_scarica){
         MOT_EN = 0;
         STEP_EN = 0;
         COLORLED = 1;
         //suonaBuzzer_1();
-        
         while(1);
-    }
+    } 
+     */
 }
 
 void sollevaCarrello(void){
