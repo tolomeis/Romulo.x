@@ -23,22 +23,19 @@ uint16_t msec_10;
 
 void InitApp(void);/* I/O and Peripheral Initialization */
 
- uint8_t compara(uint16_t,uint16_t,uint16_t);
-
 void seguiLinea(void);
-
 
 void controllaColore(void);
 
 void stopM(void);
 
-void suonaBuzzer_1(void);
+void suonaBuzzer_05(void);
 
 void checkBatt(void);
 
 void sollevaCarrello(void);
 void abbassaCarrello(void);
 
-void delay_mS(uint16_t );
+void delay_mS(uint16_t Msec);
 void taratura(void);
-//inline uint8_t compara(uint16_t,uint16_t,uint16_t);
+uint16_t lineaFR(void);

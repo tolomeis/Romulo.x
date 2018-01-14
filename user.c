@@ -26,7 +26,7 @@
 /******************************************************************************/
 
 /* <Initialize variables in user.h and insert code for user algorithms.> */
-
+uint16_t v_sensori;
 void InitApp(void)
 {
     /*******IMPOSTO IMPUT E OUTPUT******/
@@ -54,12 +54,6 @@ void InitApp(void)
 /********FUNZIONI UTENTE **********************************************/
 /**********************************************************************/
 
-
-/********** FUNZIONE DI COMPARAZIONE CON TOLLERANZA******/
- uint8_t compara(uint16_t valore, uint16_t soglia, uint16_t tolleranza){
-    return  (soglia - tolleranza <= valore) && (valore <= soglia + tolleranza);
-}
-/************ INSEGUITORE DI LINEA ****************/
 void seguiLinea(){
             //***vai avanti
     EPWM1_LoadDutyValue(700);
@@ -68,112 +62,97 @@ void seguiLinea(){
     //se si rileva la linea di stop la routine si interrompe e la
     //funzione finisce. Viceversa l'inseguitore continua a correggere
     //la prorpia traiettoria per mantenersi sopra la linea
-    while(ADC_GetConversion(channel_AN13)<Front_POS){
-        deltaV =  ADC_GetConversion(channel_AN13);                  //basandosi sul valore di tensione centrale, con una 
-        if(deltaV > 292){                                           // comparazione è possibile stabilire la posizione della linea
-            vel_DX=762;                                             //linea a sinistra, incremento velocità di destra
-            vel_SX = 655;                                                    
-        }else if(deltaV < 252 && deltaV > 10){                      //linea a destra, incremento velocità di sinistra
-            vel_SX=750;
-            vel_DX = 667;
-       }else if(deltaV > 10){
-            vel_DX = 712;                                            //linea assente, proseguo in avanti finchè la linea 
-            vel_SX = 700;                                            //non ritorna sul robot.
-       }
-        EPWM1_LoadDutyValue(vel_SX);                                 //alla fine della comparazione, si invia il dato di velocità
-        EPWM2_LoadDutyValue(vel_DX);                                 //appena calcolato ai motori.
-        //8ms fra una correzione e l'altra
-        //****NB: Probabilmente inutile
-        for(uint8_t T = 0; T < 8; T++){
-            __delay_ms(1);
-             if(ADC_GetConversion(channel_AN13)>=Front_POS){
+    //while(ADC_GetConversion(channel_AN13)<Front_POS){
+     do{   
+        deltaV = lineaFR();
+        switch(deltaV){
+            case Front_SX_8:
+            case 126:
+            case 124:
+                vel_DX=767;                                 //linea a sinistra, incremento velocità di destra
+                vel_SX = 650;
                 break;
-            }
-          }
-    }
+            case Front_DX_8:
+            case 40:
+            case 38:
+                vel_SX=755;
+                vel_DX = 662;
+                break;
+            case Front_CDX_8:
+            case 99:
+            case 97:       
+                    vel_SX=735;
+                vel_DX = 670;
+                break;
+            case Front_CSX_8:
+            case 167:
+            case 169:
+                vel_SX=670;
+                vel_DX = 735;
+                break;
+            case Front_C_8: //68
+            case 67:
+            case 69:
+                vel_DX = 712;                               //linea assente, proseguo in avanti finchè la linea 
+                vel_SX = 700;
+                break;
+            default:
+                break;
+        }
+        EPWM1_LoadDutyValue(vel_SX);                    //alla fine della comparazione, si invia il dato di velocità
+        EPWM2_LoadDutyValue(vel_DX);                    //appena calcolato ai motori.
+    } while(deltaV < Front_POS_8-2);
          
 }
 
-//************* INSEGUITORE DI LINEA CON RILEVAZIONE DI MEZZA******
-//***** ancora beta
-/*
-void NUOVoseguiLinea(){
-    //vado avanti
-    EPWM1_LoadDutyValue(700);
-    EPWM2_LoadDutyValue(712);
-    MOT_EN = 1;
-    //leggo il sensore di linea. divido per 10 per avere un po di tolleranza
-    //le soglie sono già divise per 10, vedere alias.h
-    uint16_t v_linea = ADC_GetConversion(channel_AN13)/10;
-    //finchè non trovo la linea di stop, comparo con le soglie e scelgo le velocità di correzione per i motori
-    while(ADC_GetConversion(channel_AN13)<Front_POS){
-        switch(v_sensori){
-            case Front_C:
-                vel_SX=700;
-                vel_DX=712;
-                break;
-            case Front_DX:
-                vel_DX=762;
-                vel_SX = 655; 
-                break;
-             case Front_SX:
-                vel_SX=750;
-                vel_DX = 667;
-                break;
-            case Front_CDX:
-                vel_DX = 730;
-                vel_SX = 675;
-                break;
-            case Front_CSX:
-                vel_SX = 725;
-                vel_DX = 680;
-                break;
-        }
-        //muovo i motori alla velocità appena decisa
-        EPWM1_LoadDutyValue(vel_SX);
-        EPWM2_LoadDutyValue(vel_DX); 
-    }
-    //la funzione ritorna non appena si trova la linea di stop.
-}
-
-*/
-
 void taratura(){
-    S0 = 0;
-    S1 = 0;
-    S2 = 0;
-    // divido per 10 per avere un po di tolleranza
-    // le soglie sono già divise per 10, vedi alias.h
-    delay_mS(1000);
+    S0 = 0; S1 = 0; S2 = 0;
+    delay_mS(500);
+    S0 = 1; S1 = 1; S2 = 1;
+    delay_mS(500);
+    S0 = 0; S1 = 0; S2 = 0;
+    
     while(PORTBbits.RB1){
-        uint16_t v_sensori = ADC_GetConversion(channel_AN13)/10;
+        v_sensori = lineaFR();
         switch (v_sensori){
-            case Front_DX:
+            case Front_DX_8: //39
+            case 40:
+            case 38:
                 S0 = 1;
                 S1 = 0;
                 S2 = 0;
                 break;
-            case Front_C:
+            case Front_C_8: //68
+            case 67:
+            case 69:
                 S0 = 0;
                 S1 = 1;
                 S2 = 0;
                 break;
-            case Front_SX:
+            case Front_SX_8: //125
+            case 126:
+            case 124:
                 S0 = 0;
                 S1 = 0;
                 S2 = 1;
                 break;
-            case Front_CDX:
+            case Front_CDX_8:  //98
+            case 99:
+            case 97:
                 S0 = 1;
                 S1 = 1;
                 S2 = 0;
                 break;
-            case Front_CSX:
+            case Front_CSX_8: //168
+            case 167:
+            case 169:
                 S0 = 0;
                 S1 = 1;
                 S2 = 1;
                 break;
-            case Front_POS:
+            case Front_POS_8: //192
+            case 191:
+            case 193:
                 S0 = 1;
                 S1 = 1;
                 S2 = 1;
@@ -185,36 +164,51 @@ void taratura(){
                 break;
         }
     }  
-    //eventualmente suona il buzzer
-    S0 = 0;
-    S1 = 0;
-    S2 = 0;
-    ei();
+    S0 = 0; S1 = 0; S2 = 0;
+    delay_mS(500);
+    S0 = 1; S1 = 1; S2 = 1;
+    delay_mS(500);
+    S0 = 0; S1 = 0; S2 = 0;
+    /*INTEDG1 = 0;        //imposto trigger di INT1 su fronte di salita
+    INT1IP = 1;         //imposto INT1 come alta priorità
+    INT1IE = 1;         //attivo interrupt su RB1
+    ei();*/
 }
+
+uint16_t lineaFR(){
+    //copiato pari pari da adc.c
+    //0x0D è il canale del frontale
+    ADCON0bits.CHS = 0x0D;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GO_nDONE = 1;
+    while (ADCON0bits.GO_nDONE);
+    uint16_t ris = ((ADRESH << 8) + ADRESL);
+    ris = ris >> 2;  //in questo modo ris è a 8 bit
+    //ris = ris/10;
+    return ris;
+}
+
+
 void controllaColore(){
     //INIZIALIZZO SENSORE, IMPOSTO PRESCALER E ACCENDO LED
-    S0 = 0;
-    S1 = 1;
+    S0 = 0; S1 = 1;
     COLORLED = 0;
     //controllo rosso
-    S2 = 0;
-    S3 = 0;
+    S2 = 0; S3 = 0;
     //attesa di 500ms per stabilizzare il sensore
     delay_mS(500);
     rossoPC = ADC_GetConversion(channel_AN4);
-    
+  
     //BLU
-    S2 = 0;
-    S3 = 1;
+    S2 = 0; S3 = 1;
     delay_mS(500);
     bluPC = ADC_GetConversion(channel_AN4);
     
     //verde
-    S2 = 1;
-    S3 = 1;
+    S2 = 1; S3 = 1;
     delay_mS(500);
     verdePC  = ADC_GetConversion(channel_AN4);
-    
+  
     //finito, spengo i LED.
     COLORLED = 1;
     //routine di decisione del colore. Con 3 comparazioni sul valore ASSOLUTO
@@ -240,12 +234,14 @@ void stopM(void){
     MOT_EN = 0;
 }
 
-void suonaBuzzer_1(void){
-    CCP4_SetCompareCount(800);
+void suonaBuzzer_05(void){
+    CCP4_SetCompareCount(500);
     T1CONbits.TMR1ON = 1;
-    for (uint16_t T=0; T <= 100; T=T+1){
+    for (uint16_t T=0; T <= 50; T++){
         __delay_ms(10);
     }
+    
+    CCP4_SetCompareCount(0);
     T1CONbits.TMR1ON = 0;
 }
 
@@ -256,17 +252,17 @@ void checkBatt(void){
         MOT_EN = 0;
         STEP_EN = 0;
         COLORLED = 1;
-        //suonaBuzzer_1();
+        suonaBuzzer_1();
+        
         while(1);
-    } 
-     */
+    }*/
 }
 
 void sollevaCarrello(void){
     uint8_t p = 0;
+    STEP_EN = 1;
     for(p=0; p<43;p++)
     {
-        STEP_EN = 1;
         INAp=0;
         INBp=1;
         INAm=1;
@@ -329,7 +325,7 @@ void abbassaCarrello(void){
 
 
     }
-            STEP_EN = 0;
+    STEP_EN = 0;
 
 }
 
