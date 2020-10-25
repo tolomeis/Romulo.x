@@ -15,44 +15,6 @@ extern "C" {
 // ALIAS PER COSTANTI, SOGLIE E PIN
 //**************************************
 
-    /******SOGLIE DI COMPARAZIONE PER LINEA***/
-
-
-    /*
-    //********** POSIZIONE ***************
-    #define partenza  0
-    #define taratura 1
-    #define caricoPezzo1 2
-    #define colorePezzo1 3
-    #define caricoPezzo2 4
-    #define colorePezzo2 5
-    #define caricoPezzo3 6
-    #define colorePezzo3 7
-    #define scaricoCurva 8
-    #define scarico 9
-    #define arrivo 10
-
-   //********** TASK **********
-
-    #define attendi 0
-    #define vai_deposito 1
-    #define tara_colore 2
-    #define controlloPezzo1 3
-    #define controlloPezzo2 4
-    #define controlloPezzo3 5
-    #define caricoPezzo 6
-    #define scaricoPezzo 7
-
-    //************* FASI DI SCARICO ***********
-
-    #define null 0
-    #define rotazione 1
-    #define avvicinamento 2
-    #define sollevamento 3
-    #define ritornoLinea 4
-    #define ritornoRotazione 5
-    */
-
     /***************PIN DI I/O DIGITALI*******/
 #define S0      LATA0
 #define S1      LATA1
@@ -66,32 +28,50 @@ extern "C" {
 #define INBp    LATC5
 #define INBm    LATC6
 #define STEP_EN LATC7
- //*variabile batteria scarica
+
 #define batt_scarica 656
 
-///***** LE SOGLIE DEI SENSORI SON DIVISE PER 10 PER METTER UN PO PIU' DI TOLLERANZA
-#define Front_SX    51
-#define Front_DX    16
-#define Front_C     28
-#define Front_CSX   68
+
+#define Front_SX    510
+#define Front_DX    160
+#define Front_C     280
+#define Front_CSX   680
 #define Front_CDX   40 // da rivedere
+// SOGLIA FRONT-POS NON DIVISA PER 10
+#define Front_POS   750
+
+#define Front_SX10    51
+#define Front_DX10    16
+#define Front_C10     28
+#define Front_CSX10   68
+#define Front_CDX10   4 // da rivedere
+// SOGLIA FRONT-POS NON DIVISA PER 10
+#define Front_POS10   75    
     
+    
+/**** SOGLIE PER TARATURA A 8 BIT****/
+#define Front_SX_8    125
+#define Front_DX_8    39
+#define Front_C_8     68
+#define Front_CSX_8   168
+#define Front_CDX_8   98
+#define Front_POS_8   192
+    
+// NON UTILIZZATI    
+/*    
 #define Back_SX     0
 #define Back_DX     0
 #define Back_C      0
-#define Front_POS   750
 #define Back_POS    0
+ */
 
 #define puls_rosso  921
 #define puls_blu    532
 #define puls_verde  724
 
-
-
 #ifdef	__cplusplus
 }
 #endif
-
 
 #endif	/* ALIAS_H */
 

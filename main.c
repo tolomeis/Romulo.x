@@ -1,12 +1,4 @@
 /******************************************************************************/
-/******************************************************************************/
-/**** ROMULO 1.2 - ROBOT CARRELLO ELEVATORE************************************/
-/**Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione -
- *  Condividi allo stesso modo 4.0 Internazionale. Per leggere una copia della
- *  licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.*/
-/******************************************************************************/
-
-/******************************************************************************/
 /* Files to Include                                                           */
 /******************************************************************************/
 
@@ -38,17 +30,18 @@
 
 uint16_t V_pulsantiera, V_frontale, V_posteriore;
 uint16_t i;
-//NB: inserire una funzione inline per la comprazione con tolleranza
 
+//NB: inserire una funzione inline per la comprazione con tolleranza
 /******************************************************************************/
 /* Main Program                                                              */
 /******************************************************************************/
 void main(void)
 {
+    OSCILLATOR_Initialize();
     SYSTEM_Initialize();
     InitApp();
     
-    /***********DISATTIVO MOTORI****/
+    /***********DISATTIVO MOTORI PER EVITARE PARTENZE****/
     MOT_EN = 0;
     STEP_EN = 0;
     EPWM1_LoadDutyValue(511);
@@ -56,12 +49,18 @@ void main(void)
     /*** DISATTIVO TIMER, SPENGO LED****/
     T1CONbits.TMR1ON = 0;
     COLORLED= 1;
-    //***** INIZIALIZZO INTERRUPT IN1 SU RB1 (PULSANTE DI ARRESTO)*****
+    //***** INIZIALIZZO INTERRUPT IN1 SU RB1*****
+    //l'interrupt all'inizio è disattivato, si attiva immediatamente dopo
+    //la taratura
     TRISBbits.RB1 = 1;  //RB1 è un ingresso
-    INTEDG1 = 0;        //imposto trigger di INT1 su fronte di salita
+    ANSELBbits.ANSB1 = 0;
+    /*INTEDG1 = 0;//imposto trigger di INT1 su fronte di salita
     INT1IP = 1;         //imposto INT1 come alta priorità
-    INT1IE = 1;         //attivo interrupt su RB1
+    INT1IE = 0; 
+    INTCON3bits.//DISATTIVO interrupt su RB1
+     */
     di();      //***** DISATTIVO INTERRUPT GENERALE E ALTA PRIORITÀ
+               //** disattivato perchè viene utilizzato per avviare taratura
     
     /***********FINE INIZIALIZZAZIONE INTERRUPT */
     //Pongo a 0 i segnali dello stepper.
@@ -69,32 +68,34 @@ void main(void)
     INBp=0;
     INAm=0;
     INBm=0;
-
-    //numero di linee "percorse"
     uint8_t numLinee = 0;
     
     /**********************************************************************/
-    /********FINE INIZIALIZZAZIONE. ROBOT OPERATIVO ***********************/
+    /********FINE INIZIALIZZAZIONE. INIZIO CICLO DI LOOP ******************/
     /**********************************************************************/
+    
     while(1) {
         V_pulsantiera = ADC_GetConversion(channel_AN9);
+
         //se premuto un colore, lo memorizzo in goal_color e avvio tutta la 
         //sequenza, altrimenti torno a leggere la pulsantiera.
         //se premuto pulsante di attivazione taratura, inizo la routine di tara
-        if(PORTBbits.RB1 == 0 && compara(V_pulsantiera,puls_blu,40)){
+        if(PORTBbits.RB1 == 0 && (puls_blu-40 <= V_pulsantiera && V_pulsantiera <= puls_blu+40)){
             taratura();
         }else if(V_pulsantiera <1000){
-            if(compara(V_pulsantiera,puls_rosso,40)){
+            if(puls_rosso-40 <= V_pulsantiera && V_pulsantiera <= puls_rosso+40){
                 goal_color = ROSSO;
-            }else if(compara(V_pulsantiera,puls_verde,40)){
+            }else if(puls_verde-40 <= V_pulsantiera && V_pulsantiera <= puls_verde+40){
                 goal_color = VERDE;
-            }else if(compara(V_pulsantiera,puls_blu,40)){
+            }else if(puls_blu-40 <= V_pulsantiera && V_pulsantiera <= puls_blu+40){
                 goal_color = BLU;
             }
- 
+            //suonaBuzzer_05();
             // OPZIONALE
             //ATTENDO MEZZO SECONDO
-            delay_mS(500);
+            for (uint16_t T=0; T <= 50; T=T+1){
+                __delay_ms(10);
+            }
             //AVVIO MOTORI, SEGUO LA LINA
             EPWM1_LoadDutyValue(514);
             EPWM2_LoadDutyValue(514);
@@ -117,7 +118,9 @@ void main(void)
                 //questo delay serve a sorpassare completamente la linea di stop
                 //ed evitare che il robot si rifermi subito.
                 //NB: è possibile toglierlo.
-                delay_mS(500);
+                for(uint8_t t = 0; t<=100; t++){
+                    __delay_ms(10);
+                    }
                 seguiLinea();
                 stopM();
                 //controllo colore
@@ -133,8 +136,9 @@ void main(void)
                     MOT_EN = 1;
                     EPWM1_LoadDutyValue(700);
                     EPWM2_LoadDutyValue(712);
-                    
-                    delay_mS(1000);
+                    for(uint8_t t = 0; t<=100; t++){
+                    __delay_ms(10);
+                    }
                     seguiLinea();
                     stopM();
                     numLinee++;
@@ -147,16 +151,16 @@ void main(void)
             //Quindi, prima di tutto inizio la manovra di sollevamento, che si
             //basa su tempi.
             //ROTAZIONE PER PRENDERE PEZZO
+            //da rivedere: cercare di inserire una rotazione dinamica
             EPWM1_LoadDutyValue(700);
-            EPWM2_LoadDutyValue(300);
-            MOT_EN = 1;
-            delay_mS(1900);
-            
-            // MI AVVICINO PER PRENDERE PEZZO
-            EPWM1_LoadDutyValue(661);
-            EPWM2_LoadDutyValue(670);
+            EPWM2_LoadDutyValue(290);
             MOT_EN = 1;
             delay_mS(2000);
+            // MI AVVICINO PER PRENDERE PEZZO
+            EPWM1_LoadDutyValue(655);
+            EPWM2_LoadDutyValue(685);
+            MOT_EN = 1;
+            delay_mS(1750);
             // FERMO E SOLLEVO CARRELLO
             stopM();
             sollevaCarrello();
@@ -164,17 +168,17 @@ void main(void)
             EPWM1_LoadDutyValue(361);
             EPWM2_LoadDutyValue(372);
             MOT_EN = 1;
-            delay_mS(1500);
+            //while(lineaFR() != Front_C_8); //è la soglia minore
+            delay_mS(1750);
             stopM();
-
             //******** INIZIO UNA ROTAZIONE DINAMICA, ovvero inizio a ruotare
             //finchè i sensori frontali non rilevano la linea.
             //NB: da rivedere.
-            
             EPWM1_LoadDutyValue(700);
-            EPWM2_LoadDutyValue(300);
+            EPWM2_LoadDutyValue(311);
             MOT_EN = 1;
-            while(ADC_GetConversion(channel_AN13)<=300);
+            delay_mS(1625);
+            //while(lineaFR() != Front_C_8);
             /****  SEGUO LA LINEA FINO ALLA PARTENZA***/
             EPWM1_LoadDutyValue(700);
             EPWM2_LoadDutyValue(712);
@@ -197,15 +201,15 @@ void main(void)
             stopM();
             abbassaCarrello();
             // INDIETREGGIO
-            EPWM1_LoadDutyValue(300);
-            EPWM2_LoadDutyValue(300);
+            EPWM1_LoadDutyValue(360);
+            EPWM2_LoadDutyValue(370);
             MOT_EN = 1;
             delay_mS(2000);
             stopM();
 
            //RUOTO PER 4,5 SECONDI
-            EPWM1_LoadDutyValue(700);
-            EPWM2_LoadDutyValue(300);
+            EPWM1_LoadDutyValue(300);
+            EPWM2_LoadDutyValue(700);
             MOT_EN = 1;
             delay_mS(4000);
             stopM();
@@ -220,9 +224,8 @@ void main(void)
 /*****************************************************************/
 /*********** ROUTINE DI INTERRUPT PER IL PULSANTE DI ARRESTO******/
 /*****************************************************************/
-//NB: non funzionante
 /*
- void interrupt  stop(void) {
+void interrupt  stop(void) {
     //**CONTROLLO CHE L'INTERRUPT SIA CORRETTO
     if(INT1IE && INT1IF){
     CCP4_SetCompareCount(800);
@@ -230,10 +233,10 @@ void main(void)
     MOT_EN = 0;
     for(i=0; i<100; i++){
         __delay_ms(10);
-        }
+    }
+        
     }
 }
- */
-
+*/
 
 
