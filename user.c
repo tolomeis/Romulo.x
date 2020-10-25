@@ -21,6 +21,13 @@
 #include "alias.h"
 #include "mcc_generated_files/mcc.h"
 
+
+#define LinTh       900
+#define setpoint    1.7*1023.0/5.0
+#define deltaT 1
+#define Ki 1.0
+#define Kp 1.0
+
 /******************************************************************************/
 /* User Functions                                                             */
 /******************************************************************************/
@@ -59,6 +66,7 @@ void InitApp(void)
  uint8_t compara(uint16_t valore, uint16_t soglia, uint16_t tolleranza){
     return  (soglia - tolleranza <= valore) && (valore <= soglia + tolleranza);
 }
+ 
 /************ INSEGUITORE DI LINEA ****************/
 void seguiLinea(){
             //***vai avanti
@@ -93,6 +101,7 @@ void seguiLinea(){
     }
          
 }
+/*Inseguitore di linea*/
 
 //************* INSEGUITORE DI LINEA CON RILEVAZIONE DI MEZZA******
 //***** ancora beta
@@ -137,6 +146,43 @@ void NUOVoseguiLinea(){
 }
 
 */
+
+void PID_Linea(int vel){
+    EPWM1_LoadDutyValue(vel);
+    EPWM2_LoadDutyValue(vel);
+    MOT_EN = 1;
+    double e = 0.0;
+    double Ie = 0.0;
+
+    double deltaV = 0.0;
+    while(ADC_GetConversion(channel_AN13) < LinTh){
+        e = (double) ADC_GetConversion(channel_AN13);
+        e -= setpoint;
+        Ie += deltaT*e;
+        deltaV = (Kp*e) + (Ki*Ie);
+        EPWM1_LoadDutyValue(vel +((int) deltaV));   //sx
+        EPWM2_LoadDutyValue(vel -((int) deltaV));   //dx
+        __delay_ms(deltaT);
+        //TODO:
+        //antiwindup
+    } 
+    MOT_EN = 0;
+}
+
+void taraturaIR(){
+	int i = 0;
+	int s;
+	MOT_EN = 1;
+	while(ADC_GetConversion(channel_AN13) >= LinTh){
+		s = (2 * (i%2)) - 1;
+		EPWM1_LoadDutyValue(256 + (s*100));
+    		EPWM2_LoadDutyValue(256 - (s*100));
+            delay_mS(1000);
+		i++;
+	}
+    	MOT_EN = 0;
+}
+		
 
 void taratura(){
     S0 = 0;
@@ -228,9 +274,6 @@ void controllaColore(){
     }
 
 }
-
-
-
 
 void stopM(void){
     EPWM1_LoadDutyValue(511);

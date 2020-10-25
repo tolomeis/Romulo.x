@@ -27,6 +27,8 @@ void InitApp(void);/* I/O and Peripheral Initialization */
 
 void seguiLinea(void);
 
+void PID_Linea(int);
+void taraturaIR(void);
 
 void controllaColore(void);
 
