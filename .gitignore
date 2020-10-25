@@ -43,7 +43,7 @@ Temporary Items
 .apdisk
 *.p1
 *.pre
-/build/*
-/nbproject/*
-/dist/*
+build/*
+nbproject/*
+dist/*
 
