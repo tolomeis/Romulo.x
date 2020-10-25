@@ -21,9 +21,9 @@
 #include "alias.h"
 #include "mcc_generated_files/mcc.h"
 
-
-#define LinTh       900
-#define setpoint    1.7*1023.0/5.0
+#define IRVDD   4.25
+#define LinTh       ((31/32)*IRVDD)*(1023/5.0)
+#define setpoint    (2.0*1023.0)/5.0
 #define deltaT 1
 #define Ki 1.0
 #define Kp 1.0
@@ -169,13 +169,16 @@ void PID_Linea(int vel){
 }
 
 void taraturaIR(){
+    __delay_ms(20);
 	int i = 0;
 	int s;
 	MOT_EN = 1;
-	while(ADC_GetConversion(channel_AN13) >= LinTh){
+    int soglia = ADC_GetConversion(channel_AN13);
+	//while(ADC_GetConversion(channel_AN13) <= LinTh);
+    while(ADC_GetConversion(channel_AN13) >= (int) setpoint){
 		s = (2 * (i%2)) - 1;
-		EPWM1_LoadDutyValue(256 + (s*100));
-    		EPWM2_LoadDutyValue(256 - (s*100));
+		EPWM1_LoadDutyValue(512 + (s*250));
+    		EPWM2_LoadDutyValue(512 - (s*250));
             delay_mS(1000);
 		i++;
 	}

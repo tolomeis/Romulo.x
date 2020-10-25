@@ -3,8 +3,8 @@
 [d edition pro ]
 [d chip 18F24K22 ]
 [d frameptr 4065 ]
-"81 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
-[e E7379 . `uc
+"81 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/adc.c
+[e E6653 . `uc
 channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
@@ -14,14 +14,14 @@ channel_AN9 9
 channel_AN11 11
 channel_AN13 13
 ]
-"6 C:\Users\Simone\Documents\GitHub\Romulo.x\user.h
-[e E7378 . `uc
+"6 /home/tolomeilab/MPLABXProjects/Romulo.x/user.h
+[e E6652 . `uc
 ROSSO 0
 BLU 1
 VERDE 2
 ]
-"72 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[e E7422 . `uc
+"80 /home/tolomeilab/MPLABXProjects/Romulo.x/user.c
+[e E6700 . `uc
 channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
@@ -31,14 +31,14 @@ channel_AN9 9
 channel_AN11 11
 channel_AN13 13
 ]
-"6 C:\Users\Simone\Documents\GitHub\Romulo.x\user.h
-[e E7380 . `uc
+"6 /home/tolomeilab/MPLABXProjects/Romulo.x/user.h
+[e E6654 . `uc
 ROSSO 0
 BLU 1
 VERDE 2
 ]
-"80 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
-[e E7424 . `uc
+"81 /home/tolomeilab/MPLABXProjects/Romulo.x/main.c
+[e E6702 . `uc
 channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
@@ -48,85 +48,95 @@ channel_AN9 9
 channel_AN11 11
 channel_AN13 13
 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\float.c
+"62 /opt/microchip/xc8/v1.41/sources/common/float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
-"86 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftadd.c
+"86 /opt/microchip/xc8/v1.41/sources/common/ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"54 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftdiv.c
+"54 /opt/microchip/xc8/v1.41/sources/common/ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftmul.c
+"4 /opt/microchip/xc8/v1.41/sources/common/ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v1.41/sources/common/ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
-"20 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftsub.c
+"20 /opt/microchip/xc8/v1.41/sources/common/ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwdiv.c
+"44 /opt/microchip/xc8/v1.41/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"8 /opt/microchip/xc8/v1.41/sources/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"10 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\sprcadd.c
+"28 /opt/microchip/xc8/v1.41/sources/common/lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"10 /opt/microchip/xc8/v1.41/sources/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 3 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 3 0 ]
-"11 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\sprcdiv.c
+"11 /opt/microchip/xc8/v1.41/sources/common/sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\sprcmul.c
+"8 /opt/microchip/xc8/v1.41/sources/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 3 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\Umul32.c
+"15 /opt/microchip/xc8/v1.41/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /opt/microchip/xc8/v1.41/sources/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"27 C:\Users\Simone\Documents\GitHub\Romulo.x\interrupts.c
+"27 /home/tolomeilab/MPLABXProjects/Romulo.x/interrupts.c
 [v _high_isr high_isr `II(v  1 e 1 0 ]
 "67
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
-"46 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
+"46 /home/tolomeilab/MPLABXProjects/Romulo.x/main.c
 [v _main main `(v  1 e 1 0 ]
-"59 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
+"59 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 "105
 [v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
-"58 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/ccp4.c
+"58 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/ccp4.c
 [v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
 "75
 [v _CCP4_SetCompareCount CCP4_SetCompareCount `(v  1 e 1 0 ]
-"64 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm1.c
+"64 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/epwm1.c
 [v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
 "91
 [v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
-"64 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm2.c
+"64 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/epwm2.c
 [v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 1 0 ]
 "91
 [v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
-"106 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/mcc.c
+"106 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "118
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"50 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/pin_manager.c
+"50 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"63 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr1.c
+"63 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "89
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
-"58 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr2.c
+"58 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "78
 [v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
-"30 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+"37 /home/tolomeilab/MPLABXProjects/Romulo.x/user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
-"59
+"66
 [v _compara compara `(uc  1 e 1 0 ]
-"63
-[v _seguiLinea seguiLinea `(v  1 e 1 0 ]
-"141
+"150
+[v _PID_Linea PID_Linea `(v  1 e 1 0 ]
+"172
+[v _taraturaIR taraturaIR `(v  1 e 1 0 ]
+"190
 [v _taratura taratura `(v  1 e 1 0 ]
-"194
+"243
 [v _controllaColore controllaColore `(v  1 e 1 0 ]
-"235
+"281
 [v _stopM stopM `(v  1 e 1 0 ]
-"252
+"298
 [v _checkBatt checkBatt `(v  1 e 1 0 ]
-"265
+"311
 [v _sollevaCarrello sollevaCarrello `(v  1 e 1 0 ]
-"300
+"346
 [v _abbassaCarrello abbassaCarrello `(v  1 e 1 0 ]
-"337
+"383
 [v _delay_mS delay_mS `(v  1 e 1 0 ]
-"49 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic18f24k22.h
+"49 /opt/microchip/xc8/v1.41/include/pic18f24k22.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
 "93
 [v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
@@ -135,7 +145,7 @@ channel_AN13 13
 [s S113 . 1 `uc 1 C4TSEL 1 0 :2:0 
 `uc 1 C5TSEL 1 0 :2:2 
 ]
-"1246
+"1243
 [s S116 . 1 `uc 1 C4TSEL0 1 0 :1:0 
 `uc 1 C4TSEL1 1 0 :1:1 
 `uc 1 C5TSEL0 1 0 :1:2 
@@ -149,7 +159,7 @@ channel_AN13 13
 `uc 1 . 1 0 :1:5 
 `uc 1 C3TSEL 1 0 :2:6 
 ]
-"1304
+"1301
 [s S359 . 1 `uc 1 C1TSEL0 1 0 :1:0 
 `uc 1 C1TSEL1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -161,31 +171,31 @@ channel_AN13 13
 ]
 [u S368 . 1 `S353 1 . 1 0 `S359 1 . 1 0 ]
 [v _CCPTMRS0bits CCPTMRS0bits `VES368  1 e 1 @3913 ]
-"1924
+"1919
 [v _CCP4CON CCP4CON `VEuc  1 e 1 @3927 ]
-"1993
+"1988
 [v _CCPR4L CCPR4L `VEuc  1 e 1 @3928 ]
-"2012
+"2007
 [v _CCPR4H CCPR4H `VEuc  1 e 1 @3929 ]
-"2584
+"2567
 [v _WPUB WPUB `VEuc  1 e 1 @3937 ]
-"2683
+"2666
 [v _PSTR2CON PSTR2CON `VEuc  1 e 1 @3939 ]
-"2858
+"2805
 [v _ECCP2AS ECCP2AS `VEuc  1 e 1 @3940 ]
-"3099
+"3046
 [v _PWM2CON PWM2CON `VEuc  1 e 1 @3941 ]
-"3168
+"3115
 [v _CCP2CON CCP2CON `VEuc  1 e 1 @3942 ]
-"3255
+"3202
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @3943 ]
-"3274
+"3221
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @3944 ]
 [s S141 . 1 `uc 1 CCP3IF 1 0 :1:0 
 `uc 1 CCP4IF 1 0 :1:1 
 `uc 1 CCP5IF 1 0 :1:2 
 ]
-"6098
+"5931
 [u S145 . 1 `S141 1 . 1 0 ]
 [v _PIR4bits PIR4bits `VES145  1 e 1 @3963 ]
 [s S641 . 1 `uc 1 RB0 1 0 :1:0 
@@ -197,7 +207,7 @@ channel_AN13 13
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-"6646
+"6474
 [s S709 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
@@ -262,13 +272,13 @@ channel_AN13 13
 ]
 [u S771 . 1 `S641 1 . 1 0 `S709 1 . 1 0 `S718 1 . 1 0 `S727 1 . 1 0 `S736 1 . 1 0 `S745 1 . 1 0 `S752 1 . 1 0 `S759 1 . 1 0 `S761 1 . 1 0 `S768 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES771  1 e 1 @3969 ]
-"7337
+"7162
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-"7469
+"7273
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-"7601
+"7384
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-"7733
+"7495
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 [s S592 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
@@ -279,7 +289,7 @@ channel_AN13 13
 `uc 1 TRISA6 1 0 :1:6 
 `uc 1 TRISA7 1 0 :1:7 
 ]
-"7765
+"7527
 [s S601 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
@@ -291,7 +301,7 @@ channel_AN13 13
 ]
 [u S610 . 1 `S592 1 . 1 0 `S601 1 . 1 0 ]
 [v _TRISAbits TRISAbits `VES610  1 e 1 @3986 ]
-"7954
+"7716
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 [s S632 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
@@ -302,12 +312,12 @@ channel_AN13 13
 `uc 1 TRISB6 1 0 :1:6 
 `uc 1 TRISB7 1 0 :1:7 
 ]
-"7986
+"7748
 [u S650 . 1 `S632 1 . 1 0 `S641 1 . 1 0 ]
 [v _TRISBbits TRISBbits `VES650  1 e 1 @3987 ]
-"8175
+"7937
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-"8416
+"8178
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
 [s S175 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
@@ -317,7 +327,7 @@ channel_AN13 13
 `uc 1 RC1IF 1 0 :1:5 
 `uc 1 ADIF 1 0 :1:6 
 ]
-"8862
+"8624
 [s S183 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
@@ -325,19 +335,19 @@ channel_AN13 13
 ]
 [u S188 . 1 `S175 1 . 1 0 `S183 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES188  1 e 1 @3998 ]
-"11096
+"10826
 [v _ECCP1AS ECCP1AS `VEuc  1 e 1 @4022 ]
-"11477
+"11207
 [v _PWM1CON PWM1CON `VEuc  1 e 1 @4023 ]
-"12519
+"12133
 [v _PSTR1CON PSTR1CON `VEuc  1 e 1 @4025 ]
-"12692
+"12282
 [v _T2CON T2CON `VEuc  1 e 1 @4026 ]
 [s S447 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
-"12713
+"12303
 [s S451 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -348,26 +358,26 @@ channel_AN13 13
 ]
 [u S459 . 1 `S447 1 . 1 0 `S451 1 . 1 0 ]
 [v _T2CONbits T2CONbits `VES459  1 e 1 @4026 ]
-"12762
+"12352
 [v _PR2 PR2 `VEuc  1 e 1 @4027 ]
-"12781
+"12371
 [v _TMR2 TMR2 `VEuc  1 e 1 @4028 ]
-"12800
+"12390
 [v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
-"12887
+"12477
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
-"12906
+"12496
 [v _CCPR1H CCPR1H `VEuc  1 e 1 @4031 ]
-"12925
+"12515
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
-"12995
+"12585
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
-"13062
+"12652
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
 [s S503 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
-"13107
+"12697
 [s S506 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
@@ -397,16 +407,16 @@ channel_AN13 13
 ]
 [u S533 . 1 `S503 1 . 1 0 `S506 1 . 1 0 `S510 1 . 1 0 `S518 1 . 1 0 `S521 1 . 1 0 `S524 1 . 1 0 `S527 1 . 1 0 `S530 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES533  1 e 1 @4034 ]
-"13192
+"12782
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
-"13211
+"12801
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-"15295
+"14603
 [v _T1GCON T1GCON `VEuc  1 e 1 @4044 ]
 [s S259 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 T1GGO_NOT_DONE 1 0 :1:3 
 ]
-"15325
+"14633
 [s S262 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
@@ -425,12 +435,12 @@ channel_AN13 13
 ]
 [u S278 . 1 `S259 1 . 1 0 `S262 1 . 1 0 `S270 1 . 1 0 `S275 1 . 1 0 ]
 [v _T1GCONbits T1GCONbits `VES278  1 e 1 @4044 ]
-"15389
+"14697
 [v _T1CON T1CON `VEuc  1 e 1 @4045 ]
 [s S209 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T1SYNC 1 0 :1:2 
 ]
-"15422
+"14730
 [s S212 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 T1RD16 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
@@ -452,20 +462,20 @@ channel_AN13 13
 ]
 [u S231 . 1 `S209 1 . 1 0 `S212 1 . 1 0 `S219 1 . 1 0 `S228 1 . 1 0 ]
 [v _T1CONbits T1CONbits `VES231  1 e 1 @4045 ]
-"15501
+"14809
 [v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
-"15507
+"14815
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
-"15526
+"14834
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-"15704
+"15012
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
-"15760
+"15068
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 [s S31 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
-"16570
+"15870
 [s S34 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
@@ -489,7 +499,7 @@ channel_AN13 13
 `uc 1 PEIE_GIEL 1 0 :1:6 
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
-"16646
+"15946
 [s S863 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -505,41 +515,41 @@ channel_AN13 13
 ]
 [u S876 . 1 `S854 1 . 1 0 `S863 1 . 1 0 `S872 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES876  1 e 1 @4082 ]
-"17823
+"17125
 [v _INT1IE INT1IE `VEb  1 e 0 @32643 ]
-"17827
+"17129
 [v _INT1IP INT1IP `VEb  1 e 0 @32646 ]
-"17847
+"17149
 [v _INTEDG1 INTEDG1 `VEb  1 e 0 @32653 ]
-"17915
+"17217
 [v _LATA0 LATA0 `VEb  1 e 0 @31816 ]
-"17917
+"17219
 [v _LATA1 LATA1 `VEb  1 e 0 @31817 ]
-"17919
+"17221
 [v _LATA2 LATA2 `VEb  1 e 0 @31818 ]
-"17921
+"17223
 [v _LATA3 LATA3 `VEb  1 e 0 @31819 ]
-"17923
+"17225
 [v _LATA4 LATA4 `VEb  1 e 0 @31820 ]
-"17947
+"17249
 [v _LATC0 LATC0 `VEb  1 e 0 @31832 ]
-"17953
+"17255
 [v _LATC3 LATC3 `VEb  1 e 0 @31835 ]
-"17955
+"17257
 [v _LATC4 LATC4 `VEb  1 e 0 @31836 ]
-"17957
+"17259
 [v _LATC5 LATC5 `VEb  1 e 0 @31837 ]
-"17959
+"17261
 [v _LATC6 LATC6 `VEb  1 e 0 @31838 ]
-"17961
+"17263
 [v _LATC7 LATC7 `VEb  1 e 0 @31839 ]
-"39 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
+"39 /home/tolomeilab/MPLABXProjects/Romulo.x/main.c
 [v _V_pulsantiera V_pulsantiera `ui  1 e 2 0 ]
-"57 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr1.c
+"57 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEui  1 e 2 0 ]
-"6 C:\Users\Simone\Documents\GitHub\Romulo.x\user.h
-[v _colore colore `E7378  1 e 1 0 ]
-[v _goal_color goal_color `E7378  1 e 1 0 ]
+"6 /home/tolomeilab/MPLABXProjects/Romulo.x/user.h
+[v _colore colore `E6652  1 e 1 0 ]
+[v _goal_color goal_color `E6652  1 e 1 0 ]
 "7
 [v _rossoPC rossoPC `i  1 e 2 0 ]
 [v _verdePC verdePC `i  1 e 2 0 ]
@@ -554,111 +564,111 @@ channel_AN13 13
 [v _T T `ui  1 e 2 0 ]
 "15
 [v _msec_10 msec_10 `ui  1 e 2 0 ]
-"46 C:\Users\Simone\Documents\GitHub\Romulo.x\main.c
+"46 /home/tolomeilab/MPLABXProjects/Romulo.x/main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "74
-[v main@numLinee numLinee `uc  1 a 1 17 ]
-"215
+[v main@numLinee numLinee `uc  1 a 1 48 ]
+"221
 } 0
-"141 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+"172 /home/tolomeilab/MPLABXProjects/Romulo.x/user.c
+[v _taraturaIR taraturaIR `(v  1 e 1 0 ]
+{
+"175
+[v taraturaIR@s s `i  1 a 2 21 ]
+"174
+[v taraturaIR@i i `i  1 a 2 19 ]
+"177
+[v taraturaIR@soglia soglia `i  1 a 2 17 ]
+"187
+} 0
+"15 /opt/microchip/xc8/v1.41/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 35 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 31 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 33 ]
+"53
+} 0
+"4 /opt/microchip/xc8/v1.41/sources/common/ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+{
+[v ___ftge@ff1 ff1 `f  1 p 3 6 ]
+[v ___ftge@ff2 ff2 `f  1 p 3 9 ]
+"13
+} 0
+"190 /home/tolomeilab/MPLABXProjects/Romulo.x/user.c
 [v _taratura taratura `(v  1 e 1 0 ]
 {
-"149
-[v taratura@v_sensori v_sensori `ui  1 a 2 15 ]
-"193
+"198
+[v taratura@v_sensori v_sensori `ui  1 a 2 11 ]
+"242
 } 0
-"235
+"281
 [v _stopM stopM `(v  1 e 1 0 ]
 {
-"241
+"287
 } 0
-"265
+"311
 [v _sollevaCarrello sollevaCarrello `(v  1 e 1 0 ]
 {
-"266
+"312
 [v sollevaCarrello@p p `uc  1 a 1 32 ]
-"297
-} 0
-"63
-[v _seguiLinea seguiLinea `(v  1 e 1 0 ]
-{
-"87
-[v seguiLinea@T T `uc  1 a 1 4 ]
-"95
-} 0
-"91 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm2.c
-[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
-{
-[v EPWM2_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 31 ]
-"98
-} 0
-"91 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm1.c
-[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
-{
-[v EPWM1_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 31 ]
-"98
-} 0
-"194 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
-[v _controllaColore controllaColore `(v  1 e 1 0 ]
-{
-"230
-} 0
-"337
-[v _delay_mS delay_mS `(v  1 e 1 0 ]
-{
-[v delay_mS@m_sec m_sec `ui  1 p 2 10 ]
 "343
 } 0
-"252
+"243
+[v _controllaColore controllaColore `(v  1 e 1 0 ]
+{
+"279
+} 0
+"383
+[v _delay_mS delay_mS `(v  1 e 1 0 ]
+{
+[v delay_mS@m_sec m_sec `ui  1 p 2 7 ]
+"389
+} 0
+"298
 [v _checkBatt checkBatt `(v  1 e 1 0 ]
 {
-"263
+"309
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\lwdiv.c
+"8 /opt/microchip/xc8/v1.41/sources/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
-[v ___lwdiv@quotient quotient `ui  1 a 2 8 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
 "12
-[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+[v ___lwdiv@counter counter `uc  1 a 1 4 ]
 "8
-[v ___lwdiv@dividend dividend `ui  1 p 2 3 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 5 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "31
 } 0
-"105 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
-[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
-{
-[v ADC_GetConversion@channel channel `E7379  1 a 1 wreg ]
-[v ADC_GetConversion@channel channel `E7379  1 a 1 wreg ]
-"108
-[v ADC_GetConversion@channel channel `E7379  1 a 1 2 ]
-"124
-} 0
-"59 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+"66 /home/tolomeilab/MPLABXProjects/Romulo.x/user.c
 [v _compara compara `(uc  1 e 1 0 ]
 {
-[v compara@valore valore `ui  1 p 2 0 ]
-[v compara@soglia soglia `ui  1 p 2 2 ]
-[v compara@tolleranza tolleranza `ui  1 p 2 4 ]
-"61
+[v compara@valore valore `ui  1 p 2 31 ]
+[v compara@soglia soglia `ui  1 p 2 33 ]
+[v compara@tolleranza tolleranza `ui  1 p 2 35 ]
+"68
 } 0
-"300
+"346
 [v _abbassaCarrello abbassaCarrello `(v  1 e 1 0 ]
 {
-"302
-[v abbassaCarrello@p_1005 p `uc  1 a 1 1 ]
-"301
-[v abbassaCarrello@p p `uc  1 a 1 0 ]
-"334
+"348
+[v abbassaCarrello@p_1014 p `uc  1 a 1 33 ]
+"347
+[v abbassaCarrello@p p `uc  1 a 1 32 ]
+"380
 } 0
-"106 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/mcc.c
+"106 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "116
 } 0
-"58 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr2.c
+"58 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "76
@@ -668,7 +678,7 @@ channel_AN13 13
 {
 "82
 } 0
-"63 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/tmr1.c
+"63 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "87
@@ -678,42 +688,134 @@ channel_AN13 13
 {
 "93
 } 0
-"50 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/pin_manager.c
+"50 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "68
 } 0
-"118 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/mcc.c
+"118 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "128
 } 0
-"64 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm2.c
+"64 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/epwm2.c
 [v _EPWM2_Initialize EPWM2_Initialize `(v  1 e 1 0 ]
 {
 "89
 } 0
-"64 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/epwm1.c
+"64 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/epwm1.c
 [v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
 {
 "89
 } 0
-"58 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/ccp4.c
+"58 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/ccp4.c
 [v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
 {
 "73
 } 0
-"59 C:\Users\Simone\Documents\GitHub\Romulo.x\mcc_generated_files/adc.c
+"59 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"30 C:\Users\Simone\Documents\GitHub\Romulo.x\user.c
+"150 /home/tolomeilab/MPLABXProjects/Romulo.x/user.c
+[v _PID_Linea PID_Linea `(v  1 e 1 0 ]
+{
+"154
+[v PID_Linea@e e `d  1 a 3 45 ]
+"155
+[v PID_Linea@deltaV deltaV `d  1 a 3 42 ]
+[v PID_Linea@Ie Ie `d  1 a 3 39 ]
+"150
+[v PID_Linea@vel vel `i  1 p 2 36 ]
+"170
+} 0
+"28 /opt/microchip/xc8/v1.41/sources/common/lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+{
+[v ___lwtoft@c c `ui  1 p 2 3 ]
+"31
+} 0
+"44 /opt/microchip/xc8/v1.41/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 6 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 10 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 5 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 31 ]
+"73
+} 0
+"20 /opt/microchip/xc8/v1.41/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+{
+[v ___ftsub@f1 f1 `f  1 p 3 30 ]
+[v ___ftsub@f2 f2 `f  1 p 3 33 ]
+"27
+} 0
+"86 /opt/microchip/xc8/v1.41/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+{
+"88
+[v ___ftadd@exp1 exp1 `uc  1 a 1 29 ]
+[v ___ftadd@exp2 exp2 `uc  1 a 1 28 ]
+[v ___ftadd@sign sign `uc  1 a 1 27 ]
+"86
+[v ___ftadd@f1 f1 `f  1 p 3 18 ]
+[v ___ftadd@f2 f2 `f  1 p 3 21 ]
+"148
+} 0
+"62 /opt/microchip/xc8/v1.41/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 13 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 17 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 16 ]
+[v ___ftmul@exp exp `uc  1 a 1 12 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 3 ]
+[v ___ftmul@f2 f2 `f  1 p 3 6 ]
+"157
+} 0
+"62 /opt/microchip/xc8/v1.41/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 31 ]
+[v ___ftpack@exp exp `uc  1 p 1 34 ]
+[v ___ftpack@sign sign `uc  1 p 1 35 ]
+"86
+} 0
+"91 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/epwm2.c
+[v _EPWM2_LoadDutyValue EPWM2_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v EPWM2_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 11 ]
+"98
+} 0
+"91 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/epwm1.c
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v EPWM1_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 11 ]
+"98
+} 0
+"105 /home/tolomeilab/MPLABXProjects/Romulo.x/mcc_generated_files/adc.c
+[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E6653  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E6653  1 a 1 wreg ]
+"108
+[v ADC_GetConversion@channel channel `E6653  1 a 1 35 ]
+"124
+} 0
+"37 /home/tolomeilab/MPLABXProjects/Romulo.x/user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
 {
-"50
+"57
 } 0
-"67 C:\Users\Simone\Documents\GitHub\Romulo.x\interrupts.c
+"67 /home/tolomeilab/MPLABXProjects/Romulo.x/interrupts.c
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
 {
 "102

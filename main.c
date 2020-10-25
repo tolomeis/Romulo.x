@@ -69,6 +69,7 @@ void main(void)
     INAm=0;
     INBm=0;
     uint8_t numLinee = 0;
+    taraturaIR();
     
     /**********************************************************************/
     /********FINE INIZIALIZZAZIONE. INIZIO CICLO DI LOOP ******************/
@@ -102,7 +103,8 @@ void main(void)
             MOT_EN = 1;
             EPWM1_LoadDutyValue(700);
             EPWM2_LoadDutyValue(712);
-            seguiLinea();
+            //seguiLinea();
+            PID_Linea(700);
             //NB: la subroutine seguiLinea termina quando il robot trova la
             //linea di stop.
            //***TROVATA LA LINEA MI FERMO E CONTROLLO COLORE**/
@@ -118,10 +120,16 @@ void main(void)
                 //questo delay serve a sorpassare completamente la linea di stop
                 //ed evitare che il robot si rifermi subito.
                 //NB: è possibile toglierlo.
+<<<<<<< Updated upstream
                 for(uint8_t t = 0; t<=100; t++){
                     __delay_ms(10);
                     }
                 seguiLinea();
+=======
+                delay_mS(500);
+                //seguiLinea();
+                PID_Linea(700);
+>>>>>>> Stashed changes
                 stopM();
                 //controllo colore
                 controllaColore();
@@ -136,10 +144,17 @@ void main(void)
                     MOT_EN = 1;
                     EPWM1_LoadDutyValue(700);
                     EPWM2_LoadDutyValue(712);
+<<<<<<< Updated upstream
                     for(uint8_t t = 0; t<=100; t++){
                     __delay_ms(10);
                     }
                     seguiLinea();
+=======
+                    
+                    delay_mS(1000);
+                    //seguiLinea();
+                    PID_Linea(700);
+>>>>>>> Stashed changes
                     stopM();
                     numLinee++;
                 }
@@ -183,7 +198,8 @@ void main(void)
             EPWM1_LoadDutyValue(700);
             EPWM2_LoadDutyValue(712);
             MOT_EN = 1;
-            seguiLinea();
+            //seguiLinea();
+            PID_Linea(700);
             //se numLinee = 0 allora passo oltre, altrimenti ripeto l'inseguitre
             //di linea e decremento numLinee, e ripeto finchè numLinee > 0
             while (numLinee>0){
@@ -191,7 +207,8 @@ void main(void)
                 EPWM2_LoadDutyValue(712);
                 MOT_EN = 1;
                 delay_mS(350);
-                seguiLinea();
+                //seguiLinea();
+                PID_Linea(700);
                 numLinee--;
             }
             //A questo punto il robot si trova in zona di scarico
